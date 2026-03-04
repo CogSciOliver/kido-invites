@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "AmsterdamThree";
+  src: url("./fonts/AmsterdamThree.woff2") format("woff2"),
+       url("./fonts/AmsterdamThree.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --bg: #FFF9EF;
   --ink: #0F0F0F;
@@ -100,9 +108,10 @@ body {
 }
 
 .scriptline__script {
-  font-family: "Allura", "Brush Script MT", cursive;
+  font-family: "AmsterdamThree", cursive;
   font-size: 70px;
-  color: var(--green);
+  color: var(--mint);
+
   line-height: .9;
 }
 
