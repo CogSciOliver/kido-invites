@@ -7,7 +7,7 @@
   "arrival_time": "6:30 PM",
   "venue": {
     "name": "Bathhouse Williamsburg",
-    "address_line1": "233 Wythe Ave",
+    "address_line1": "103 N 10th St",
     "address_line2": "Brooklyn, NY 11249",
     "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg"
   },
@@ -31,7 +31,7 @@
   "links": [
     {
       "label": "Itinerary Link",
-      "url": "https://invite.daniioliver.com"
+      "url": "https://event.daniioliver.com"
     },
     {
       "label": "Venue Website",
