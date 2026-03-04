@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,8 +13,16 @@
 
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <main class="page" id="app" aria-busy="true">
+    <!-- This banner can be used for live updates during the event. To show it, add a "live_banner" field to data/event.json with your message. -->
+    <div id="liveBanner" class="liveBanner" style="display:none;">
+      <span id="liveBannerText"></span>
+    </div>
+
+
+
     <header class="hero">
       <div class="hero__media">
         <img id="heroImage" class="hero__img" alt="Event artwork" loading="eager" />
@@ -37,6 +46,7 @@
         <div class="ctaRow">
           <a class="btn btn--primary" id="rsvpBtn" href="#">RSVP</a>
           <a class="btn btn--ghost" id="mapBtn" href="#" target="_blank" rel="noopener">Open Map</a>
+          <a class="btn btn--ghost" id="calendarBtn">Add to Calendar</a>
         </div>
 
         <p class="subcopy" id="arrivalCopy">
@@ -46,13 +56,25 @@
         <div class="links" id="linksRow"></div>
       </div>
     </header>
+    <!-- This Banner is a live tracker for where we are -->
+    <div class="liveTracker">
+      <div class="liveItem liveNowCard">
+        <span class="liveLabel">NOW</span>
+        <span id="liveNow"></span>
+      </div>
+
+      <div class="liveItem">
+        <span class="liveLabel">NEXT</span>
+        <span id="liveNext"></span>
+      </div>
+    </div>
 
     <section class="cardGrid">
       <section class="card">
         <h2 class="card__title">Location</h2>
         <div class="card__body">
-          <div class="venueName" id="venueName">Bathhouse Williamsburg</div>
-          <div class="venueAddr" id="venueAddr">233 Wythe Ave, Brooklyn, NY 11249</div>
+          <div class="venueName" id="venueName">Event Venue</div>
+          <div class="venueAddr" id="venueAddr">Address in Json</div>
           <div class="hint">Please arrive on time so we can start together.</div>
         </div>
       </section>
@@ -80,20 +102,23 @@
       </section>
     </section>
 
+    <!-- This section is for prime information changes -->
     <section class="updates" id="updates" hidden>
       <div class="updates__header">
         <h2 class="updates__title">Live updates</h2>
         <p class="updates__intro" id="updatesIntro"></p>
       </div>
       <div class="updates__list" id="updatesList"></div>
-      <p class="updates__tip">Tip: To change this during the night, edit <code>data/event.json</code> and refresh.</p>
+      <p class="updates__tip">Tip: This page refreshes automatically every 30 seconds.</p>
     </section>
 
     <footer class="footer">
-      <div class="footer__note" id="footerNote">Questions? Reply to the RSVP email.</div>
+      <div class="footer__note" id="footerNote">Questions? Text Me Directly.</div>
+      <div class="footer__note">This page refreshes every 30 seconds for live updates on the night of the event.</div>
     </footer>
   </main>
 
   <script src="script.js"></script>
 </body>
+
 </html>

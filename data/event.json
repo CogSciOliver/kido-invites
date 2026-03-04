@@ -1,4 +1,7 @@
 {
+  "live_banner": "We're still on! Live updates noted here on the night of the event",
+  "live_now": "Danii's building 3 applications and not sleeping. Check back here for live updates on the night of the event.",
+  "live_next": "If you are attending the museum trip in the day, we will meet at 9:30 AM at the American Museum of Natural History.",
   "title": "Ladies' Night Soir\u00e9e",
   "date_display": "03.13.2026",
   "weekday_display": "Friday",
@@ -17,8 +20,7 @@
   },
   "rsvp": {
     "primary_text": "RSVP",
-    "email": "yourbestemail@example.com",
-    "deadline": ""
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSeFjkOsk2wMSXaJV9CvihUgSufbWLxLCYA7qX0kxBgDNcWJog/viewform"
   },
   "dress_code": "Comfortable chic. Bring a swimsuit and sandals.",
   "what_to_bring": [
@@ -61,15 +63,20 @@
     "items": [
       {
         "type": "info",
-        "title": "Tonight\u2019s meeting point",
+        "title": "Friday's meeting point",
         "text": "Lobby by the host stand."
       },
       {
-        "type": "time",
+        "type": "what's needed",
         "title": "Heads up",
         "text": "Bring a swimsuit + sandals."
+      },
+      {
+        "type": "time",
+        "title": "6:30 PM",
+        "text": "Tickets still available for purchase online. See you there!"
       }
     ]
   },
-  "footer_note": "Questions? Reply to the RSVP email."
+  "footer_note": "Questions? Text Me Directly."
 }

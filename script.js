@@ -1,21 +1,42 @@
 async function loadEvent() {
   const res = await fetch('./data/event.json', { cache: 'no-store' });
   if (!res.ok) throw new Error('Could not load event.json');
-  return await res.json();
+
+  const data = await res.json();
+
+  // Live banner
+  if (data.live_banner) {
+    const banner = document.getElementById("liveBanner");
+    const bannerText = document.getElementById("liveBannerText");
+
+    if (banner && bannerText) {
+      banner.style.display = "block";
+      bannerText.innerText = data.live_banner;
+    }
+  }
+
+  // Live tracker
+  const now = document.getElementById("liveNow");
+  const next = document.getElementById("liveNext");
+
+  if (now && data.live_now) now.innerText = data.live_now;
+  if (next && data.live_next) next.innerText = data.live_next;
+
+  return data;
 }
 
-function el(id){ return document.getElementById(id); }
+function el(id) { return document.getElementById(id); }
 
-function setText(id, text){
+function setText(id, text) {
   const node = el(id);
   if (node) node.textContent = text ?? '';
 }
 
-function safeJoin(...parts){
+function safeJoin(...parts) {
   return parts.filter(Boolean).join(' ');
 }
 
-function renderLinks(links){
+function renderLinks(links) {
   const row = el('linksRow');
   row.innerHTML = '';
   if (!Array.isArray(links) || links.length === 0) return;
@@ -31,7 +52,7 @@ function renderLinks(links){
   });
 }
 
-function renderBring(items){
+function renderBring(items) {
   const ul = el('bringList');
   ul.innerHTML = '';
   (items || []).forEach(t => {
@@ -41,7 +62,7 @@ function renderBring(items){
   });
 }
 
-function renderSchedule(items){
+function renderSchedule(items) {
   const ol = el('scheduleList');
   ol.innerHTML = '';
   (items || []).forEach(s => {
@@ -58,7 +79,7 @@ function renderSchedule(items){
   });
 }
 
-function renderUpdates(updates){
+function renderUpdates(updates) {
   const wrap = el('updates');
   if (!updates?.enabled) {
     wrap.hidden = true;
@@ -83,19 +104,18 @@ function renderUpdates(updates){
   });
 }
 
-function setHeroImage(){
+function setHeroImage() {
   // Default: use your existing artwork. Swap by changing this line or by adding hero_image in event.json
   const img = el('heroImage');
   img.src = './assets/Invitation.jpg';
 }
 
-function rsvpHref(email){
-  if (!email) return '#';
-  return `mailto:${email}?subject=${encodeURIComponent('RSVP — Ladies\' Night Soirée')}`;
+function rsvpHref() {
+  return "https://docs.google.com/forms/d/e/1FAIpQLSeFjkOsk2wMSXaJV9CvihUgSufbWLxLCYA7qX0kxBgDNcWJog/viewform";
 }
 
-(async function init(){
-  try{
+(async function init() {
+  try {
     const data = await loadEvent();
 
     setHeroImage();
@@ -117,10 +137,12 @@ function rsvpHref(email){
     // Buttons
     const rsvpBtn = el('rsvpBtn');
     rsvpBtn.textContent = data.rsvp?.primary_text || 'RSVP';
-    rsvpBtn.href = rsvpHref(data.rsvp?.email);
+    rsvpBtn.href = data.rsvp?.url || "#";
+    rsvpBtn.target = "_blank";
 
     const mapBtn = el('mapBtn');
     mapBtn.href = data.venue?.google_maps_url || '#';
+    mapBtn.target = "_blank";
 
     // Lists
     renderLinks(data.links);
@@ -138,7 +160,7 @@ function rsvpHref(email){
     setText('footerNote', data.footer_note || '');
 
     el('app').setAttribute('aria-busy', 'false');
-  }catch(err){
+  } catch (err) {
     console.error(err);
     document.body.innerHTML = `
       <div style="max-width:900px;margin:40px auto;padding:18px;font-family:system-ui">
@@ -149,3 +171,37 @@ function rsvpHref(email){
     `;
   }
 })();
+
+const calendarBtn = document.getElementById("calendarBtn");
+
+calendarBtn.addEventListener("click", () => {
+
+  const start = "20260313T183000";
+  const end = "20260313T233000";
+
+  const ics = `
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Ladies Night Soirée
+DTSTART:${start}
+DTEND:${end}
+LOCATION:Bathhouse Williamsburg, Brooklyn NY
+DESCRIPTION:Ladies Night Soirée hosted by Danii Oliver
+END:VEVENT
+END:VCALENDAR
+`;
+
+  const blob = new Blob([ics], { type: "text/calendar" });
+  const url = window.URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "ladies-night.ics";
+  link.click();
+
+});
+
+setInterval(() => {
+  location.reload();
+}, 60000);
