@@ -1,0 +1,75 @@
+{
+  "title": "Ladies' Night Soir\u00e9e",
+  "date_display": "03.13.2026",
+  "weekday_display": "Friday",
+  "city": "Brooklyn, NY",
+  "host": "Danii Oliver",
+  "arrival_time": "6:30 PM",
+  "venue": {
+    "name": "Bathhouse Williamsburg",
+    "address_line1": "233 Wythe Ave",
+    "address_line2": "Brooklyn, NY 11249",
+    "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg"
+  },
+  "after": {
+    "headline": "Drinks & Bites",
+    "note": "After the soak, we\u2019ll head out for drinks and bites of your choice."
+  },
+  "rsvp": {
+    "primary_text": "RSVP",
+    "email": "yourbestemail@example.com",
+    "deadline": ""
+  },
+  "dress_code": "Comfortable chic. Bring a swimsuit and sandals.",
+  "what_to_bring": [
+    "Swimsuit",
+    "Sandals or slides",
+    "Hair tie (optional)",
+    "Photo ID",
+    "Your best energy"
+  ],
+  "links": [
+    {
+      "label": "Itinerary Link",
+      "url": "https://invite.daniioliver.com"
+    },
+    {
+      "label": "Venue Website",
+      "url": "https://www.abathhouse.com/"
+    }
+  ],
+  "schedule": [
+    {
+      "time": "6:30 PM",
+      "title": "Arrivals",
+      "details": "Meet in the lobby and get settled."
+    },
+    {
+      "time": "6:45 PM",
+      "title": "Soak Session",
+      "details": "Spa time at Bathhouse Williamsburg."
+    },
+    {
+      "time": "9:00 PM",
+      "title": "Drinks & Bites",
+      "details": "Choose your adventure \u2014 details in live updates."
+    }
+  ],
+  "live_updates": {
+    "enabled": true,
+    "intro": "If anything changes during the night, I\u2019ll update it here.",
+    "items": [
+      {
+        "type": "info",
+        "title": "Tonight\u2019s meeting point",
+        "text": "Lobby by the host stand."
+      },
+      {
+        "type": "time",
+        "title": "Heads up",
+        "text": "Bring a swimsuit + sandals."
+      }
+    ]
+  },
+  "footer_note": "Questions? Reply to the RSVP email."
+}
