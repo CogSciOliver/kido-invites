@@ -1,11 +1,3 @@
-@font-face {
-  font-family: "AmsterdamThree";
-  src: url("./fonts/AmsterdamThree.woff2") format("woff2"),
-       url("./fonts/AmsterdamThree.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 :root {
   --bg: #FFF9EF;
   --ink: #0F0F0F;
@@ -101,14 +93,17 @@ body {
 
 .scriptline {
   margin: 6px 0 8px;
-  display: flex;
-  gap: 16px;
-  align-items: baseline;
-  flex-wrap: wrap;
+}
+
+.scriptline__image {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .scriptline__script {
-  font-family: "AmsterdamThree", cursive;
+  font-family: "Meddon", cursive;
   font-size: 70px;
   color: var(--mint);
 
@@ -417,7 +412,7 @@ body {
   border: 2px solid transparent;
   background:
     linear-gradient(#FFFfff, #FFF9EF) padding-box,
-    linear-gradient(70deg, var(--green-dark), var(--green), var(--mint), var(--green-dark)) border-box;
+    linear-gradient(70deg, var(--green-dark), var(--green), var(--mint), var(--sage)) border-box;
   background-size: 200% 200%;
   animation: movingBorder 3s linear infinite;
   box-shadow: 5px 5px 15px rgba(6, 67, 40, 0.5);

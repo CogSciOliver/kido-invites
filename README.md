@@ -1,10 +1,4 @@
-# Ladies' Night Soirée — quick editable site
-
-## Fastest way to publish (GitHub Pages)
-1) Create a GitHub repo (public or private with Pages enabled).
-2) Upload everything in this folder.
-3) In GitHub: Settings → Pages → Deploy from branch → select `main` and `/ (root)`.
-4) Your link will appear there.
+# Event Invite With Live Day of Edits — quick editable app
 
 ## How to make quick edits during the night
 Open `data/event.json` and edit:
@@ -25,3 +19,13 @@ The RSVP button is a mailto link using the email in `event.json`:
 
 If you prefer a form later (Google Form, Typeform, Tally), replace the RSVP link in `script.js`
 or add a `rsvp.url` field and point the button to it.
+
+### Run App During Production
+Run in Terminal:
+``` 
+python3 -m http.server 8000 
+```
+Visit:
+```
+http://localhost:8000
+```
