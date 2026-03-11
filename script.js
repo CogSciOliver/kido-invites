@@ -204,7 +204,7 @@ END:VCALENDAR
 
 setInterval(() => {
   location.reload();
-}, 3000000);
+}, 60000);
 
 // 3000000 ms = 5 minutes refresh for pre-event updates
 // 60000 ms = 1 minute refresh during live event
