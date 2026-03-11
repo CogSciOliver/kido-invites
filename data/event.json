@@ -24,6 +24,30 @@
       }
     ]
   },
+
+  "ORDER OF EVENTS":"=== EDIT HERE ===",
+  "schedule": [
+    {
+      "time": "9:30 AM",
+      "title": "Museum with Kids",
+      "details": "Meet in the lobby after ticketing. "
+    },
+    {
+      "time": "4:30 PM",
+      "title": "Travel To Brooklyn",
+      "details": "Accounting for rush hour traffic."
+    },
+    {
+      "time": "6:00 - 6:15 PM",
+      "title": "Arrivals",
+      "details": "Meet in the lobby and get settled."
+    },
+    {
+      "time": "6:30 PM",
+      "title": "Soak Session",
+      "details": "Spa time at Bathhouse Williamsburg."
+    }
+  ],
   
   
   
@@ -63,18 +87,6 @@
     {
       "label": "Venue Website",
       "url": "https://www.abathhouse.com/"
-    }
-  ],
-  "schedule": [
-    {
-      "time": "6:15 PM",
-      "title": "Arrivals",
-      "details": "Meet in the lobby and get settled."
-    },
-    {
-      "time": "6:30 PM",
-      "title": "Soak Session",
-      "details": "Spa time at Bathhouse Williamsburg."
     }
   ],
   "footer_note": "Questions? Text Me Directly."
