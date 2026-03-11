@@ -12,15 +12,15 @@
     "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg"
   },
   "after": {
-    "headline": "Drinks & Bites",
-    "note": "After the soak, we\u2019ll head out for drinks and bites of your choice."
+    "headline": "Main Event",
+    "note": "Bathhouse Williamsburg. Please purchase your entry time ASAP. If you wait you will have to wait to enter next available time slot."
   },
   "rsvp": {
     "primary_text": "RSVP",
     "email": "yourbestemail@example.com",
     "deadline": ""
   },
-  "dress_code": "Comfortable chic. Bring a swimsuit and sandals.",
+  "dress_code": "Bring a swimsuit and sandals.",
   "what_to_bring": [
     "Swimsuit",
     "Sandals or slides",
@@ -31,7 +31,7 @@
   "links": [
     {
       "label": "Itinerary Link",
-      "url": "https://invite.daniioliver.com"
+      "url": "https://event.daniioliver.com"
     },
     {
       "label": "Venue Website",
@@ -45,14 +45,14 @@
       "details": "Meet in the lobby and get settled."
     },
     {
-      "time": "6:45 PM",
+      "time": "6:30 PM",
       "title": "Soak Session",
       "details": "Spa time at Bathhouse Williamsburg."
     },
     {
-      "time": "9:00 PM",
-      "title": "Drinks & Bites",
-      "details": "Choose your adventure \u2014 details in live updates."
+      "time": "09:30 AM",
+      "title": "Kids at the Museum",
+      "details": "Day trip to American Museum of History."
     }
   ],
   "live_updates": {
