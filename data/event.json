@@ -40,20 +40,20 @@
     "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg"
   },
   "after": {
-    "headline": "Drinks & Bites",
-    "note": "After the soak, we\u2019ll head out for drinks and bites of your choice."
+    "headline": "After Our Soak",
+    "note": "We'll play it by ear for those who can stay and hang."
   },
   "rsvp": {
     "primary_text": "RSVP",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSeFjkOsk2wMSXaJV9CvihUgSufbWLxLCYA7qX0kxBgDNcWJog/viewform"
   },
-  "dress_code": "Comfortable chic. Bring a swimsuit and sandals.",
+  "dress_code": "Comfortable Swimming Attire",
   "what_to_bring": [
     "Swimsuit",
     "Sandals or slides",
     "Hair tie (optional)",
     "Photo ID",
-    "Your best energy"
+    "Everything you need to release."
   ],
   "links": [
     {
