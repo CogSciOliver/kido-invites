@@ -1,6 +1,6 @@
 {
-  "live_banner": "We're still on! Live updates noted here on the night of the event",
-  "live_now": "Danii's building 3 applications and not sleeping. Check back here for live updates on the night of the event.",
+  "live_banner": "Main Event is the Bathhouse. Please secure your entry time slot ticket, ASAP.",
+  "live_now": "Get Your Entry Ticket Now. Limited entry happens in 30 minute interval.",
   "live_next": "If you are attending the museum trip in the day, we will meet at 9:30 AM at the American Museum of Natural History.",
   "title": "Ladies' Night Soir\u00e9e",
   "date_display": "03.13.2026",
@@ -57,19 +57,14 @@
     "intro": "If anything changes during the night, I\u2019ll update it here.",
     "items": [
       {
-        "type": "info",
-        "title": "Friday's meeting point",
-        "text": "Lobby by the host stand."
+        "type": "Day Trip",
+        "title": "Natural History Museum",
+        "text": "9:30 AM Inside Entry Lobby."
       },
       {
-        "type": "what's needed",
-        "title": "Heads up",
-        "text": "Bring a swimsuit + sandals."
-      },
-      {
-        "type": "time",
-        "title": "6:30 PM",
-        "text": "Tickets still available for purchase online. See you there!"
+        "type": "Main Event",
+        "title": "Bathhouse",
+        "text": "6:30 PM, Bring a swimsuit + sandals. Tickets still available for purchase online. See you there!"
       }
     ]
   },
