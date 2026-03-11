@@ -42,19 +42,14 @@
   ],
   "schedule": [
     {
-      "time": "6:30 PM",
+      "time": "6:15 PM",
       "title": "Arrivals",
       "details": "Meet in the lobby and get settled."
     },
     {
-      "time": "6:45 PM",
+      "time": "6:30 PM",
       "title": "Soak Session",
       "details": "Spa time at Bathhouse Williamsburg."
-    },
-    {
-      "time": "9:00 PM",
-      "title": "Drinks & Bites",
-      "details": "Choose your adventure \u2014 details in live updates."
     }
   ],
   "live_updates": {

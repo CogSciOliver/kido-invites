@@ -17,10 +17,36 @@
 
 <body>
   <main class="page" id="app" aria-busy="true">
-    <!-- This banner can be used for live updates during the event. To show it, add a "live_banner" field to data/event.json with your message. -->
+    <!-- This banner is for live updates during the event. To show it, add a "live_banner" field to data/event.json with your message. -->
     <div id="liveBanner" class="liveBanner" style="display:none;">
       <span id="liveBannerText"></span>
     </div>
+    <!-- END UPDATE BANNER -->
+
+    <!-- This Banner is a live tracker for where we are -->
+    <div class="liveTracker">
+      <div class="liveItem liveNowCard">
+        <span class="liveLabel">NOW</span>
+        <span id="liveNow"></span>
+      </div>
+
+      <div class="liveItem">
+        <span class="liveLabel">NEXT</span>
+        <span id="liveNext"></span>
+      </div>
+    </div>
+    <!-- END LIVE TRACKER -->
+
+    <!-- This section is for prime information changes -->
+    <section class="updates" id="updates" hidden>
+      <div class="updates__header">
+        <h2 class="updates__title">Live updates</h2>
+        <p class="updates__intro" id="updatesIntro"></p>
+      </div>
+      <div class="updates__list" id="updatesList"></div>
+      <p class="updates__tip">Tip: This page refreshes automatically every 30 seconds.</p>
+    </section>
+    <!-- END LIVE UPDATES -->
 
     <header class="hero">
       <div class="hero__media">
@@ -55,18 +81,6 @@
         <div class="links" id="linksRow"></div>
       </div>
     </header>
-    <!-- This Banner is a live tracker for where we are -->
-    <div class="liveTracker">
-      <div class="liveItem liveNowCard">
-        <span class="liveLabel">NOW</span>
-        <span id="liveNow"></span>
-      </div>
-
-      <div class="liveItem">
-        <span class="liveLabel">NEXT</span>
-        <span id="liveNext"></span>
-      </div>
-    </div>
 
     <section class="cardGrid">
       <section class="card">
@@ -101,15 +115,6 @@
       </section>
     </section>
 
-    <!-- This section is for prime information changes -->
-    <section class="updates" id="updates" hidden>
-      <div class="updates__header">
-        <h2 class="updates__title">Live updates</h2>
-        <p class="updates__intro" id="updatesIntro"></p>
-      </div>
-      <div class="updates__list" id="updatesList"></div>
-      <p class="updates__tip">Tip: This page refreshes automatically every 30 seconds.</p>
-    </section>
 
     <footer class="footer">
       <div class="footer__note" id="footerNote">Questions? Text Me Directly.</div>
