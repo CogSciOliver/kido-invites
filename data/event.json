@@ -15,7 +15,7 @@
       {
         "type": "Main Event",
         "title": "Bathhouse",
-        "text": "Must have your entry timed ticket for "Williamsburg" location. Bring a swimsuit + sandals.\n "
+        "text": "Must have your entry timed ticket for \[Williamsburg\] location. Bring a swimsuit + sandals.\n "
       },
       {
         "type": "(Completed) Day Trip",
@@ -38,12 +38,12 @@
       "details": "Accounting for rush hour traffic."
     },
     {
-      "time": "6:00 - 6:15 PM",
+      "time": "6:30 - 7:00 PM",
       "title": "Arrivals",
       "details": "Meet in the lobby and get settled."
     },
     {
-      "time": "6:30 PM",
+      "time": "7:30 PM",
       "title": "Soak Session",
       "details": "Spa time at Bathhouse Williamsburg."
     }
