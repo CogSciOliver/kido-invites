@@ -1,4 +1,5 @@
-# Ladies' Night Soirée — quick editable site
+# Event Evite with Live Updates 
+— quick editable site
 
 ## Fastest way to publish (GitHub Pages)
 1) Create a GitHub repo (public or private with Pages enabled).
