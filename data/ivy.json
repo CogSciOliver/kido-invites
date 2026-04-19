@@ -1,0 +1,79 @@
+{
+  "title": "Discover the Mysteries of the Universe with Ivy",
+  "date_display": "06.13.2026",
+  "weekday_display": "Saturday",
+  "city": "Grapevine, TX",
+  "host": "Ivy Braithwaite",
+  "arrival_time": "12:30 PM",
+  "venue": {
+    "name": "Meow Wolf Grapevine",
+    "address_line1": "3000 Grapevine Mills Pkwy Suite 253",
+    "address_line2": "Grapevine, TX 76051",
+    "google_maps_url": "https://maps.google.com/?q=3000+Grapevine+Mills+Pkwy+Suite+253,+Grapevine,+TX+76051"
+  },
+  "after": {
+    "headline": "Main Event",
+    "note": "We’ll be exploring Meow Wolf’s The Real Unreal together. Please purchase your ticket time ASAP so we can stay on the same entry window."
+  },
+  "rsvp": {
+    "primary_text": "RSVP",
+    "email": "yourbestemail@example.com",
+    "deadline": ""
+  },
+  "dress_code": "Wear comfortable clothes and shoes for walking, exploring, and interactive exhibits.",
+  "what_to_bring": [
+    "Comfortable walking shoes",
+    "Phone for photos",
+    "Curiosity and puzzle-solving energy",
+    "A fully charged battery pack (optional)",
+    "Your best mystery-event vibes"
+  ],
+  "links": [
+    {
+      "label": "Itinerary Link",
+      "url": "https://event.daniioliver.com"
+    },
+    {
+      "label": "Meow Wolf Grapevine",
+      "url": "https://meowwolf.com/visit/grapevine"
+    },
+    {
+      "label": "Tickets",
+      "url": "https://tickets.meowwolf.com/grapevine/"
+    }
+  ],
+  "schedule": [
+    {
+      "time": "12:30 PM",
+      "title": "Arrival",
+      "details": "Meet near the Meow Wolf entrance and get checked in."
+    },
+    {
+      "time": "1:00 PM",
+      "title": "Enter The Real Unreal",
+      "details": "We’ll head inside together and begin exploring the mystery."
+    },
+    {
+      "time": "2:30 PM",
+      "title": "Free Exploration + Photos",
+      "details": "Time to roam, investigate, discover hidden details, and take birthday photos."
+    }
+  ],
+  "live_updates": {
+    "enabled": true,
+    "intro": "If anything changes during the day, I’ll update it here.",
+    "items": [
+      {
+        "type": "info",
+        "title": "Meeting point",
+        "text": "Meet at the Meow Wolf Grapevine entrance."
+      },
+      {
+        "type": "time",
+        "title": "Heads up",
+        "text": "Please buy tickets early so we can enter together."
+      }
+    ]
+  },
+  "footer_note": "Questions? Reply to the RSVP email."
+}
