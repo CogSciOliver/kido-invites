@@ -1,14 +1,14 @@
 {
-  "title": "Ladies' Night Soir\u00e9e",
-  "date_display": "03.13.2026",
+  "title": "Discovery The Mysteries of the Universe with Ivy",
+  "date_display": "06.13.2026",
   "weekday_display": "Friday",
-  "city": "Brooklyn, NY",
-  "host": "Danii Oliver",
-  "arrival_time": "6:30 PM",
+  "city": "Grapevine, TX",
+  "host": "Ivy Braithwaite",
+  "arrival_time": "12:30 PM",
   "venue": {
-    "name": "Bathhouse Williamsburg",
-    "address_line1": "233 Wythe Ave",
-    "address_line2": "Brooklyn, NY 11249",
+    "name": "Meow Wolf",
+    "address_line1": "Grapevine Mall",
+    "address_line2": "Grapevine, TX",
     "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg"
   },
   "after": {
