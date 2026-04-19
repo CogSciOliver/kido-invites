@@ -1,5 +1,5 @@
 async function loadEvent() {
-  const res = await fetch('./data/event.json', { cache: 'no-store' });
+  const res = await fetch('./data/ivy.json', { cache: 'no-store' });
   if (!res.ok) throw new Error('Could not load event.json');
 
   const data = await res.json();
