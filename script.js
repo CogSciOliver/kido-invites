@@ -1,33 +1,31 @@
 async function loadEvent() {
-  const res = await fetch('./data/event.json', { cache: 'no-store' });
-  if (!res.ok) throw new Error('Could not load ivy.json');
+  const res = await fetch('./data/ivy.json', { cache: 'no-store' });
+  if (!res.ok) throw new Error('Could not load event.json');
 
   const data = await res.json();
 
   // Live banner
   if (data.live_banner) {
-    const banner = document.getElementById('liveBanner');
-    const bannerText = document.getElementById('liveBannerText');
+    const banner = document.getElementById("liveBanner");
+    const bannerText = document.getElementById("liveBannerText");
 
     if (banner && bannerText) {
-      banner.style.display = 'block';
+      banner.style.display = "block";
       bannerText.innerText = data.live_banner;
     }
   }
 
   // Live tracker
-  const now = document.getElementById('liveNow');
-  const next = document.getElementById('liveNext');
+  const now = document.getElementById("liveNow");
+  const next = document.getElementById("liveNext");
 
-  if (now) now.innerText = data.live_now || '';
-  if (next) next.innerText = data.live_next || '';
+  if (now && data.live_now) now.innerText = data.live_now;
+  if (next && data.live_next) next.innerText = data.live_next;
 
   return data;
 }
 
-function el(id) {
-  return document.getElementById(id);
-}
+function el(id) { return document.getElementById(id); }
 
 function setText(id, text) {
   const node = el(id);
@@ -40,8 +38,6 @@ function safeJoin(...parts) {
 
 function renderLinks(links) {
   const row = el('linksRow');
-  if (!row) return;
-
   row.innerHTML = '';
   if (!Array.isArray(links) || links.length === 0) return;
 
@@ -58,8 +54,6 @@ function renderLinks(links) {
 
 function renderBring(items) {
   const ul = el('bringList');
-  if (!ul) return;
-
   ul.innerHTML = '';
   (items || []).forEach(t => {
     const li = document.createElement('li');
@@ -70,8 +64,6 @@ function renderBring(items) {
 
 function renderSchedule(items) {
   const ol = el('scheduleList');
-  if (!ol) return;
-
   ol.innerHTML = '';
   (items || []).forEach(s => {
     const li = document.createElement('li');
@@ -89,156 +81,130 @@ function renderSchedule(items) {
 
 function renderUpdates(updates) {
   const wrap = el('updates');
-  if (!wrap) return;
-
   if (!updates?.enabled) {
     wrap.hidden = true;
     return;
   }
-
   wrap.hidden = false;
   setText('updatesIntro', updates.intro || '');
 
   const list = el('updatesList');
-  if (!list) return;
-
   list.innerHTML = '';
 
   (updates.items || []).forEach(u => {
     const div = document.createElement('div');
     div.className = 'update';
-
+    const type = (u.type || 'update').toUpperCase();
     div.innerHTML = `
-      <div class="update__meta">${(u.type || 'update').toUpperCase()}</div>
+      <div class="update__meta">${type}</div>
       <div class="update__title">${u.title || ''}</div>
       <div class="update__text">${u.text || ''}</div>
     `;
-
     list.appendChild(div);
   });
 }
 
-function setHeroImage(data) {
+function setHeroImage() {
+  // Default: use your existing artwork. Swap by changing this line or by adding hero_image in event.json
   const img = el('heroImage');
-  const media = img?.closest('.hero__media');
-
-  if (!img) return;
-
-  const heroImage = data?.hero_image;
-
-  if (heroImage === false || heroImage === null || heroImage === '') {
-    if (media) media.style.display = 'none';
-    else img.style.display = 'none';
-    return;
-  }
-
-  img.src = heroImage || './assets/Invitation.jpg';
-
-  if (media) media.style.display = '';
-  img.style.display = '';
+  img.src = './assets/Invitation.jpg';
 }
 
-function buildCalendarFile(data) {
-  const title = data.title || 'Event';
-  const location = [
-    data.venue?.name,
-    data.venue?.address_line1,
-    data.venue?.address_line2
-  ].filter(Boolean).join(', ');
-
-  const description = `${title} hosted by ${data.host || ''}`.trim();
-
-  const start = '20260613T123000';
-  const end = '20260613T153000';
-
-  return `BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-SUMMARY:${title}
-DTSTART:${start}
-DTEND:${end}
-LOCATION:${location}
-DESCRIPTION:${description}
-END:VEVENT
-END:VCALENDAR`;
+function rsvpHref() {
+  return "https://docs.google.com/forms/d/e/1FAIpQLSeFjkOsk2wMSXaJV9CvihUgSufbWLxLCYA7qX0kxBgDNcWJog/viewform";
 }
 
 (async function init() {
   try {
     const data = await loadEvent();
 
-    setHeroImage(data);
+    setHeroImage();
+    if (data.hero_image) el('heroImage').src = data.hero_image;
 
     setText('dateDisplay', data.date_display);
     setText('cityDisplay', data.city);
     setText('titleDisplay', data.title);
     setText('hostDisplay', data.host);
 
-    const arrival = data.arrival_time
-      ? `<strong>${data.arrival_time}</strong>`
-      : '<strong>—</strong>';
+    // Arrival line
+    const arrival = data.arrival_time ? `<strong>${data.arrival_time}</strong>` : '<strong>—</strong>';
+    el('arrivalCopy').innerHTML = `Kindly requests your arrival at ${arrival} to kick off the night with a soak.`;
 
-    const arrivalCopy = el('arrivalCopy');
-    if (arrivalCopy) {
-      arrivalCopy.innerHTML = `Kindly requests your arrival at ${arrival} to begin the mystery together.`;
-    }
-
+    // Venue
     setText('venueName', data.venue?.name);
     setText('venueAddr', safeJoin(data.venue?.address_line1, data.venue?.address_line2));
 
+    // Buttons
     const rsvpBtn = el('rsvpBtn');
-    if (rsvpBtn) {
-      rsvpBtn.textContent = data.rsvp?.primary_text || 'RSVP';
-      rsvpBtn.href = data.rsvp?.url || '#';
-      rsvpBtn.target = '_blank';
-    }
+    rsvpBtn.textContent = data.rsvp?.primary_text || 'RSVP';
+    rsvpBtn.href = data.rsvp?.url || "#";
+    rsvpBtn.target = "_blank";
 
     const mapBtn = el('mapBtn');
-    if (mapBtn) {
-      mapBtn.href = data.venue?.google_maps_url || '#';
-      mapBtn.target = '_blank';
-    }
+    mapBtn.href = data.venue?.google_maps_url || '#';
+    mapBtn.target = "_blank";
 
+    // Lists
     renderLinks(data.links);
     renderBring(data.what_to_bring);
     setText('dressCode', data.dress_code || '');
     renderSchedule(data.schedule);
 
-    setText('afterTitle', data.after?.headline || 'Main Event');
+    // After section
+    setText('afterTitle', data.after?.headline || 'Drinks & Bites');
     setText('afterText', data.after?.note || '');
 
+    // Updates
     renderUpdates(data.live_updates);
+
     setText('footerNote', data.footer_note || '');
 
-    const calendarBtn = el('calendarBtn');
-    if (calendarBtn) {
-      calendarBtn.addEventListener('click', () => {
-        const ics = buildCalendarFile(data);
-        const blob = new Blob([ics], { type: 'text/calendar' });
-        const url = window.URL.createObjectURL(blob);
-
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'ivy-birthday.ics';
-        link.click();
-
-        window.URL.revokeObjectURL(url);
-      });
-    }
-
-    el('app')?.setAttribute('aria-busy', 'false');
+    el('app').setAttribute('aria-busy', 'false');
   } catch (err) {
     console.error(err);
     document.body.innerHTML = `
       <div style="max-width:900px;margin:40px auto;padding:18px;font-family:system-ui">
         <h1>Couldn’t load event details</h1>
-        <p>Make sure <code>./data/ivy.json</code> exists and is valid JSON.</p>
+        <p>Make sure <code>data/event.json</code> exists and is valid JSON.</p>
         <pre>${String(err)}</pre>
       </div>
     `;
   }
 })();
 
+const calendarBtn = document.getElementById("calendarBtn");
+
+calendarBtn.addEventListener("click", () => {
+
+  const start = "20260313T183000";
+  const end = "20260313T233000";
+
+  const ics = `
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Ladies Night Soirée
+DTSTART:${start}
+DTEND:${end}
+LOCATION:Bathhouse Williamsburg, Brooklyn NY
+DESCRIPTION:Ladies Night Soirée hosted by Danii Oliver
+END:VEVENT
+END:VCALENDAR
+`;
+
+  const blob = new Blob([ics], { type: "text/calendar" });
+  const url = window.URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "ladies-night.ics";
+  link.click();
+
+});
+
 setInterval(() => {
   location.reload();
 }, 60000);
+
+// 3000000 ms = 5 minutes refresh for pre-event updates
+// 60000 ms = 1 minute refresh during live event
