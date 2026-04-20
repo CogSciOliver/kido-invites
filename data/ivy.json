@@ -1,11 +1,51 @@
 {
+  "TOP BANNER": "=== EDIT HERE ===",
+  "live_banner": "See you at Meow Wolf. Meet at the entrance before our timed entry.",
+  "LIVE HAPPENING": "=== EDIT HERE ===",
+  "live_now": "Checked in and waiting for you at Meow Wolf!",
+  "live_next": "We’re heading into The Real Unreal. Get ready to explore.",
+  "LIVE UPDATES": "=== EDIT HERE ===",
+  "live_updates": {
+    "enabled": true,
+    "intro": "If anything changes during the day, I’ll update it here.",
+    "items": [
+      {
+        "type": "Main Event",
+        "title": "Meow Wolf Grapevine",
+        "text": "Please purchase your timed ticket early so we can enter together. Wear comfortable shoes and be ready to explore."
+      },
+      {
+        "type": "Birthday Mission",
+        "title": "The Real Unreal",
+        "text": "We’ll explore the exhibit, take photos, and follow the mystery together."
+      }
+    ]
+  },
+  "ORDER OF EVENTS": "=== EDIT HERE ===",
+  "schedule": [
+    {
+      "time": "12:30 PM",
+      "title": "Arrival",
+      "details": "Meet near the Meow Wolf entrance and get checked in."
+    },
+    {
+      "time": "1:00 PM",
+      "title": "Enter The Real Unreal",
+      "details": "We’ll head inside together and begin exploring the mystery."
+    },
+    {
+      "time": "2:30 PM",
+      "title": "Free Exploration + Photos",
+      "details": "Time to roam, investigate hidden details, and grab birthday photos."
+    }
+  ],
   "title": "Discover the Mysteries of the Universe with Ivy",
   "date_display": "06.13.2026",
   "weekday_display": "Saturday",
   "city": "Grapevine, TX",
   "host": "Ivy Braithwaite",
   "arrival_time": "12:30 PM",
-"hero_image": false,
+  "hero_image": "./assets/Invitation.jpg",
   "venue": {
     "name": "Meow Wolf Grapevine",
     "address_line1": "3000 Grapevine Mills Pkwy Suite 253",
@@ -14,12 +54,11 @@
   },
   "after": {
     "headline": "Main Event",
-    "note": "We’ll be exploring Meow Wolf’s The Real Unreal together. Please purchase your ticket time ASAP so we can stay on the same entry window."
+    "note": "We’ll be exploring Meow Wolf together. Please purchase your ticket time ASAP so we can stay on the same entry window."
   },
   "rsvp": {
     "primary_text": "RSVP",
-    "email": "yourbestemail@example.com",
-    "deadline": ""
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSeFjkOsk2wMSXaJV9CvihUgSufbWLxLCYA7qX0kxBgDNcWJog/viewform"
   },
   "dress_code": "Wear comfortable clothes and shoes for walking, exploring, and interactive exhibits.",
   "what_to_bring": [
@@ -35,7 +74,7 @@
       "url": "https://event.daniioliver.com"
     },
     {
-      "label": "Meow Wolf Grapevine",
+      "label": "Venue Website",
       "url": "https://meowwolf.com/visit/grapevine"
     },
     {
@@ -43,38 +82,5 @@
       "url": "https://tickets.meowwolf.com/grapevine/"
     }
   ],
-  "schedule": [
-    {
-      "time": "12:30 PM",
-      "title": "Arrival",
-      "details": "Meet near the Meow Wolf entrance and get checked in."
-    },
-    {
-      "time": "1:00 PM",
-      "title": "Enter The Real Unreal",
-      "details": "We’ll head inside together and begin exploring the mystery."
-    },
-    {
-      "time": "2:30 PM",
-      "title": "Free Exploration + Photos",
-      "details": "Time to roam, investigate, discover hidden details, and take birthday photos."
-    }
-  ],
-  "live_updates": {
-    "enabled": true,
-    "intro": "If anything changes during the day, I’ll update it here.",
-    "items": [
-      {
-        "type": "info",
-        "title": "Meeting point",
-        "text": "Meet at the Meow Wolf Grapevine entrance."
-      },
-      {
-        "type": "time",
-        "title": "Heads up",
-        "text": "Please buy tickets early so we can enter together."
-      }
-    ]
-  },
-  "footer_note": "Questions? Reply to the RSVP email."
+  "footer_note": "Questions? Text Me Directly."
 }
