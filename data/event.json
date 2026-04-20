@@ -1,72 +1,83 @@
 {
-  "TOP BANNER": "=== EDIT HERE ===",
-  "live_banner": "See you at Meow Wolf. Meet at the entrance before our timed entry.",
-  "LIVE HAPPENING": "=== EDIT HERE ===",
-  "live_now": "Checked in and waiting for you at Meow Wolf!",
-  "live_next": "We’re heading into The Real Unreal. Get ready to explore.",
-  "LIVE UPDATES": "=== EDIT HERE ===",
+  "TOP BANNER":"=== EDIT HERE ===",
+  "live_banner": "See You Inside Bathhouse. \n After entry down by the pools.",
+  
+  "LIVE HAPPENING":"=== EDIT HERE ===",
+  "live_now": "Checked in and waiting for you!.",
+  
+  "live_next": "Soak in Bathhouse. Grab a drink and chill.",
+  
+  "LIVE UPDATES":"=== EDIT HERE ===",
   "live_updates": {
     "enabled": true,
-    "intro": "If anything changes during the day, I’ll update it here.",
+    "intro": "If anything changes during the night, I\u2019ll update it here.",
     "items": [
       {
         "type": "Main Event",
-        "title": "Meow Wolf Grapevine",
-        "text": "Please purchase your timed ticket early so we can enter together. Wear comfortable shoes and be ready to explore."
+        "title": "Bathhouse",
+        "text": "Must have your entry timed ticket for the Williamsburg location. Bring a swimsuit + sandals.\n "
       },
       {
-        "type": "Birthday Mission",
-        "title": "The Real Unreal",
-        "text": "We’ll explore the exhibit, take photos, and follow the mystery together."
+        "type": "(Completed) Day Trip",
+        "title": "Natural History Museum",
+        "text": "9:30 AM Inside Entry Lobby."
       }
     ]
   },
-  "ORDER OF EVENTS": "=== EDIT HERE ===",
+
+  "ORDER OF EVENTS":"=== EDIT HERE ===",
   "schedule": [
     {
-      "time": "12:30 PM",
-      "title": "Arrival",
-      "details": "Meet near the Meow Wolf entrance and get checked in."
+      "time": "9:30 AM",
+      "title": "Museum with Kids",
+      "details": "Meet in the lobby after ticketing. "
     },
     {
-      "time": "1:00 PM",
-      "title": "Enter The Real Unreal",
-      "details": "We’ll head inside together and begin exploring the mystery."
+      "time": "4:30 PM",
+      "title": "Travel To Brooklyn",
+      "details": "Accounting for rush hour traffic."
     },
     {
-      "time": "2:30 PM",
-      "title": "Free Exploration + Photos",
-      "details": "Time to roam, investigate hidden details, and grab birthday photos."
+      "time": "6:30 - 7:00 PM",
+      "title": "Arrivals",
+      "details": "Meet in the lobby and get settled."
+    },
+    {
+      "time": "7:30 PM",
+      "title": "Soak Session",
+      "details": "Spa time at Bathhouse Williamsburg."
     }
   ],
-  "title": "Discover the Mysteries of the Universe with Ivy",
-  "date_display": "06.13.2026",
-  "weekday_display": "Saturday",
-  "city": "Grapevine, TX",
-  "host": "Ivy Braithwaite",
-  "arrival_time": "12:30 PM",
-  "hero_image": "./assets/Invitation.jpg",
+  
+  
+  
+  "title": "Ladies' Night Soir\u00e9e",
+  "date_display": "03.13.2026",
+  "weekday_display": "Friday",
+  "city": "Brooklyn, NY",
+  "host": "Danii Oliver",
+  "arrival_time": "6:30 PM",
   "venue": {
-    "name": "Meow Wolf Grapevine",
-    "address_line1": "3000 Grapevine Mills Pkwy Suite 253",
-    "address_line2": "Grapevine, TX 76051",
-    "google_maps_url": "https://maps.google.com/?q=3000+Grapevine+Mills+Pkwy+Suite+253,+Grapevine,+TX+76051"
+    "name": "Bathhouse Williamsburg",
+    "address_line1": "103 N 10th St",
+    "address_line2": "Brooklyn, NY 11249",
+    "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg"
   },
   "after": {
-    "headline": "Main Event",
-    "note": "We’ll be exploring Meow Wolf together. Please purchase your ticket time ASAP so we can stay on the same entry window."
+    "headline": "After Our Soak",
+    "note": "We'll play it by ear for those who can stay and hang."
   },
   "rsvp": {
     "primary_text": "RSVP",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSeFjkOsk2wMSXaJV9CvihUgSufbWLxLCYA7qX0kxBgDNcWJog/viewform"
   },
-  "dress_code": "Wear comfortable clothes and shoes for walking, exploring, and interactive exhibits.",
+  "dress_code": "Comfortable Swimming Attire",
   "what_to_bring": [
-    "Comfortable walking shoes",
-    "Phone for photos",
-    "Curiosity and puzzle-solving energy",
-    "A fully charged battery pack (optional)",
-    "Your best mystery-event vibes"
+    "Swimsuit",
+    "Sandals or slides",
+    "Hair tie (optional)",
+    "Photo ID",
+    "Everything you need to release."
   ],
   "links": [
     {
@@ -75,11 +86,7 @@
     },
     {
       "label": "Venue Website",
-      "url": "https://meowwolf.com/visit/grapevine"
-    },
-    {
-      "label": "Tickets",
-      "url": "https://tickets.meowwolf.com/grapevine/"
+      "url": "https://www.abathhouse.com/"
     }
   ],
   "footer_note": "Questions? Text Me Directly."
