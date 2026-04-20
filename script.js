@@ -104,10 +104,19 @@ function renderUpdates(updates) {
   });
 }
 
-function setHeroImage() {
-  // Default: use your existing artwork. Swap by changing this line or by adding hero_image in event.json
+function setHeroImage(data) {
   const img = el('heroImage');
-  img.src = './assets/Invitation.jpg';
+  if (!img) return;
+
+  const heroImage = data?.hero_image;
+
+  if (!heroImage) {
+    img.style.display = 'none';
+    return;
+  }
+
+  img.src = heroImage;
+  img.style.display = '';
 }
 
 function rsvpHref() {
