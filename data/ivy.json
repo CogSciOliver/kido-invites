@@ -1,9 +1,11 @@
 {
   "TOP BANNER": "=== EDIT HERE ===",
   "live_banner": "See you at Meow Wolf. Meet at the entrance before our timed entry.",
+
   "LIVE HAPPENING": "=== EDIT HERE ===",
   "live_now": "Checked in and waiting for you at Meow Wolf!",
   "live_next": "We’re heading into The Real Unreal. Get ready to explore.",
+
   "LIVE UPDATES": "=== EDIT HERE ===",
   "live_updates": {
     "enabled": true,
@@ -21,6 +23,7 @@
       }
     ]
   },
+
   "ORDER OF EVENTS": "=== EDIT HERE ===",
   "schedule": [
     {
@@ -39,28 +42,33 @@
       "details": "Time to roam, investigate hidden details, and grab birthday photos."
     }
   ],
+
   "title": "Discover the Mysteries of the Universe with Ivy",
   "date_display": "06.13.2026",
   "weekday_display": "Saturday",
   "city": "Grapevine, TX",
   "host": "Ivy Braithwaite",
   "arrival_time": "12:30 PM",
-  "hero_image": "./assets/Invitation.jpg",
+
   "venue": {
     "name": "Meow Wolf Grapevine",
     "address_line1": "3000 Grapevine Mills Pkwy Suite 253",
     "address_line2": "Grapevine, TX 76051",
     "google_maps_url": "https://maps.google.com/?q=3000+Grapevine+Mills+Pkwy+Suite+253,+Grapevine,+TX+76051"
   },
+
   "after": {
     "headline": "Main Event",
     "note": "We’ll be exploring Meow Wolf together. Please purchase your ticket time ASAP so we can stay on the same entry window."
   },
+
   "rsvp": {
     "primary_text": "RSVP",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSeFjkOsk2wMSXaJV9CvihUgSufbWLxLCYA7qX0kxBgDNcWJog/viewform"
   },
+
   "dress_code": "Wear comfortable clothes and shoes for walking, exploring, and interactive exhibits.",
+
   "what_to_bring": [
     "Comfortable walking shoes",
     "Phone for photos",
@@ -68,6 +76,7 @@
     "A fully charged battery pack (optional)",
     "Your best mystery-event vibes"
   ],
+
   "links": [
     {
       "label": "Itinerary Link",
@@ -82,5 +91,6 @@
       "url": "https://tickets.meowwolf.com/grapevine/"
     }
   ],
+
   "footer_note": "Questions? Text Me Directly."
 }
