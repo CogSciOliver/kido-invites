@@ -5,6 +5,7 @@
   "city": "Grapevine, TX",
   "host": "Ivy Braithwaite",
   "arrival_time": "12:30 PM",
+"hero_image": false,
   "venue": {
     "name": "Meow Wolf Grapevine",
     "address_line1": "3000 Grapevine Mills Pkwy Suite 253",
