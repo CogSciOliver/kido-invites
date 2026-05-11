@@ -1,128 +1,24 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ladies' Night Soirée</title>
-
-  <!-- Fonts: swap if you want -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@500;700&family=Meddon&display=swap" rel="stylesheet">
-
-
-  <link rel="stylesheet" href="styles.css" />
+  <title>KIDO Events Live</title>
+  <link rel="stylesheet" href="./styles/base.css" />
 </head>
-
 <body>
-  <main class="page" id="app" aria-busy="true">
-    <!-- This banner is for live updates during the event. To show it, add a "live_banner" field to data/event.json with your message. -->
-    <div id="liveBanner" class="liveBanner" style="display:none;">
-      <span id="liveBannerText"></span>
-    </div>
-    <!-- END UPDATE BANNER -->
-
-    <!-- This Banner is a live tracker for where we are -->
-    <div class="liveTracker">
-      <div class="liveItem liveNowCard">
-        <span class="liveLabel">NOW</span>
-        <span id="liveNow"></span>
+  <main class="landing">
+    <section class="landingCard">
+      <p class="eyebrow">Event Platform</p>
+      <h1>Event invite pages with live host updates.</h1>
+      <p>One shared invite shell, per-event JSON, host dashboard, guest RSVP, and GitHub-backed JSON storage.</p>
+      <div class="ctaRow">
+        <a class="btn btn--primary" href="./create.html">Create A New Event</a>
+        <a class="btn btn--ghost" href="./invite.html?event=ladies-night">View Invite</a>
+        <a class="btn btn--ghost" href="./admin.html?event=ladies-night">Admin</a>
+        
       </div>
-
-      <div class="liveItem">
-        <span class="liveLabel">NEXT</span>
-        <span id="liveNext"></span>
-      </div>
-    </div>
-    <!-- END LIVE TRACKER -->
-
-    <!-- This section is for prime information changes -->
-    <section class="updates" id="updates" hidden>
-      <div class="updates__header">
-        <h2 class="updates__title">Live updates</h2>
-        <p class="updates__intro" id="updatesIntro"></p>
-      </div>
-      <div class="updates__list" id="updatesList"></div>
-      <p class="updates__tip">Tip: This page refreshes automatically every 30 seconds.</p>
     </section>
-    <!-- END LIVE UPDATES -->
-
-    <header class="hero">
-      <div class="hero__media">
-        <img id="heroImage" class="hero__img" alt="Event artwork" loading="eager" />
-      </div>
-
-      <div class="hero__content">
-        <div class="kicker">
-          <div class="kicker__date" id="dateDisplay">03.13.2026</div>
-          <div class="kicker__city" id="cityDisplay">Brooklyn, NY</div>
-        </div>
-
-        <h1 class="title" id="titleDisplay">Ladies' Night Soirée</h1>
-
-        <div class="scriptline">
-          <!-- <span class="scriptline__script">You're Invited</span> -->
-          <img src="/assets/youre-invited.png" alt="You're Invited" class="scriptline__image">
-        </div>
-
-        <div class="host" id="hostDisplay">Danii Oliver</div>
-
-        <div class="ctaRow">
-          <a class="btn btn--primary" id="rsvpBtn" href="#">RSVP</a>
-          <a class="btn btn--ghost" id="mapBtn" href="#" target="_blank" rel="noopener">Open Map</a>
-          <a class="btn btn--ghost" id="calendarBtn">Add to Calendar</a>
-        </div>
-
-        <p class="subcopy" id="arrivalCopy">
-          Kindly requests your arrival at <strong>6:30 PM</strong> to kick off the night with a soak.
-        </p>
-
-        <div class="links" id="linksRow"></div>
-      </div>
-    </header>
-
-    <section class="cardGrid">
-      <section class="card">
-        <h2 class="card__title">Location</h2>
-        <div class="card__body">
-          <div class="venueName" id="venueName">Event Venue</div>
-          <div class="venueAddr" id="venueAddr">Address in Json</div>
-          <div class="hint">Please arrive on time so we can start together.</div>
-        </div>
-      </section>
-
-       <section class="card">
-        <h2 class="card__title">Schedule</h2>
-        <div class="card__body">
-          <ol class="timeline" id="scheduleList"></ol>
-        </div>
-      </section>
-
-      <section class="card">
-        <h2 class="card__title">What to bring</h2>
-        <div class="card__body">
-          <ul class="bullets" id="bringList"></ul>
-          <div class="hint" id="dressCode"></div>
-        </div>
-      </section>
-
-      <section class="card" id="afterCard">
-        <h2 class="card__title" id="afterTitle">Drinks & Bites</h2>
-        <div class="card__body">
-          <p class="afterText" id="afterText"></p>
-        </div>
-      </section>
-    </section>
-
-
-    <footer class="footer">
-      <div class="footer__note" id="footerNote">Questions? Text Me Directly.</div>
-      <div class="footer__note">This page refreshes every 30 seconds for live updates on the night of the event.<br /><br /> Copyright Danii Oliver 2026</div>
-    </footer>
   </main>
-
-  <script src="script.js"></script>
 </body>
-
 </html>

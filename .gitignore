@@ -1,1 +1,4 @@
 .ds_store
+.vercel
+DEV.md
+.env.local

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Invite</title>
+  <link rel="stylesheet" href="./styles/base.css" />
+  <link rel="stylesheet" href="./styles/admin.css" />
+</head>
+
+<body>
+  <main class="adminShell">
+    <section class="adminHeader">
+      <div>
+        <p class="eyebrow">Create Invite</p>
+        <h1>New Invite Page</h1>
+        <p class="muted">Creates a new event folder in GitHub with event.json and rsvps.json.</p>
+      </div>
+    </section>
+
+    <section class="adminGrid">
+      <form class="adminCard" id="createForm">
+        <h2>Admin Access</h2>
+        <label>Admin Secret <input id="adminSecret" type="password" required /></label>
+
+        <h2>Event Basics</h2>
+        <label>Title <input id="title" value="New Event" /></label>
+        <label>Slug <input id="slug" value="new-event" /></label>
+        <label>Host <input id="host" value="Host Name" /></label>
+        <label>Date Display <input id="dateDisplay" value="MM/DD/YYYY" /></label>
+        <label>City, State<input id="city" value="City, ST" /></label>
+        <label>
+          Arrival Time
+          <input id="arrivalTime" value="6:30 PM" />
+        </label>
+
+        <label>
+          Venue Name
+          <input id="venueName" value="Event Venue" />
+        </label>
+
+        <label>
+          Address Line 1
+          <input id="addressLine1" value="" />
+        </label>
+
+        <label>
+          Address Line 2
+          <input id="addressLine2" value="" />
+        </label>
+
+        <label>
+          Google Maps URL
+          <input id="mapUrl" value="" />
+        </label>
+
+        <label>
+          What to Bring
+          <input id="whatToBring" value="" />
+        </label>
+
+        <label>
+          Dress Code
+          <input id="dressCode" value="" />
+        </label>
+
+        <button class="btn btn--primary" type="submit">Create Event & Link</button>
+      </form>
+
+      <section class="adminCard">
+        <h2>Result</h2>
+        <pre id="resultBox">Waiting...</pre>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./core/create-main.js"></script>
+</body>
+
+</html>
