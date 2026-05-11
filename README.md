@@ -38,7 +38,7 @@ event-platform/
   create.html                # make new invite
   script.js                  # script for all invites
   style.css                  # style for all invites
-  invite-template.njk        # macro for all invites
+  invite-template        # macro for all invites
   
   unique-event-name/                # content for each event 
   unique-event-name/imgs/          # imgs for each event that are not hosted elsewhere
