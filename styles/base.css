@@ -1,0 +1,26 @@
+:root {
+  --bg: #FFF9EF;
+  --ink: #0F0F0F;
+  --muted: rgba(15,15,15,.70);
+  --sage: #A0B090;
+  --green: #108050;
+  --green-dark: #175710;
+  --mint: #20bb9c;
+  --card: rgba(255,255,255,.55);
+  --border: rgba(160,176,144,.55);
+  --shadow: 0 10px 30px rgba(0,0,0,.06);
+  --radius: 18px;
+  --font-sans: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); line-height: 1.45; }
+.eyebrow { margin: 0 0 10px; color: var(--green); font-size: 12px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.muted { color: var(--muted); }
+.ctaRow { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 999px; text-decoration: none; font-weight: 700; letter-spacing: .03em; border: 1px solid var(--border); cursor: pointer; }
+.btn--primary { background: var(--green); color: white; border-color: rgba(16,128,80,.35); }
+.btn--ghost { background: rgba(255,255,255,.45); color: var(--ink); }
+.landing { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+.landingCard { max-width: 780px; padding: 28px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+.landingCard h1 { margin: 0; font-family: var(--font-serif); font-size: clamp(38px, 7vw, 72px); line-height: 1; }

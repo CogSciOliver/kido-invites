@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "slug": "ladies-night",
+    "template": "soiree",
+    "status": "live"
+  },
+  "live": {
+    "banner": "See You Inside Bathhouse.\nAfter entry, meet down by the pools.",
+    "now": "Checked in and waiting for you!",
+    "next": "Soak in Bathhouse. Grab a drink and chill.",
+    "refresh_seconds": 60,
+    "updates": {
+      "enabled": true,
+      "intro": "If anything changes during the night, I\u2019ll update it here.",
+      "items": [
+        {
+          "type": "Main Event",
+          "title": "Bathhouse",
+          "text": "Must have your entry timed ticket. Bring a swimsuit + sandals."
+        }
+      ]
+    }
+  },
+  "event": {
+    "title": "Ladies' Night Soir\u00e9e",
+    "date_display": "03.13.2026",
+    "weekday_display": "Friday",
+    "city": "Brooklyn, NY",
+    "host": "Danii Oliver",
+    "arrival_time": "6:30 PM"
+  },
+  "assets": {
+    "hero_image": "./events/ladies-night/imgs/invitation.jpg",
+    "script_image": "./events/ladies-night/imgs/youre-invited.png"
+  },
+  "venue": {
+    "name": "Bathhouse Williamsburg",
+    "address_line1": "103 N 10th St",
+    "address_line2": "Brooklyn, NY 11249",
+    "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg"
+  },
+  "after": {
+    "headline": "After Our Soak",
+    "note": "We'll play it by ear for those who can stay and hang."
+  },
+  "calendar": {
+    "filename": "ladies-night.ics",
+    "title": "Ladies Night Soir\u00e9e",
+    "start": "20260313T183000",
+    "end": "20260313T233000",
+    "location": "Bathhouse Williamsburg, Brooklyn NY",
+    "description": "Ladies Night Soir\u00e9e hosted by Danii Oliver"
+  },
+  "rsvp": {
+    "enabled": true,
+    "mode": "api",
+    "primary_text": "RSVP",
+    "external_url": "",
+    "fields": [
+      "name",
+      "email",
+      "phone",
+      "attending",
+      "note"
+    ]
+  },
+  "dress_code": "Comfortable Swimming Attire",
+  "what_to_bring": [
+    "Swimsuit",
+    "Sandals or slides",
+    "Hair tie (optional)",
+    "Photo ID"
+  ],
+  "links": [
+    {
+      "label": "Venue Website",
+      "url": "https://www.abathhouse.com/"
+    }
+  ],
+  "schedule": [
+    {
+      "time": "6:30 - 7:00 PM",
+      "title": "Arrivals",
+      "details": "Meet in the lobby and get settled."
+    },
+    {
+      "time": "7:30 PM",
+      "title": "Soak Session",
+      "details": "Spa time at Bathhouse Williamsburg."
+    }
+  ],
+  "footer": {
+    "notes": [
+      "Questions? Text Me Directly.",
+      "This page refreshes automatically for live updates on the night of the event.",
+      "Copyright Danii Oliver 2026"
+    ]
+  }
+}

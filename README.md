@@ -1,46 +1,60 @@
-# Event Invite With Live Day of Edits — quick editable app
+# Event Platform + Vercel API Starter
 
-## How to make quick edits during the night
-Open `data/event.json` and edit:
-- schedule times/titles/details
-- venue/address/map
-- live_updates.items (add/modify items)
+This version keeps the guest invite static, but adds Vercel serverless API routes that write JSON back to GitHub.
 
-Save — then refresh the webpage.  
-Tip: If the changes don't show right away, hard-refresh (Cmd+Shift+R).
+## What works
 
-## Change the hero image
-Option A: replace `assets/Invitation.jpg` with your own image (keep the same name).  
-Option B: add `"hero_image": "./assets/YourImage.jpg"` to event.json.
+- `invite.html?event=ladies-night`
+- Guest RSVP posts to `/api/rsvp`
+- Admin live updates post to `/api/update-event`
+- Create page posts to `/api/create-event`
+- JSON files stay in GitHub, no database required
 
-## RSVP behavior
-The RSVP button is a mailto link using the email in `event.json`:
-`rsvp.email`
+## Local setup
 
-If you prefer a form later (Google Form, Typeform, Tally), replace the RSVP link in `script.js`
-or add a `rsvp.url` field and point the button to it.
+Install Vercel CLI if needed:
 
-### Run App During Production
-Run in Terminal:
-``` 
-python3 -m http.server 8000 
-```
-Visit:
-```
-http://localhost:8000
+```bash
+npm i -g vercel
 ```
 
-## MVP Platform Build out 
-event-platform/
-  index.html                 # landing / event lookup
-  invite.html                # guest invite page 
-  admin.html                 # host dashboard
-  create.html                # make new invite
-  script.js                  # script for all invites
-  style.css                  # style for all invites
-  invite-template        # macro for all invites
-  
-  unique-event-name/                # content for each event 
-  unique-event-name/imgs/          # imgs for each event that are not hosted elsewhere
-  unique-event-name/event.json
-  unique-event-name/event.css
+Create `.env.local` from `.env.example`.
+
+Then run:
+
+```bash
+vercel dev
+```
+
+Open:
+
+```txt
+http://localhost:3000/invite.html?event=ladies-night
+http://localhost:3000/admin.html?event=ladies-night
+http://localhost:3000/create.html
+```
+
+## GitHub token
+
+Create a fine-grained personal access token with:
+
+- Repository access: only this repo
+- Permissions: Contents → Read and Write
+
+Put it in `.env.local`:
+
+```txt
+GITHUB_TOKEN=...
+```
+
+## Admin secret
+
+Admin routes require:
+
+```txt
+ADMIN_SECRET=...
+```
+
+The dashboard asks for this secret in the browser for MVP testing.
+
+For production, replace this with proper auth.

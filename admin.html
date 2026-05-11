@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Admin</title>
+  <link rel="stylesheet" href="./styles/base.css" />
+  <link rel="stylesheet" href="./styles/admin.css" />
+</head>
+
+<body>
+  <main class="adminShell">
+    <section class="adminHeader">
+      <div>
+        <p class="eyebrow">Host Dashboard</p>
+        <h1 id="adminTitle">Event Admin</h1>
+        <p class="muted">Update the live banner, NOW/NEXT, and live update cards.</p>
+      </div>
+      <a class="btn btn--ghost" id="viewInvite">View Invite</a>
+    </section>
+
+    <section class="adminGrid">
+      <form class="adminCard" id="liveForm">
+        <h2>Admin Access</h2>
+        <label>Admin Secret <input id="adminSecret" type="password" placeholder="ADMIN_SECRET" required /></label>
+
+        <h2>Live Host Updates</h2>
+        <label>Top Banner <textarea id="liveBanner" rows="3"></textarea></label>
+        <label>Now <input id="liveNow" type="text" /></label>
+        <label>Next <input id="liveNext" type="text" /></label>
+
+        <button class="btn btn--primary" type="submit">Save to GitHub JSON</button>
+      </form>
+
+      <section class="adminCard">
+        <h2>Status</h2>
+
+        <div id="saveStatus" class="statusMessage">
+          Ready to save updates.
+        </div>
+
+        <div class="hint">
+          Guests will see updates automatically when the page refreshes.
+        </div>
+
+        <a class="btn btn--ghost" id="viewInvite">
+          Open Invite Page
+        </a>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./core/admin-main.js"></script>
+</body>
+
+</html>
