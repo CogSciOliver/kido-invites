@@ -1,0 +1,93 @@
+{
+  "TOP BANNER":"=== EDIT HERE ===",
+  "live_banner": "See You Inside Bathhouse. \n After entry down by the pools.",
+  
+  "LIVE HAPPENING":"=== EDIT HERE ===",
+  "live_now": "Checked in and waiting for you!.",
+  
+  "live_next": "Soak in Bathhouse. Grab a drink and chill.",
+  
+  "LIVE UPDATES":"=== EDIT HERE ===",
+  "live_updates": {
+    "enabled": true,
+    "intro": "If anything changes during the night, I\u2019ll update it here.",
+    "items": [
+      {
+        "type": "Main Event",
+        "title": "Bathhouse",
+        "text": "Must have your entry timed ticket for the Williamsburg location. Bring a swimsuit + sandals.\n "
+      },
+      {
+        "type": "(Completed) Day Trip",
+        "title": "Natural History Museum",
+        "text": "9:30 AM Inside Entry Lobby."
+      }
+    ]
+  },
+
+  "ORDER OF EVENTS":"=== EDIT HERE ===",
+  "schedule": [
+    {
+      "time": "9:30 AM",
+      "title": "Museum with Kids",
+      "details": "Meet in the lobby after ticketing. "
+    },
+    {
+      "time": "4:30 PM",
+      "title": "Travel To Brooklyn",
+      "details": "Accounting for rush hour traffic."
+    },
+    {
+      "time": "6:30 - 7:00 PM",
+      "title": "Arrivals",
+      "details": "Meet in the lobby and get settled."
+    },
+    {
+      "time": "7:30 PM",
+      "title": "Soak Session",
+      "details": "Spa time at Bathhouse Williamsburg."
+    }
+  ],
+  
+  
+  
+  "title": "Ladies' Night Soir\u00e9e",
+  "date_display": "03.13.2026",
+  "weekday_display": "Friday",
+  "city": "Brooklyn, NY",
+  "host": "Danii Oliver",
+  "arrival_time": "6:30 PM",
+  "venue": {
+    "name": "Bathhouse Williamsburg",
+    "address_line1": "103 N 10th St",
+    "address_line2": "Brooklyn, NY 11249",
+    "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg"
+  },
+  "after": {
+    "headline": "After Our Soak",
+    "note": "We'll play it by ear for those who can stay and hang."
+  },
+  "rsvp": {
+    "primary_text": "RSVP",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSeFjkOsk2wMSXaJV9CvihUgSufbWLxLCYA7qX0kxBgDNcWJog/viewform"
+  },
+  "dress_code": "Comfortable Swimming Attire",
+  "what_to_bring": [
+    "Swimsuit",
+    "Sandals or slides",
+    "Hair tie (optional)",
+    "Photo ID",
+    "Everything you need to release."
+  ],
+  "links": [
+    {
+      "label": "Itinerary Link",
+      "url": "https://event.daniioliver.com"
+    },
+    {
+      "label": "Venue Website",
+      "url": "https://www.abathhouse.com/"
+    }
+  ],
+  "footer_note": "Questions? Text Me Directly."
+}
