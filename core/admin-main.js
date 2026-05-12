@@ -128,19 +128,21 @@ function renderRsvpGroup(key, label, items = []) {
     <details class="rsvpGroup rsvpGroup--${key}${mutedClass}">
       <summary>
         <span class="rsvpGroup__title">${label}: ${items.length}</span>
-        <span class="rsvpGroup__toggle">View</span>
+        <span class="rsvpGroup__toggle">
+          <span class="rsvpGroup__toggleView">View</span>
+          <span class="rsvpGroup__toggleClose">Close</span>
+        </span>
       </summary>
 
       <div class="rsvpGuestList">
-        ${
-          items.length
-            ? items
-                .slice()
-                .reverse()
-                .map(renderRsvpGuest)
-                .join("")
-            : `<p class="rsvpEmpty">No ${label.toLowerCase()} RSVPs yet.</p>`
-        }
+        ${items.length
+      ? items
+        .slice()
+        .reverse()
+        .map(renderRsvpGuest)
+        .join("")
+      : `<p class="rsvpEmpty">No ${label.toLowerCase()} RSVPs yet.</p>`
+    }
       </div>
     </details>
   `;
@@ -172,17 +174,15 @@ function renderRsvpGuest(item = {}) {
         <span>${escapeHTML(submitted)}</span>
       </div>
 
-      ${
-        note
-          ? `<p class="rsvpGuest__note"><strong>Note:</strong> ${escapeHTML(note)}</p>`
-          : ""
-      }
+      ${note
+      ? `<p class="rsvpGuest__note"><strong>Note:</strong> ${escapeHTML(note)}</p>`
+      : ""
+    }
 
-      ${
-        contactLine
-          ? `<div class="rsvpGuest__contact"><span>Contact</span> ${contactLine}</div>`
-          : ""
-      }
+      ${contactLine
+      ? `<div class="rsvpGuest__contact"><span>Contact:</span> ${contactLine}</div>`
+      : ""
+    }
     </article>
   `;
 }
