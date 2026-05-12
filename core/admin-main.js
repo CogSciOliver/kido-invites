@@ -66,7 +66,7 @@ document.getElementById("liveForm").addEventListener("submit", async (event) => 
 
 const rsvpStatus = document.getElementById("rsvpStatus");
 const refreshRsvps = document.getElementById("refreshRsvps");
-const rsvpRows = document.getElementById("rsvpRows");
+const rsvpGroups = document.getElementById("rsvpGroups");
 
 if (refreshRsvps) {
   refreshRsvps.addEventListener("click", loadRsvps);
@@ -86,54 +86,12 @@ async function loadRsvps() {
       return;
     }
 
-    renderRsvpCounts(result.counts);
-    renderRsvpRows(result.responses || []);
+    renderRsvpGroups(result.responses || []);
 
     setRsvpStatus(`Loaded ${result.responses?.length || 0} RSVP(s).`);
   } catch (err) {
     setRsvpStatus(`RSVP load failed: ${err.message}`);
   }
-}
-
-function renderRsvpCounts(counts = {}) {
-  setText("rsvpTotal", counts.total || 0);
-  setText("rsvpYes", counts.yes || 0);
-  setText("rsvpMaybe", counts.maybe || 0);
-  setText("rsvpNo", counts.no || 0);
-}
-
-function renderRsvpRows(responses = []) {
-  if (!rsvpRows) return;
-
-  if (!responses.length) {
-    rsvpRows.innerHTML = `<tr><td colspan="5">No RSVPs yet.</td></tr>`;
-    return;
-  }
-
-  rsvpRows.innerHTML = responses
-    .slice()
-    .reverse()
-    .map((item) => {
-      const submitted = item.created_at
-        ? new Date(item.created_at).toLocaleString()
-        : "";
-
-      const contact = [item.email, item.phone]
-        .filter(Boolean)
-        .map(escapeHTML)
-        .join("<br>");
-
-      return `
-        <tr>
-          <td>${escapeHTML(item.name || "Guest")}</td>
-          <td>${escapeHTML(item.attending || "")}</td>
-          <td>${contact}</td>
-          <td>${escapeHTML(item.note || "")}</td>
-          <td>${escapeHTML(submitted)}</td>
-        </tr>
-      `;
-    })
-    .join("");
 }
 
 function setRsvpStatus(message) {
@@ -142,7 +100,112 @@ function setRsvpStatus(message) {
   }
 }
 
-function setText(id, value) {
-  const el = document.getElementById(id);
-  if (el) el.textContent = String(value);
+function renderRsvpGroups(responses = []) {
+  if (!rsvpGroups) return;
+
+  const grouped = {
+    yes: [],
+    maybe: [],
+    no: []
+  };
+
+  responses.forEach((item) => {
+    const status = normalizeAttending(item.attending);
+    grouped[status].push(item);
+  });
+
+  rsvpGroups.innerHTML = [
+    renderRsvpGroup("yes", "Yes", grouped.yes),
+    renderRsvpGroup("maybe", "Maybe", grouped.maybe),
+    renderRsvpGroup("no", "No", grouped.no)
+  ].join("");
+}
+
+function renderRsvpGroup(key, label, items = []) {
+  const mutedClass = key === "no" ? " rsvpGroup--muted" : "";
+
+  return `
+    <details class="rsvpGroup rsvpGroup--${key}${mutedClass}">
+      <summary>
+        <span class="rsvpGroup__title">${label}: ${items.length}</span>
+        <span class="rsvpGroup__toggle">View</span>
+      </summary>
+
+      <div class="rsvpGuestList">
+        ${
+          items.length
+            ? items
+                .slice()
+                .reverse()
+                .map(renderRsvpGuest)
+                .join("")
+            : `<p class="rsvpEmpty">No ${label.toLowerCase()} RSVPs yet.</p>`
+        }
+      </div>
+    </details>
+  `;
+}
+
+function renderRsvpGuest(item = {}) {
+  const submitted = item.created_at
+    ? new Date(item.created_at).toLocaleString()
+    : "";
+
+  const email = cleanText(item.email);
+  const phone = cleanText(item.phone);
+  const note = cleanText(item.note);
+
+  const emailLink = email
+    ? `<a href="${escapeHTML(mailtoHref(email))}">${escapeHTML(email)}</a>`
+    : "";
+
+  const phoneLink = phone
+    ? `<a href="${escapeHTML(telHref(phone))}">${escapeHTML(phone)}</a>`
+    : "";
+
+  const contactLine = [emailLink, phoneLink].filter(Boolean).join(" <span>|</span> ");
+
+  return `
+    <article class="rsvpGuest">
+      <div class="rsvpGuest__topline">
+        <strong>${escapeHTML(item.name || "Guest")}</strong>
+        <span>${escapeHTML(submitted)}</span>
+      </div>
+
+      ${
+        note
+          ? `<p class="rsvpGuest__note"><strong>Note:</strong> ${escapeHTML(note)}</p>`
+          : ""
+      }
+
+      ${
+        contactLine
+          ? `<div class="rsvpGuest__contact"><span>Contact</span> ${contactLine}</div>`
+          : ""
+      }
+    </article>
+  `;
+}
+
+function normalizeAttending(value = "") {
+  const status = String(value).toLowerCase().trim();
+
+  if (status === "yes") return "yes";
+  if (status === "maybe") return "maybe";
+  if (status === "no") return "no";
+
+  return "maybe";
+}
+
+function cleanText(value = "") {
+  return String(value || "").trim();
+}
+
+function mailtoHref(email = "") {
+  return `mailto:${email.trim()}`;
+}
+
+function telHref(phone = "") {
+  const cleaned = phone.replace(/[^\d+]/g, "");
+  return cleaned ? `tel:${cleaned}` : "#";
 }
