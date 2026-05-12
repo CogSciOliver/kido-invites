@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "slug": "testing",
+    "template": "soiree",
+    "status": "draft"
+  },
+  "live": {
+    "banner": "",
+    "now": "",
+    "next": "",
+    "refresh_seconds": 60,
+    "updates": {
+      "enabled": true,
+      "intro": "If anything changes during the event, I’ll update it here.",
+      "items": []
+    }
+  },
+  "event": {
+    "title": "Testing",
+    "date_display": "05/12/2026",
+    "city": "Testing, TS",
+    "host": "Testing",
+    "arrival_time": "6:30 PM"
+  },
+  "assets": {
+    "hero_image": "./events/testing/imgs/invitation.jpg",
+    "script_image": "./events/testing/imgs/youre-invited.png"
+  },
+  "venue": {
+    "name": "Testing",
+    "address_line1": "900 E Criner St",
+    "address_line2": "Grandview, TX 76050",
+    "google_maps_url": "Testing"
+  },
+  "after": {
+    "headline": "After",
+    "note": ""
+  },
+  "calendar": {
+    "filename": "testing.ics",
+    "title": "Testing",
+    "start": "",
+    "end": "",
+    "location": "",
+    "description": ""
+  },
+  "rsvp": {
+    "enabled": true,
+    "mode": "api",
+    "primary_text": "RSVP",
+    "external_url": "",
+    "fields": [
+      "name",
+      "email",
+      "phone",
+      "attending",
+      "note"
+    ]
+  },
+  "what_to_bring": [],
+  "dress_code": "Testing",
+  "links": [],
+  "schedule": [],
+  "footer": {
+    "notes": []
+  }
+}
