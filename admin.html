@@ -31,21 +31,56 @@
 
         <button class="btn btn--primary" type="submit">Save Live Updates Now</button>
       </form>
-      <section class="adminCard">
+
+      <div class="adminCard">
         <h2>Status</h2>
+        <p>Guests will see updates automatically when the page refreshes.</p>
 
         <div id="saveStatus" class="statusMessage">
           Ready to save updates.
         </div>
+        <a class="btn btn--primary" id="viewInvite">View Invite</a>
 
-        <div class="hint">
-          Guests will see updates automatically when the page refreshes.
+        <h2>RSVPs</h2>
+        <div class="statusMessage" id="rsvpStatus">
+          Loading RSVPs...
         </div>
 
-        <a class="btn btn--primary" id="viewInvite">View Invite</a>
-      </section>
-      
+        <div class="rsvpCounts" id="rsvpCounts">
+          <div><strong>Total:</strong> <span id="rsvpTotal">0</span></div>
+          <div><strong>Yes:</strong> <span id="rsvpYes">0</span></div>
+          <div><strong>Maybe:</strong> <span id="rsvpMaybe">0</span></div>
+          <div><strong>No:</strong> <span id="rsvpNo">0</span></div>
+        </div>
+
+        <button class="btn btn--ghost" id="refreshRsvps" type="button">
+          Refresh RSVPs
+        </button>
+
+        <div class="rsvpTableWrap">
+          <table class="rsvpTable">
+            <thead>
+              <tr>
+                <th>Guest</th>
+                <th>Attending</th>
+                <th>Contact</th>
+                <th>Note</th>
+                <th>Submitted</th>
+              </tr>
+            </thead>
+            <tbody id="rsvpRows">
+              <tr>
+                <td colspan="5">No RSVPs loaded yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
     </section>
+
+
+
   </main>
 
   <script type="module" src="./core/admin-main.js"></script>
