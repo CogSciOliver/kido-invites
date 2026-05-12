@@ -5,13 +5,13 @@
     "status": "live"
   },
   "live": {
-    "banner": "See You Inside Bathhouse.\nAfter entry, meet down by the pools.",
+    "banner": "Thanks for Sharing a Special Night with Me!",
     "now": "Checked in and waiting for you!",
     "next": "Soak in Bathhouse. Grab a drink and chill.",
     "refresh_seconds": 60,
     "updates": {
       "enabled": true,
-      "intro": "If anything changes during the night, I\u2019ll update it here.",
+      "intro": "If anything changes during the night, I’ll update it here.",
       "items": [
         {
           "type": "Main Event",
@@ -22,7 +22,7 @@
     }
   },
   "event": {
-    "title": "Ladies' Night Soir\u00e9e",
+    "title": "Ladies' Night Soirée",
     "date_display": "03.13.2026",
     "weekday_display": "Friday",
     "city": "Brooklyn, NY",
@@ -46,11 +46,11 @@
   },
   "calendar": {
     "filename": "ladies-night.ics",
-    "title": "Ladies Night Soir\u00e9e",
+    "title": "Ladies Night Soirée",
     "start": "20260313T183000",
     "end": "20260313T233000",
     "location": "Bathhouse Williamsburg, Brooklyn NY",
-    "description": "Ladies Night Soir\u00e9e hosted by Danii Oliver"
+    "description": "Ladies Night Soirée hosted by Danii Oliver"
   },
   "rsvp": {
     "enabled": true,
