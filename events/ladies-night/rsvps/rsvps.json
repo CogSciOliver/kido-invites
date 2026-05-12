@@ -1,13 +1,5 @@
 {
-  "ok": true,
   "event_slug": "ladies-night",
-  "counts": {
-    "total": 3,
-    "yes": 2,
-    "no": 1,
-    "maybe": 0,
-    "unknown": 0
-  },
   "responses": [
     {
       "created_at": "2026-05-12T15:08:18.277Z",
@@ -34,6 +26,15 @@
       "phone": "9176645446",
       "attending": "no",
       "note": "Boo!"
+    },
+    {
+      "id": "1778609858700-9m4hb8dt",
+      "created_at": "2026-05-12T18:17:38.700Z",
+      "name": "Switch",
+      "email": "danii@chivaemdr.com",
+      "phone": "9176645446",
+      "attending": "maybe",
+      "note": "IDK let me think if i like you."
     }
   ]
 }
