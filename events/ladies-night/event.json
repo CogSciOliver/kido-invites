@@ -37,7 +37,8 @@
     "name": "Bathhouse Williamsburg",
     "address_line1": "103 N 10th St",
     "address_line2": "Brooklyn, NY 11249",
-    "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg"
+    "google_maps_url": "https://maps.google.com/?q=Bathhouse+Williamsburg",
+    "website_url": "https://www.abathhouse.com/"
   },
   "after": {
     "headline": "After Our Soak",

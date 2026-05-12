@@ -27,12 +27,24 @@ export class EventRenderer {
           <h1 class="title">${escapeHTML(data.event?.title)}</h1>
           ${data.assets?.script_image ? `<div class="scriptline"><img src="${escapeHTML(data.assets.script_image)}" alt="You're Invited" class="scriptline__image"></div>` : ""}
           <div class="host">${escapeHTML(data.event?.host)}</div>
-          <div class="ctaRow">
-            ${data.rsvp?.external_url ? `<a class="btn btn--primary" href="${escapeHTML(data.rsvp.external_url)}" target="_blank" rel="noopener">${escapeHTML(data.rsvp.primary_text || "RSVP")}</a>` : `<a class="btn btn--primary" href="#rsvp">${escapeHTML(data.rsvp?.primary_text || "RSVP")}</a>`}
-            <a class="btn btn--ghost" href="${escapeHTML(data.venue?.google_maps_url || "#")}" target="_blank" rel="noopener">Open Map</a>
-            <button class="btn btn--ghost" id="calendarBtn" type="button">Add to Calendar</button>
-          </div>
           <p class="subcopy">Kindly requests your arrival at <strong>${escapeHTML(data.event?.arrival_time || "—")}</strong>.</p>
+          <div class="ctaRow">
+            ${data.rsvp?.external_url
+        ? `<a class="btn btn--primary" href="${escapeHTML(data.rsvp.external_url)}" target="_blank" rel="noopener">${escapeHTML(data.rsvp.primary_text || "RSVP")}</a>`
+        : `<a class="btn btn--primary" href="#rsvp">${escapeHTML(data.rsvp?.primary_text || "RSVP")}</a>`}
+            
+        <button class="btn btn--ghost" id="calendarBtn" type="button">Add to Calendar</button>
+        
+               ${data.venue?.website_url
+        ? `<a class="btn btn--ghost" href="${escapeHTML(data.venue.website_url)}" target="_blank" rel="noopener">Venue Website</a>`
+        : ""
+      }
+  
+              <a class="btn btn--ghost" href="${escapeHTML(data.venue?.google_maps_url || "#")}" target="_blank" rel="noopener">Open Map</a>
+
+            
+          </div>
+          
           ${this.links(data.links)}
         </div>
       </header>
