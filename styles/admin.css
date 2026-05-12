@@ -53,12 +53,127 @@
 }
 
 .statusMessage {
-  padding: 14px 16px;
-  border-radius: 12px;
-  background: rgba(16, 128, 80, .08);
-  border: 1px solid rgba(16, 128, 80, .22);
-  font-weight: 700;
-  margin-bottom: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: rgba(16, 128, 80, .08);
+    border: 1px solid rgba(16, 128, 80, .22);
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.rsvpGroups {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.rsvpGroup {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .55);
+    overflow: hidden;
+}
+
+.rsvpGroup summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.rsvpGroup summary::-webkit-details-marker {
+    display: none;
+}
+
+.rsvpGroup__title {
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+
+.rsvpGroup__toggle {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    opacity: .65;
+}
+
+.rsvpGroup[open] .rsvpGroup__toggle {
+    opacity: 1;
+}
+
+.rsvpGuestList {
+    display: grid;
+    gap: 10px;
+    padding: 0 12px 12px;
+}
+
+.rsvpGuest {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .65);
+    border: 1px solid rgba(0, 0, 0, .06);
+}
+
+.rsvpGuest__topline {
+    display: grid;
+    gap: 4px;
+}
+
+.rsvpGuest__topline span {
+    font-size: 12px;
+    opacity: .65;
+}
+
+.rsvpGuest__note {
+    margin: 0;
+    font-size: 14px;
+}
+
+.rsvpGuest__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.rsvpGuest__contact>span:first-child {
+    font-weight: 800;
+    opacity: .65;
+}
+
+.rsvpGuest__contact a {
+    color: inherit;
+    font-weight: 700;
+}
+
+.rsvpEmpty {
+    margin: 0;
+    padding: 12px;
+    font-size: 14px;
+    opacity: .65;
+}
+
+.rsvpGroup--no,
+.rsvpGroup--muted {
+    opacity: .58;
+    filter: grayscale(.25);
+}
+
+.rsvpGroup--no .rsvpGuest {
+    background: rgba(255, 255, 255, .38);
+}
+
+@media (min-width: 720px) {
+    .rsvpGuest__topline {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
 }
 
 @media (max-width: 820px) {
