@@ -169,6 +169,18 @@
     background: rgba(255, 255, 255, .38);
 }
 
+.rsvpGroup__toggleClose {
+    display: none;
+}
+
+.rsvpGroup[open] .rsvpGroup__toggleView {
+    display: none;
+}
+
+.rsvpGroup[open] .rsvpGroup__toggleClose {
+    display: inline;
+}
+
 @media (min-width: 720px) {
     .rsvpGuest__topline {
         grid-template-columns: 1fr auto;
