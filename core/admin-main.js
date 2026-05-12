@@ -1,4 +1,5 @@
 import { EventData } from "./EventData.js";
+import { escapeHTML } from "./utils.js";
 
 const slug = EventData.getSlug("ladies-night");
 
@@ -62,3 +63,86 @@ document.getElementById("liveForm").addEventListener("submit", async (event) => 
     }
   }
 });
+
+const rsvpStatus = document.getElementById("rsvpStatus");
+const refreshRsvps = document.getElementById("refreshRsvps");
+const rsvpRows = document.getElementById("rsvpRows");
+
+if (refreshRsvps) {
+  refreshRsvps.addEventListener("click", loadRsvps);
+}
+
+loadRsvps();
+
+async function loadRsvps() {
+  setRsvpStatus("Loading RSVPs...");
+
+  try {
+    const res = await fetch(`/api/rsvp?event=${encodeURIComponent(slug)}`);
+    const result = await res.json();
+
+    if (!res.ok || !result.ok) {
+      setRsvpStatus(`RSVP load failed: ${result.error || "Unknown error"}`);
+      return;
+    }
+
+    renderRsvpCounts(result.counts);
+    renderRsvpRows(result.responses || []);
+
+    setRsvpStatus(`Loaded ${result.responses?.length || 0} RSVP(s).`);
+  } catch (err) {
+    setRsvpStatus(`RSVP load failed: ${err.message}`);
+  }
+}
+
+function renderRsvpCounts(counts = {}) {
+  setText("rsvpTotal", counts.total || 0);
+  setText("rsvpYes", counts.yes || 0);
+  setText("rsvpMaybe", counts.maybe || 0);
+  setText("rsvpNo", counts.no || 0);
+}
+
+function renderRsvpRows(responses = []) {
+  if (!rsvpRows) return;
+
+  if (!responses.length) {
+    rsvpRows.innerHTML = `<tr><td colspan="5">No RSVPs yet.</td></tr>`;
+    return;
+  }
+
+  rsvpRows.innerHTML = responses
+    .slice()
+    .reverse()
+    .map((item) => {
+      const submitted = item.created_at
+        ? new Date(item.created_at).toLocaleString()
+        : "";
+
+      const contact = [item.email, item.phone]
+        .filter(Boolean)
+        .map(escapeHTML)
+        .join("<br>");
+
+      return `
+        <tr>
+          <td>${escapeHTML(item.name || "Guest")}</td>
+          <td>${escapeHTML(item.attending || "")}</td>
+          <td>${contact}</td>
+          <td>${escapeHTML(item.note || "")}</td>
+          <td>${escapeHTML(submitted)}</td>
+        </tr>
+      `;
+    })
+    .join("");
+}
+
+function setRsvpStatus(message) {
+  if (rsvpStatus) {
+    rsvpStatus.textContent = message;
+  }
+}
+
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = String(value);
+}
