@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "slug": "kevin-41",
+    "template": "soiree",
+    "status": "draft"
+  },
+  "live": {
+    "banner": "Save the Date!",
+    "now": "Danii is getting the invites together.",
+    "next": "I might invite you.",
+    "refresh_seconds": 60,
+    "updates": {
+      "enabled": true,
+      "intro": "If anything changes during the event, I'll update it here.",
+      "items": []
+    }
+  },
+  "event": {
+    "title": "Liming & Cookout Birthday",
+    "date_display": "08/07/2026",
+    "city": "Grandview, TX",
+    "host": "Kevin Braithwaite",
+    "invite_headline": "Come Celebrate",
+    "invite_phrase": "is hosting",
+    "arrival_time": "6:30 PM"
+  },
+  "design": {
+    "invite_text_font": "sans-02"
+  },
+  "assets": {
+    "hero_image": "./indie-pigeon-logo.png"
+  },
+  "venue": {
+    "name": "KIDO Family Ranch",
+    "address_line1": "900 E Criner St",
+    "address_line2": "Grandview, TX 76050",
+    "google_maps_url": "https://www.google.com/maps/place/900+W+Criner+St,+Grandview,+TX+76050/@32.2691987,-97.1889609,17z/data=!3m1!4b1!4m5!3m4!1s0x864e5137282eedf1:0x18dc4b3f9d04e1dc!8m2!3d32.2691942!4d-97.1863913?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D",
+    "website_url": "https://kidofamilyranch.com"
+  },
+  "schedule": [
+    {
+      "time": "6:30PM",
+      "title": "Arrive Park",
+      "details": "Pull up a chair."
+    },
+    {
+      "time": "7:30PM",
+      "title": "Grilling Time",
+      "details": "Grab a plate."
+    },
+    {
+      "time": "8:30PM",
+      "title": "Game Time",
+      "details": "May the best player win!"
+    }
+  ],
+  "what_to_bring": [
+    "The family!"
+  ],
+  "dress_code": "It's Hot Out Here!",
+  "after": {
+    "enabled": false,
+    "headline": "",
+    "note": ""
+  },
+  "links": [
+    {
+      "label": "Green Back Gifts",
+      "url": "https://zelle.com"
+    }
+  ],
+  "calendar": {
+    "filename": "kevin-41.ics",
+    "title": "Liming & Cookout Birthday",
+    "start": "20260807T183000",
+    "end": "20260807T223000",
+    "location": "KIDO Family Ranch, 900 E Criner St, Grandview, TX 76050",
+    "description": "Kevin's Birthday Party"
+  },
+  "rsvp": {
+    "enabled": true,
+    "mode": "api",
+    "primary_text": "RSVP",
+    "note": "Let me know you coming or if not.",
+    "external_url": "",
+    "fields": [
+      "name",
+      "email",
+      "phone",
+      "attending",
+      "note"
+    ]
+  },
+  "footer": {
+    "notes": [
+      "Questions? Text me directly.",
+      "This page refreshes during live events."
+    ]
+  }
+}
