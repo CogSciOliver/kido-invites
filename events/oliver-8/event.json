@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "slug": "oliver-8",
+    "template": "soiree",
+    "status": "draft"
+  },
+  "live": {
+    "banner": "SAVE THE DATE AUGUST 8TH",
+    "now": "Inviting my guests.",
+    "next": "Making sure you save the date.",
+    "refresh_seconds": 60,
+    "updates": {
+      "enabled": true,
+      "intro": "If anything changes during the event, I’ll update it here.",
+      "items": []
+    }
+  },
+  "event": {
+    "title": "Infinity 8 Birthday Day Party",
+    "date_display": "08/08/2026",
+    "city": "Grandview, TX",
+    "host": "Oliver Braithwaite",
+    "invite_headline": "Celebrate With Us",
+    "invite_phrase": "would love for you to join",
+    "arrival_time": "1:30PM"
+  },
+  "design": {
+    "invite_text_font": "serif"
+  },
+  "assets": {
+    "hero_image": "./events/oliver-8/imgs/invitation.jpg",
+    "script_image": ""
+  },
+  "venue": {
+    "name": "KIDO Family Ranch",
+    "address_line1": "900 E Criner St",
+    "address_line2": "Grandview, TX 76050",
+    "google_maps_url": "https://www.google.com/maps/place/900+W+Criner+St,+Grandview,+TX+76050/@32.2691987,-97.1889609,17z/data=!3m1!4b1!4m5!3m4!1s0x864e5137282eedf1:0x18dc4b3f9d04e1dc!8m2!3d32.2691942!4d-97.1863913?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D",
+    "website_url": "https://kidofamilyranch.com"
+  },
+  "schedule": [
+    {
+      "time": "1:30 PM",
+      "title": "Arrival",
+      "details": "Come in, say hi, and get settled."
+    },
+    {
+      "time": "2:00 PM",
+      "title": "Infinity Fun",
+      "details": "Games, cake, and birthday activities."
+    },
+    {
+      "time": "5:00 PM",
+      "title": "Cake & Drinks & Dance the night away",
+      "details": "Celebrate the birthday kid."
+    }
+  ],
+  "what_to_bring": [
+    "Just yourself!"
+  ],
+  "dress_code": "It's Hot Out Here!",
+  "after": {
+    "enabled": true,
+    "headline": "Adults Stay to Lime and Drink",
+    "note": "Kids are welcome, we'll be hanging with family enjoying drinks and games for the adults well into the night."
+  },
+  "links": [
+    {
+      "label": "Cash Oliver can spend in his own way.",
+      "url": "https://cashapp.com"
+    },
+    {
+      "label": "Zelle Link",
+      "url": "https://zelle.com"
+    }
+  ],
+  "calendar": {
+    "filename": "oliver-8.ics",
+    "title": "Infinity 8 Birthday Day Party",
+    "start": "20260808T133000",
+    "end": "20260809T235900",
+    "location": "KIDO Family Ranch, 900 E Criner St, Grandview, TX 76050",
+    "description": "Oliver's Infinity 8th Birthday Date!"
+  },
+  "rsvp": {
+    "enabled": true,
+    "mode": "api",
+    "primary_text": "RSVP",
+    "note": "Please save the date and we'll email you updates.",
+    "external_url": "",
+    "fields": [
+      "name",
+      "email",
+      "phone",
+      "attending",
+      "note"
+    ]
+  },
+  "footer": {
+    "notes": []
+  }
+}
