@@ -26,20 +26,20 @@ Slug-specific themeOverride.css should mainly override these.
   --color-text: var(--brand-navy);
   --color-text-muted: var(--brand-dark-grey);
 
-  --color-primary-100: rgba(20, 26, 52, 0.07);
-  --color-primary-300: rgba(20, 26, 52, 0.16);
-  --color-primary-600: var(--brand-navy);
-  --color-primary-900: #0F1428;
+  --color-primary-100: rgba(86, 120, 179, 0.10);
+  --color-primary-300: rgba(86, 120, 179, 0.24);
+  --color-primary-600: var(--brand-violet);
+  --color-primary-900: #263b67;
 
   --color-accent-100: rgba(24, 211, 177, 0.1);
   --color-accent-300: rgba(24, 211, 177, 0.2);
   --color-accent-600: var(--brand-teal);
   --color-accent-900: #0b6f5f;
 
-  --color-secondary-100: rgba(86, 120, 179, 0.10);
-  --color-secondary-300: rgba(86, 120, 179, 0.24);
-  --color-secondary-600: var(--brand-violet);
-  --color-secondary-900: #263b67;
+  --color-secondary-100: rgba(20, 26, 52, 0.07);
+  --color-secondary-300: rgba(20, 26, 52, 0.16);
+  --color-secondary-600: var(--brand-navy);
+  --color-secondary-900: #0F1428;
 
   --color-tertiary-100: rgba(255, 46, 139, 0.10);
   --color-tertiary-300: rgba(255, 46, 139, 0.24);
@@ -51,9 +51,9 @@ Slug-specific themeOverride.css should mainly override these.
   --color-alert-600: var(--brand-orange);
   --color-alert-900: #9f2018;
 
-  --color-surface-100: rgba(255, 255, 255, 0.10);
-  --color-surface-300: rgba(255, 255, 255, 0.30);
-  --color-surface-600: rgba(255, 255, 255, 0.60);
+  --color-surface-100: rgba(230, 234, 242, 0.10);
+  --color-surface-300: rgba(230, 234, 242, 0.32);
+  --color-surface-600: rgba(230, 234, 242, 0.60);
   --color-surface-900: var(--brand-white);
 
   --color-border-100: rgba(186, 195, 211, 0.14);
