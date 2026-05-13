@@ -10,7 +10,7 @@ viewInvite.href = `./invite.html?event=${encodeURIComponent(slug)}`;
 
 const data = await EventData.load(slug);
 
-document.getElementById("adminTitle").textContent = `${data.event?.title || "Event"} Admin`;
+document.getElementById("adaccentitle").textContent = `${data.event?.title || "Event"} Admin`;
 document.getElementById("liveBanner").value = data.live?.banner || "";
 document.getElementById("liveNow").value = data.live?.now || "";
 document.getElementById("liveNext").value = data.live?.next || "";

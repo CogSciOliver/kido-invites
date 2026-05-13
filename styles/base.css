@@ -1,48 +1,46 @@
-:root {
-  --bg: #FFF9EF;
-  --ink: #0F0F0F;
-  --muted: rgba(15, 15, 15, .70);
-  --sage: #A0B090;
-  --green: #108050;
-  --green-dark: #175710;
-  --mint: #20bb9c;
-  --card: rgba(255, 255, 255, .55);
-  --border: rgba(160, 176, 144, .55);
-  --shadow: 0 10px 30px rgba(0, 0, 0, .06);
-  --radius: 18px;
-  --font-sans: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-serif: "Playfair Display", Georgia, serif;
-}
+@import "./tokens.css";
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  background: var(--color-page-bg);
+}
+
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-sans);
-  line-height: 1.45;
+  background: var(--gradient-page);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: var(--line-height-body);
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
 }
 
 .eyebrow {
-  margin: 0 0 10px;
-  color: var(--green);
-  font-size: 12px;
+  margin: 0 0 var(--space-md);
+  color: var(--color-primary-600);
+  font-size: var(--font-size-xs);
   font-weight: 800;
-  letter-spacing: .18em;
+  letter-spacing: var(--letter-space-widest);
   text-transform: uppercase;
 }
 
 .muted {
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .ctaRow {
-  margin-top: 14px;
+  margin-top: var(--space-xl);
   display: flex;
-  gap: 12px;
+  gap: var(--space-lg);
   flex-wrap: wrap;
 }
 
@@ -54,17 +52,17 @@ button {
 
   width: 100%;
   min-height: 44px;
-  padding: 12px 16px;
-  margin: 7px 0;
+  padding: var(--space-lg) var(--space-2xl);
+  margin: var(--space-xs) 0;
 
-  border-radius: 999px;
-  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
 
   font-family: inherit;
-  font-size: 14px;
+  font-size: var(--font-size-md);
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: .03em;
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.03em;
   text-align: center;
   text-decoration: none;
 
@@ -77,35 +75,80 @@ button {
 }
 
 .btn--primary {
-  background: var(--green);
-  color: white;
-  border-color: rgba(16, 128, 80, .35);
+  background: var(--color-button-primary-bg);
+  color: var(--color-button-primary-text);
+  border-color: var(--color-button-primary-border);
 }
 
 .btn--ghost {
-  background: rgba(255, 255, 255, .45);
-  color: var(--ink);
+  background: var(--color-button-ghost-bg);
+  color: var(--color-button-ghost-text);
+  border-color: var(--color-button-ghost-border);
+}
+
+.btn--action {
+  background: var(--color-button-action-bg);
+  color: var(--color-button-action-text);
+  border-color: var(--color-button-action-border);
+}
+
+.btn--delete {
+  background: var(--color-button-delete-bg);
+  color: var(--color-button-delete-text);
+  border-color: var(--color-button-delete-border);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  background: var(--color-input-bg);
+  color: var(--color-input-text);
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+legend {
+  font-weight: 800;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-3xl) 0;
 }
 
 .landing {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: var(--space-6xl);
 }
 
 .landingCard {
-  max-width: 780px;
-  padding: 28px;
-  border: 1px solid var(--border);
+  max-width: var(--landing-max-width);
+  padding: var(--space-8xl);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  background: var(--card);
-  box-shadow: var(--shadow);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .landingCard h1 {
   margin: 0;
-  font-family: var(--font-serif);
-  font-size: clamp(38px, 7vw, 72px);
-  line-height: 1;
+  font-family: var(--font-display);
+  font-size: var(--font-size-landing-title);
+  line-height: var(--line-height-tight);
 }

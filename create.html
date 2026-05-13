@@ -5,8 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Create Invite</title>
-  <link rel="stylesheet" href="./styles/base.css" />
-  <link rel="stylesheet" href="./styles/admin.css" />
+  <link rel="stylesheet" href="./styles/site.css" />
 </head>
 
 <body>
@@ -14,58 +13,199 @@
     <section class="adminHeader">
       <div>
         <p class="eyebrow">Create Invite</p>
-        <h1>New Invite Page</h1>
-        <p class="muted">Creates a new event folder in GitHub with event.json and rsvps.json.</p>
+        <h1>New Event Setup</h1>
+        <p class="muted">Creates a complete event record with event.json and rsvps.json.</p>
       </div>
     </section>
 
     <section class="adminGrid">
       <form class="adminCard" id="createForm">
         <h2>Admin Access</h2>
-        <label>Admin Secret <input id="adminSecret" type="password" required /></label>
+        <label>
+          Admin Secret
+          <input id="adminSecret" type="password" required />
+        </label>
 
         <h2>Event Basics</h2>
-        <label>Title <input id="title" value="New Event" /></label>
-        <label>Slug <input id="slug" value="new-event" /></label>
-        <label>Host <input id="host" value="Host Name" /></label>
-        <label>Date Display <input id="dateDisplay" value="MM/DD/YYYY" /></label>
-        <label>City, State<input id="city" value="City, ST" /></label>
+        <label>URL Slug <input id="slug" placeholder="new-event" required /></label>
+        <label>Date Display <input id="dateDisplay" placeholder="MM/DD/YYYY" /></label>
+        <label>City, State <input id="city" placeholder="City, ST" /></label>
         <label>
-          Arrival Time
-          <input id="arrivalTime" value="6:30 PM" />
+          Invite Headline
+          <select id="inviteHeadline">
+            <option value="You're Invited">You're Invited</option>
+            <option value="Join Us">Join Us</option>
+            <option value="Save the Date">Save the Date</option>
+            <option value="Celebrate With Us">Celebrate With Us</option>
+            <option value="Come Celebrate">Come Celebrate</option>
+          </select>
+        </label>
+        <label>Host <input id="host" placeholder="Host Name" /></label>
+        <label>
+          Invitation Content
+          <select id="invitePhrase">
+            <option value="kindly requests your presence at">kindly requests your presence at</option>
+            <option value="invites you to">invites you to</option>
+            <option value="would love for you to join">would love for you to join</option>
+            <option value="is hosting">is hosting</option>
+            <option value="requests your arrival at">requests your arrival at</option>
+          </select>
+        </label>
+        <label>Title <input id="title" placeholder="New Event" required /></label>
+        <label>Arrival Time <input id="arrivalTime" placeholder="6:30 PM" /></label>
+
+        <h2>Live Defaults</h2>
+        <label>Top Banner<textarea id="liveBanner" placeholder="Exciting News" rows="2"></textarea></label>
+        <label>What's Happening Now<textarea id="liveNow" rows="2"></textarea></label>
+        <label>What's Happening Next<textarea id="liveNext" rows="2"></textarea></label>
+
+        <h2>Venue</h2>
+        <label>Venue Name <input id="venueName" placeholder="Event Venue" /></label>
+        <label>Address <input id="addressLine1" placeholder="Address Line 1" /></label>
+        <label>City, State, ZIP <input id="addressLine2" placeholder="City, State, ZIP" /></label>
+        <label>Google Maps URL <input id="mapUrl" placeholder="https://maps.google.com/..." /></label>
+        <label>Venue Website URL <input id="venueWebsiteUrl" placeholder="https://example.com" /></label>
+
+        <h2>Schedule</h2>
+        <label>
+          Schedule
+          <textarea id="scheduleItems" rows="5" placeholder="6:30 PM | Arrival | Check in and settle in.&#10;7:00 PM | Dinner | Food and drinks begin."></textarea>
         </label>
 
+        <h2>Guest Info</h2>
         <label>
-          Venue Name
-          <input id="venueName" value="Event Venue" />
-        </label>
-
-        <label>
-          Address Line 1
-          <input id="addressLine1" value="" />
-        </label>
-
-        <label>
-          Address Line 2
-          <input id="addressLine2" value="" />
-        </label>
-
-        <label>
-          Google Maps URL
-          <input id="mapUrl" value="" />
-        </label>
-
-        <label>
-          What to Bring
-          <input id="whatToBring" value="" />
+          What to Bring (optional)
+          <textarea id="whatToBring" rows="4" placeholder="Swimsuit&#10;Sandals&#10;Water bottle"></textarea>
         </label>
 
         <label>
           Dress Code
-          <input id="dressCode" value="" />
+          <input id="dressCode" />
         </label>
 
-        <button class="btn btn--primary" type="submit">Create Event & Link</button>
+        <h2>After Party</h2>
+        <fieldset class="formGroup">
+          <legend>Is there anything happening after the main event?</legend>
+
+          <label>
+            <input type="radio" name="hasAfterParty" value="yes" />
+            Yes
+          </label>
+
+          <label>
+            <input type="radio" name="hasAfterParty" value="no" checked />
+            No
+          </label>
+        </fieldset>
+
+        <div id="afterPartyFields">
+          <label>
+            Post Event Headline
+            <input id="afterHeadline" placeholder="What's happening after the event?" />
+          </label>
+
+          <label>
+            Post Event Note
+            <textarea id="afterNote" placeholder="Details guests need to know about the post-event activities." rows="3"></textarea>
+          </label>
+        </div>
+
+
+        <h2>Additional Guest Links</h2>
+        <p class="muted">
+          Add optional links guests may need, like a gift registry, menu, hotel block, playlist, or anything else.
+        </p>
+
+        <p class="muted">Build your own gift registry. You can update this at any time in your Admin View</p>
+        <a class="btn btn--action" href="https://www.amazon.com/registries?&linkCode=ll2&tag=unschoolsuppl-20&linkId=4a1a14005b251f958eb4eca022a03692&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener">Create Your Registry Now</a>
+
+        <div id="guestLinksList" class="guestLinksList">
+          <div class="guestLinkRow">
+            <label>
+              Link Button Text
+              <input class="guestLinkLabel" placeholder="Example: Gift Registry Website" />
+            </label>
+
+            <label>
+              Link URL
+              <input class="guestLinkUrl" type="url" placeholder="https://..." />
+            </label>
+
+            <button class="btn btn--delete removeGuestLink" type="button">Remove</button>
+          </div>
+        </div>
+
+        <button class="btn btn--action" id="addGuestLink" type="button">
+          Add Another Link
+        </button>
+
+
+        <h2>Invite Design</h2>
+
+        <label>
+          Hero Image URL or Path
+          <input id="heroImage" placeholder="./events/new-event/imgs/invitation.jpg" />
+        </label>
+
+        <label>
+          Invite Phrase Font
+          <select id="inviteTextFont">
+            <option value="sans">Sans Serif</option>
+            <option value="serif">Serif</option>
+            <option value="script-01">Dancing Script</option>
+            <option value="script-02">Pacifico</option>
+            <option value="script-03">Great Vibes</option>
+          </select>
+        </label>
+
+        <div class="invitePhrasePreview" id="invitePhrasePreview">
+          You're Invited
+        </div>
+
+        <h2>Add to Calendar</h2>
+        <label>
+          Event Start Date
+          <input id="eventStartDate" type="date" />
+        </label>
+
+        <label>
+          Event Start Time
+          <input id="eventStartTime" type="time" />
+        </label>
+
+        <label>
+          Event End Date
+          <input id="eventEndDate" type="date" />
+        </label>
+
+        <label>
+          Event End Time
+          <input id="eventEndTime" type="time" />
+        </label>
+
+        <label>
+          Calendar Note
+          <textarea id="calendarDescription" rows="3" placeholder="Optional note guests will see in their calendar."></textarea>
+        </label>
+
+        <h2>RSVP</h2>
+
+        <label>
+          RSVP Button Text
+          <input id="rsvpPrimaryText" value="RSVP" />
+        </label>
+
+        <label>
+          RSVP Note
+          <textarea id="rsvpNote" rows="3" placeholder="Optional note above the RSVP form."></textarea>
+        </label>
+        <h2>Footer</h2>
+        <label>
+          Footer Notes
+          <textarea id="footerNotes" rows="4" placeholder="Questions? Text me directly.&#10;This page refreshes during live events."></textarea>
+        </label>
+
+        <button class="btn btn--primary" type="submit">Create Event & Links</button>
       </form>
 
       <section class="adminCard">
