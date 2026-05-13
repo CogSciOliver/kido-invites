@@ -40,6 +40,7 @@ export default async function handler(req, res) {
       ok: true,
       slug,
       invite_url: `/invite.html?event=${slug}`,
+      design_url: `/design.html?event=${slug}`,
       admin_url: `/admin.html?event=${slug}`,
       note: "Create event.css and image folder manually for now."
     });
@@ -71,7 +72,7 @@ function makeEvent(slug, body) {
       refresh_seconds: 60,
       updates: {
         enabled: true,
-        intro: "If anything changes during the event, I’ll update it here.",
+        intro: "If anything changes during the event, I'll update it here.",
         items: []
       }
     },

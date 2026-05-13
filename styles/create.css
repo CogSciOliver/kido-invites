@@ -42,3 +42,30 @@
     font-size: var(--font-size-scriptline);
     line-height: var(--line-height-tight);
 }
+
+.invitePhrasePreview--sans-01 {
+    font-family: var(--font-sans-01);
+    font-style: normal;
+}
+
+.invitePhrasePreview--sans-02 {
+    font-family: var(--font-sans-02);
+    font-style: normal;
+}
+
+.invitePhrasePreview--serif {
+    font-family: var(--font-serif);
+    font-style: normal;
+}
+
+.invitePhrasePreview--script-01 {
+    font-family: var(--font-script-01);
+}
+
+.invitePhrasePreview--script-02 {
+    font-family: var(--font-script-02);
+}
+
+.invitePhrasePreview--script-03 {
+    font-family: var(--font-script-03);
+}

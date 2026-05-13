@@ -149,18 +149,21 @@
 
         <label>
           Invite Phrase Font
+
+          <div class="invitePhrasePreview" id="invitePhrasePreview">
+            You're Invited
+          </div>
           <select id="inviteTextFont">
-            <option value="sans">Sans Serif</option>
-            <option value="serif">Serif</option>
+            <option value="sans-01">Montserrat</option>
+            <option value="sans-02">Bubbler One</option>
+            <option value="serif">Playfair Display</option>
             <option value="script-01">Dancing Script</option>
             <option value="script-02">Pacifico</option>
             <option value="script-03">Great Vibes</option>
           </select>
         </label>
 
-        <div class="invitePhrasePreview" id="invitePhrasePreview">
-          You're Invited
-        </div>
+
 
         <h2>Add to Calendar</h2>
         <label>
@@ -213,9 +216,27 @@
         <pre id="resultBox">Waiting...</pre>
         <div class="adminCard">
           Links will display here after your invite creation. You can use these to view your invite, design your invite, and access your dashboard.
-          <a class="btn btn--action" href="/events/slug/invite">View Your Invite</a>
-          <a class="btn btn--outline" href="/events/slug/design">Design Your Invite</a>
-          <a class="btn btn--outline" href="/events/slug/admin">View Your Dashboard</a>
+          
+
+          <div id="createResultLinks" class="createResultLinks" hidden>
+            <p class="accent">
+              Your invite was created. Use these links to view, design, or manage it.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn btn--primary" id="designInviteLink" href="#">
+                Design Invite Now
+              </a>
+
+              <a class="btn btn--action" id="viewDashboardLink" href="#">
+                Visit Your Dashboard
+              </a>
+
+              <a class="btn btn--ghost" id="viewInviteLink" href="#">
+                View Invite Now
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </section>

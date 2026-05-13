@@ -1,4 +1,8 @@
 const resultBox = document.getElementById("resultBox");
+const createResultLinks = document.getElementById("createResultLinks");
+const designInviteLink = document.getElementById("designInviteLink");
+const viewDashboardLink = document.getElementById("viewDashboardLink");
+const viewInviteLink = document.getElementById("viewInviteLink");
 const createForm = document.getElementById("createForm");
 const guestLinksList = document.getElementById("guestLinksList");
 const addGuestLink = document.getElementById("addGuestLink");
@@ -112,7 +116,22 @@ createForm.addEventListener("submit", async (event) => {
     });
 
     const result = await res.json();
+
+    if (!res.ok || !result.ok) {
+      resultBox.hidden = false;
+      createResultLinks.hidden = true;
+      resultBox.textContent = result.error || JSON.stringify(result, null, 2);
+      return;
+    }
+
+    resultBox.hidden = true;
     resultBox.textContent = JSON.stringify(result, null, 2);
+
+    designInviteLink.href = result.design_url;
+    viewDashboardLink.href = result.admin_url;
+    viewInviteLink.href = result.invite_url;
+
+    createResultLinks.hidden = false;
 
     if (!res.ok || !result.ok) {
       resultBox.textContent = `Create failed:\n${JSON.stringify(result, null, 2)}`;
@@ -208,3 +227,23 @@ function toCalendarDate(date, time) {
 
   return `${cleanDate}T${cleanTime}00`;
 }
+
+function updateInvitePhrasePreviewFont() {
+  if (!inviteTextFont || !invitePhrasePreview) return;
+
+  invitePhrasePreview.classList.remove(
+    "invitePhrasePreview--sans-01",
+    "invitePhrasePreview--sans-02",
+    "invitePhrasePreview--serif",
+    "invitePhrasePreview--script-01",
+    "invitePhrasePreview--script-02",
+    "invitePhrasePreview--script-03"
+  );
+
+  invitePhrasePreview.classList.add(
+    `invitePhrasePreview--${inviteTextFont.value || "serif"}`
+  );
+}
+
+inviteTextFont?.addEventListener("change", updateInvitePhrasePreviewFont);
+updateInvitePhrasePreviewFont();
