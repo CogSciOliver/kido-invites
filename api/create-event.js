@@ -92,8 +92,7 @@ function makeEvent(slug, body) {
     },
 
     assets: {
-      hero_image: cleanText(body.hero_image) || `./events/${slug}/imgs/invitation.jpg`,
-      script_image: ""
+      hero_image: body.hero_image || "./indie-pigeon-logo.png"
     },
 
     venue: {
