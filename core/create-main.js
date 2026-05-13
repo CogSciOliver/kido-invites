@@ -10,6 +10,7 @@ const afterPartyFields = document.getElementById("afterPartyFields");
 const inviteHeadline = document.getElementById("inviteHeadline");
 const inviteTextFont = document.getElementById("inviteTextFont");
 const invitePhrasePreview = document.getElementById("invitePhrasePreview");
+const DEFAULT_HERO_IMAGE = "./indie-pigeon-logo.png";
 
 syncAfterPartyFields();
 syncInvitePreview();
