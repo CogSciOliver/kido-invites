@@ -2,21 +2,17 @@
 
 :root {
 
-        --color-button-primary-bg: var(--color-alert-600);
-        --color-button-primary-text: var(--brand-white);
-        --color-button-primary-border: var(--color-alert-300);
+        --color-button-primary-bg: var(--color-primary-300);
+        --color-button-primary-text: var(--brand-primary-600);
+        --color-button-primary-border: var(--color-primary-600);
 
         --color-button-ghost-bg: var(--color-surface-900);
         --color-button-ghost-text: var(--color-text);
         --color-button-ghost-border: var(--color-border-900);
 
-        --color-button-ghost-bg: var(--color-surface-900);
-        --color-button-ghost-text: var(--color-text);
-        --color-button-ghost-border: var(--color-border-100);
-
         --color-button-action-bg: var(--color-accent-100);
         --color-button-action-text: var(--color-accent-900);
-        --color-button-action-border: var(--color-accent-300);
+        --color-button-action-border: var(--color-accent-900);
 
         --color-button-delete-bg: var(--color-alert-100);
         --color-button-delete-text: var(--color-alert-900);
@@ -30,8 +26,6 @@
         --color-status-border: var(--color-accent-300);
         --color-status-text: var(--color-text);
 
-
-        /* ========== PLATFORM GRADIENTS ========== */
 
         /* ========== PLATFORM GRADIENTS ========== */
 
