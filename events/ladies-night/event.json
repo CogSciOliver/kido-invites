@@ -8,7 +8,7 @@
     "banner": "Thanks for Sharing a Special Night with Me!",
     "now": "Checked in and waiting for you!",
     "next": "Soak in Bathhouse. Grab a drink and chill.",
-    "refresh_seconds": 60,
+    "refresh_seconds": 60000,
     "updates": {
       "enabled": true,
       "intro": "If anything changes during the night, I’ll update it here.",
