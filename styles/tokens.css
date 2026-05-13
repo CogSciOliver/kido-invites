@@ -69,13 +69,14 @@
 
         /* ========== TYPOGRAPHY ========== */
 
-        --font-sans: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        --font-sans-01: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        --font-sans-02: "Bubbler One";
         --font-serif: "Playfair Display", Georgia, serif;
         --font-script-01: "Dancing Script", cursive;
         --font-script-02: "Pacifico", cursive;
         --font-script-03: "Great Vibes", cursive;
 
-        --font-body: var(--font-sans);
+        --font-body: var(--font-sans-01);
         --font-display: var(--font-serif);
         --font-script: var(--font-serif);
 
