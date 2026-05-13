@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Style Guide</title>
+
+  <link rel="stylesheet" href="./styles/site.css" />
+  <link rel="stylesheet" href="./styles/invite.css" />
+
+  <!-- Optional event preview:
+  <link rel="stylesheet" href="./events/ladies-night/event.css" />
+  -->
+
+  <style>
+    .styleguide {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+
+    .styleguide__header {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .styleguide__header h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: var(--font-size-landing-title);
+      line-height: var(--line-height-tight);
+    }
+
+    .styleguide__section {
+      margin-top: 28px;
+      padding: 20px;
+      border: 1px solid var(--color-border-300);
+      border-radius: var(--radius);
+      background: var(--color-surface-900);
+      box-shadow: var(--shadow-card);
+    }
+
+    .styleguide__section h2 {
+      margin-top: 0;
+      font-family: var(--font-display);
+    }
+
+    .styleguide__section h3 {
+      margin: 0 0 10px;
+      font-size: var(--font-size-md);
+      letter-spacing: var(--letter-space-widest);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    .styleguide__row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .styleguide__grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .styleguide__grid>* {
+      grid-column: span 6;
+    }
+
+    .styleguide__scale {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .styleguide__scaleGroup {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid var(--color-border-300);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-900);
+    }
+
+    .styleguide__scaleGroup h3 {
+      margin-bottom: 0;
+    }
+
+    .swatch {
+      min-height: 92px;
+      padding: 10px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border-300);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .swatch strong,
+    .swatch code {
+      display: block;
+      padding: 2px 4px;
+      border-radius: 6px;
+      background: var(--color-surface-900);
+      color: var(--color-text);
+      width: fit-content;
+    }
+
+    .swatch code {
+      margin-top: 4px;
+      font-size: 11px;
+    }
+
+    .styleguide .btn {
+      width: auto;
+      min-width: 160px;
+    }
+
+    .tokenCard {
+      padding: 14px;
+      border: 1px solid var(--color-border-300);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-900);
+    }
+
+    .tokenCard__preview {
+      min-height: 72px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border-300);
+      margin-bottom: 10px;
+    }
+
+    .tokenCard code {
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+
+    @media (max-width: 820px) {
+      .styleguide__grid>* {
+        grid-column: span 12;
+      }
+
+      .styleguide__scale {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .styleguide__scale {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="styleguide">
+    <header class="styleguide__header">
+      <p class="eyebrow">Indie Pigeon</p>
+      <h1>Platform Style Guide</h1>
+      <p class="muted">
+        Visual check for the standardized 100 / 300 / 600 / 900 token system, buttons, forms, cards, live components, invite components, and RSVP UI.
+      </p>
+    </header>
+
+    <section class="styleguide__section">
+      <h2>Core Page Tokens</h2>
+
+      <div class="styleguide__grid">
+        <div class="tokenCard">
+          <div class="tokenCard__preview" style="background: var(--color-page-bg);"></div>
+          <strong>Page Background</strong>
+          <code>--color-page-bg</code>
+        </div>
+
+        <div class="tokenCard">
+          <div class="tokenCard__preview" style="background: var(--color-text);"></div>
+          <strong>Text</strong>
+          <code>--color-text</code>
+        </div>
+
+        <div class="tokenCard">
+          <div class="tokenCard__preview" style="background: var(--color-text-muted);"></div>
+          <strong>Muted Text</strong>
+          <code>--color-text-muted</code>
+        </div>
+
+        <div class="tokenCard">
+          <div class="tokenCard__preview" style="background: var(--gradient-page);"></div>
+          <strong>Page Gradient</strong>
+          <code>--gradient-page</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>Role Color Scales</h2>
+
+      <div class="styleguide__grid">
+        <div class="styleguide__scaleGroup">
+          <h3>Primary</h3>
+          <div class="styleguide__scale">
+            <div class="swatch" style="background: var(--color-primary-100);">
+              <strong>100</strong>
+              <code>--color-primary-100</code>
+            </div>
+            <div class="swatch" style="background: var(--color-primary-300);">
+              <strong>300</strong>
+              <code>--color-primary-300</code>
+            </div>
+            <div class="swatch" style="background: var(--color-primary-600);">
+              <strong>600</strong>
+              <code>--color-primary-600</code>
+            </div>
+            <div class="swatch" style="background: var(--color-primary-900);">
+              <strong>900</strong>
+              <code>--color-primary-900</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="styleguide__scaleGroup">
+          <h3>Accent</h3>
+          <div class="styleguide__scale">
+            <div class="swatch" style="background: var(--color-accent-100);">
+              <strong>100</strong>
+              <code>--color-accent-100</code>
+            </div>
+            <div class="swatch" style="background: var(--color-accent-300);">
+              <strong>300</strong>
+              <code>--color-accent-300</code>
+            </div>
+            <div class="swatch" style="background: var(--color-accent-600);">
+              <strong>600</strong>
+              <code>--color-accent-600</code>
+            </div>
+            <div class="swatch" style="background: var(--color-accent-900);">
+              <strong>900</strong>
+              <code>--color-accent-900</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="styleguide__scaleGroup">
+          <h3>Secondary</h3>
+          <div class="styleguide__scale">
+            <div class="swatch" style="background: var(--color-secondary-100);">
+              <strong>100</strong>
+              <code>--color-secondary-100</code>
+            </div>
+            <div class="swatch" style="background: var(--color-secondary-300);">
+              <strong>300</strong>
+              <code>--color-secondary-300</code>
+            </div>
+            <div class="swatch" style="background: var(--color-secondary-600);">
+              <strong>600</strong>
+              <code>--color-secondary-600</code>
+            </div>
+            <div class="swatch" style="background: var(--color-secondary-900);">
+              <strong>900</strong>
+              <code>--color-secondary-900</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="styleguide__scaleGroup">
+          <h3>Tertiary</h3>
+          <div class="styleguide__scale">
+            <div class="swatch" style="background: var(--color-tertiary-100);">
+              <strong>100</strong>
+              <code>--color-tertiary-100</code>
+            </div>
+            <div class="swatch" style="background: var(--color-tertiary-300);">
+              <strong>300</strong>
+              <code>--color-tertiary-300</code>
+            </div>
+            <div class="swatch" style="background: var(--color-tertiary-600);">
+              <strong>600</strong>
+              <code>--color-tertiary-600</code>
+            </div>
+            <div class="swatch" style="background: var(--color-tertiary-900);">
+              <strong>900</strong>
+              <code>--color-tertiary-900</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="styleguide__scaleGroup">
+          <h3>Alert</h3>
+          <div class="styleguide__scale">
+            <div class="swatch" style="background: var(--color-alert-100);">
+              <strong>100</strong>
+              <code>--color-alert-100</code>
+            </div>
+            <div class="swatch" style="background: var(--color-alert-300);">
+              <strong>300</strong>
+              <code>--color-alert-300</code>
+            </div>
+            <div class="swatch" style="background: var(--color-alert-600);">
+              <strong>600</strong>
+              <code>--color-alert-600</code>
+            </div>
+            <div class="swatch" style="background: var(--color-alert-900);">
+              <strong>900</strong>
+              <code>--color-alert-900</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="styleguide__scaleGroup">
+          <h3>Surface</h3>
+          <div class="styleguide__scale">
+            <div class="swatch" style="background: var(--color-surface-100);">
+              <strong>100</strong>
+              <code>--color-surface-100</code>
+            </div>
+            <div class="swatch" style="background: var(--color-surface-300);">
+              <strong>300</strong>
+              <code>--color-surface-300</code>
+            </div>
+            <div class="swatch" style="background: var(--color-surface-600);">
+              <strong>600</strong>
+              <code>--color-surface-600</code>
+            </div>
+            <div class="swatch" style="background: var(--color-surface-900);">
+              <strong>900</strong>
+              <code>--color-surface-900</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="styleguide__scaleGroup">
+          <h3>Border</h3>
+          <div class="styleguide__scale">
+            <div class="swatch" style="background: var(--color-border-100);">
+              <strong>100</strong>
+              <code>--color-border-100</code>
+            </div>
+            <div class="swatch" style="background: var(--color-border-300);">
+              <strong>300</strong>
+              <code>--color-border-300</code>
+            </div>
+            <div class="swatch" style="background: var(--color-border-600);">
+              <strong>600</strong>
+              <code>--color-border-600</code>
+            </div>
+            <div class="swatch" style="background: var(--color-border-900);">
+              <strong>900</strong>
+              <code>--color-border-900</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>Component Token Previews</h2>
+
+      <div class="styleguide__grid">
+        <div class="tokenCard">
+          <div class="tokenCard__preview" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow);"></div>
+          <strong>Card</strong>
+          <code>--card-bg / --card-border / --card-shadow</code>
+        </div>
+
+        <div class="tokenCard">
+          <div class="tokenCard__preview" style="background: var(--panel-bg); border-color: var(--panel-border);"></div>
+          <strong>Panel</strong>
+          <code>--panel-bg / --panel-border</code>
+        </div>
+
+        <div class="tokenCard">
+          <div class="tokenCard__preview" style="background: var(--chip-bg); border-color: var(--chip-border);"></div>
+          <strong>Chip</strong>
+          <code>--chip-bg / --chip-border</code>
+        </div>
+
+        <div class="tokenCard">
+          <div class="tokenCard__preview" style="background: var(--section-accent-bg); border-color: var(--section-accent-border);"></div>
+          <strong>Section Accent</strong>
+          <code>--section-accent-bg / --section-accent-border</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>Buttons</h2>
+
+      <div class="styleguide__row">
+        <a class="btn btn--primary" href="#">Primary Button</a>
+        <a class="btn btn--outline" href="#">Outline Button</a>
+        <a class="btn btn--ghost" href="#">Ghost Button</a>
+        <button class="btn btn--action" type="button">Action Button</button>
+        <button class="btn btn--delete" type="button">Delete Button</button>
+      </div>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>Forms</h2>
+
+      <form class="adminCard">
+        <label>
+          Text Input
+          <input placeholder="Example input" />
+        </label>
+
+        <label>
+          Select Input
+          <select>
+            <option>Option One</option>
+            <option>Option Two</option>
+          </select>
+        </label>
+
+        <label>
+          Textarea
+          <textarea rows="3" placeholder="Example textarea"></textarea>
+        </label>
+
+        <fieldset class="formGroup">
+          <legend>Radio Group</legend>
+
+          <label>
+            <input type="radio" name="demoRadio" checked />
+            Yes
+          </label>
+
+          <label>
+            <input type="radio" name="demoRadio" />
+            No
+          </label>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>Status + Admin Cards</h2>
+
+      <div class="styleguide__grid">
+        <div class="adminCard">
+          <h2>Admin Card</h2>
+          <p class="muted">This uses adminCard styling.</p>
+          <div class="statusMessage">Status message example.</div>
+        </div>
+
+        <div class="adminCard">
+          <h2>Guest Link Row</h2>
+
+          <div class="guestLinkRow">
+            <label>
+              Link Button Text
+              <input placeholder="Gift Registry" />
+            </label>
+
+            <label>
+              Link URL
+              <input placeholder="https://example.com" />
+            </label>
+
+            <button class="btn btn--delete" type="button">Remove</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>Live Components</h2>
+
+      <div class="liveBanner">Live banner message example.</div>
+
+      <div class="liveTracker">
+        <div class="liveItem liveNowCard">
+          <span class="liveLabel">NOW</span>
+          <span>Guests are arriving.</span>
+        </div>
+
+        <div class="liveItem">
+          <span class="liveLabel">NEXT</span>
+          <span>Dinner starts soon.</span>
+        </div>
+      </div>
+
+      <section class="updates">
+        <h2 class="updates__title">Live Updates</h2>
+        <p class="updates__intro">If anything changes, updates show here.</p>
+
+        <div class="updates__list">
+          <div class="update">
+            <div class="update__meta">Update</div>
+            <div class="update__title">Parking note</div>
+            <div class="update__text">Use the side entrance and text the host if needed.</div>
+          </div>
+
+          <div class="update">
+            <div class="update__meta">Reminder</div>
+            <div class="update__title">Bring ID</div>
+            <div class="update__text">The venue may check IDs at the door.</div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>Invite Hero</h2>
+
+      <header class="hero">
+        <div class="hero__media"></div>
+
+        <div class="hero__content">
+          <div class="kicker">
+            <div class="kicker__date">06.15.2026</div>
+            <div class="kicker__city">Brooklyn, NY</div>
+          </div>
+
+          <h1 class="title">Sample Event</h1>
+
+          <div class="scriptline scriptline--serif">
+            <span class="scriptline__text">You're Invited</span>
+          </div>
+
+          <div class="host">Hosted by Indie Pigeon</div>
+
+          <p class="subcopy">
+            Kindly requests your arrival at <strong>6:30 PM</strong>.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn btn--primary" href="#">RSVP</a>
+            <button class="btn btn--ghost" type="button">Add to Calendar</button>
+            <a class="btn btn--ghost" href="#">Open Map</a>
+          </div>
+
+          <div class="links">
+            <a class="chip" href="#">Gift Registry</a>
+            <a class="chip" href="#">Menu</a>
+            <a class="chip" href="#">Hotel Block</a>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>Invite Cards</h2>
+
+      <section class="cardGrid">
+        <section class="card">
+          <h2 class="card__title">Location</h2>
+          <div class="venueName">Sample Venue</div>
+          <div class="venueAddr">123 Main Street, City, ST</div>
+          <div class="hint">Please arrive on time so we can start together.</div>
+        </section>
+
+        <section class="card">
+          <h2 class="card__title">Schedule</h2>
+
+          <ol class="timeline">
+            <li class="step">
+              <div class="step__time">6:30</div>
+              <div>
+                <div class="step__title">Arrival</div>
+                <div class="step__details">Check in and settle in.</div>
+              </div>
+            </li>
+
+            <li class="step">
+              <div class="step__time">7:00</div>
+              <div>
+                <div class="step__title">Dinner</div>
+                <div class="step__details">Food and drinks begin.</div>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="card">
+          <h2 class="card__title">What to Bring</h2>
+          <ul class="bullets">
+            <li>Comfortable shoes</li>
+            <li>Photo ID</li>
+            <li>Good energy</li>
+          </ul>
+          <div class="hint">Dress code: elevated casual.</div>
+        </section>
+
+        <section class="card">
+          <h2 class="card__title">After</h2>
+          <p class="afterText">Optional drinks nearby after the main event.</p>
+        </section>
+      </section>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>RSVP Panel</h2>
+
+      <section class="rsvpPanel">
+        <h2>RSVP</h2>
+
+        <form class="rsvpGrid">
+          <label>Name <input required /></label>
+          <label>Email <input type="email" /></label>
+          <label>Phone <input /></label>
+
+          <label>
+            Attending
+            <select>
+              <option>Yes</option>
+              <option>No</option>
+              <option>Maybe</option>
+            </select>
+          </label>
+
+          <label class="full">
+            Note
+            <textarea rows="3"></textarea>
+          </label>
+
+          <button class="btn btn--primary" type="button">Send RSVP</button>
+        </form>
+      </section>
+    </section>
+
+    <section class="styleguide__section">
+      <h2>RSVP Admin Groups</h2>
+
+      <div class="rsvpGroups">
+        <details class="rsvpGroup" open>
+          <summary>
+            <span class="rsvpGroup__title">Yes: 2</span>
+            <span class="rsvpGroup__toggle">
+              <span class="rsvpGroup__toggleView">View</span>
+              <span class="rsvpGroup__toggleClose">Close</span>
+            </span>
+          </summary>
+
+          <div class="rsvpGuestList">
+            <article class="rsvpGuest">
+              <div class="rsvpGuest__topline">
+                <strong>Guest Name</strong>
+                <span>5/13/2026, 11:30 AM</span>
+              </div>
+
+              <p class="rsvpGuest__note"><strong>Note:</strong> Excited to come.</p>
+
+              <div class="rsvpGuest__contact">
+                <span>Contact:</span>
+                <a href="#">guest@example.com</a>
+                <span>|</span>
+                <a href="#">555-555-5555</a>
+              </div>
+            </article>
+          </div>
+        </details>
+
+        <details class="rsvpGroup rsvpGroup--maybe">
+          <summary>
+            <span class="rsvpGroup__title">Maybe: 1</span>
+            <span class="rsvpGroup__toggle">
+              <span class="rsvpGroup__toggleView">View</span>
+              <span class="rsvpGroup__toggleClose">Close</span>
+            </span>
+          </summary>
+
+          <div class="rsvpGuestList">
+            <p class="rsvpEmpty">No maybe RSVPs yet.</p>
+          </div>
+        </details>
+
+        <details class="rsvpGroup rsvpGroup--no rsvpGroup--muted">
+          <summary>
+            <span class="rsvpGroup__title">No: 0</span>
+            <span class="rsvpGroup__toggle">
+              <span class="rsvpGroup__toggleView">View</span>
+              <span class="rsvpGroup__toggleClose">Close</span>
+            </span>
+          </summary>
+
+          <div class="rsvpGuestList">
+            <p class="rsvpEmpty">No no RSVPs yet.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Style guide preview only.
+    </footer>
+  </main>
+</body>
+
+</html>

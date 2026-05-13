@@ -1,0 +1,64 @@
+/* =========================
+INDIE PIGEON PLATFORM BRAND
+Main site + admin defaults.
+Event pages can override in /events/{slug}/event.css
+
+THEME COLORS
+Slug-specific themeOverride.css should mainly override these.
+========================= */
+:root {
+  --brand-red: rgb(255, 31, 45);
+  --brand-orange: rgb(254, 54, 42);
+  --brand-teal: #18D3B1;
+  --brand-fuchsia: #FF2E8B;
+  --brand-violet: #5678B3;
+  --brand-navy: #141A34;
+  --brand-white: #ffffff;
+  --brand-grey: #bac3d3;
+  --brand-dark-grey: #3A5483;
+
+
+  /* =========================
+  Gradients, shadows, and color roles
+========================= */
+
+  --color-page-bg: var(--brand-white);
+  --color-text: var(--brand-navy);
+  --color-text-muted: var(--brand-dark-grey);
+
+  --color-primary-100: rgba(20, 26, 52, 0.07);
+  --color-primary-300: rgba(20, 26, 52, 0.16);
+  --color-primary-600: var(--brand-navy);
+  --color-primary-900: #0F1428;
+
+  --color-accent-100: rgba(24, 211, 177, 0.1);
+  --color-accent-300: rgba(24, 211, 177, 0.2);
+  --color-accent-600: var(--brand-teal);
+  --color-accent-900: #0b6f5f;
+
+  --color-secondary-100: rgba(86, 120, 179, 0.10);
+  --color-secondary-300: rgba(86, 120, 179, 0.24);
+  --color-secondary-600: var(--brand-violet);
+  --color-secondary-900: #263b67;
+
+  --color-tertiary-100: rgba(255, 46, 139, 0.10);
+  --color-tertiary-300: rgba(255, 46, 139, 0.24);
+  --color-tertiary-600: var(--brand-fuchsia);
+  --color-tertiary-900: #b91b65;
+
+  --color-alert-100: rgba(254, 54, 42, 0.10);
+  --color-alert-300: rgba(254, 54, 42, 0.24);
+  --color-alert-600: var(--brand-orange);
+  --color-alert-900: #9f2018;
+
+  --color-surface-100: rgba(255, 255, 255, 0.10);
+  --color-surface-300: rgba(255, 255, 255, 0.30);
+  --color-surface-600: rgba(255, 255, 255, 0.60);
+  --color-surface-900: var(--brand-white);
+
+  --color-border-100: rgba(186, 195, 211, 0.14);
+  --color-border-300: rgba(186, 195, 211, 0.32);
+  --color-border-600: var(--brand-grey);
+  --color-border-900: var(--brand-dark-grey);
+  --color-border: var(--color-border-600);
+}

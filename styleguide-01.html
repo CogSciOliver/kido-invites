@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Style Guide</title>
+
+    <link rel="stylesheet" href="./styles/site.css" />
+    <link rel="stylesheet" href="./styles/invite.css" />
+
+    <style>
+        .styleguide {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 32px 18px 80px;
+        }
+
+        .styleguide__section {
+            margin-top: 28px;
+            padding: 20px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            background: var(--color-surface-900);
+            box-shadow: var(--shadow-card);
+        }
+
+        .styleguide__section h2 {
+            margin-top: 0;
+            font-family: var(--font-display);
+        }
+
+        .styleguide__row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .styleguide__swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .swatch {
+            padding: 14px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            background: var(--color-surface-strong);
+        }
+
+        .swatch__color {
+            height: 64px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            margin-bottom: 8px;
+        }
+
+        .styleguide .btn {
+            width: auto;
+            min-width: 160px;
+        }
+
+        .miniGrid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 14px;
+        }
+
+        .miniGrid>* {
+            grid-column: span 6;
+        }
+
+        @media (max-width: 720px) {
+            .miniGrid>* {
+                grid-column: span 12;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="styleguide">
+        <p class="eyebrow">Indie Pigeon</p>
+        <h1>Platform Style Guide</h1>
+        <p class="muted">Quick visual check for tokens, buttons, forms, cards, live components, invite components, and admin UI.</p>
+
+        <section class="styleguide__section">
+            <h2>Color Tokens</h2>
+
+            <div class="styleguide__swatches">
+                <div class="swatch">
+                    <div class="swatch__color" style="background: var(--color-page-bg);"></div>
+                    <strong>Page BG</strong>
+                    <div class="muted">--color-page-bg</div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch__color" style="background: var(--color-text);"></div>
+                    <strong>Text</strong>
+                    <div class="muted">--color-text</div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch__color" style="background: var(--color-primary);"></div>
+                    <strong>Primary</strong>
+                    <div class="muted">--color-primary</div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch__color" style="background: var(--color-accent);"></div>
+                    <strong>Accent</strong>
+                    <div class="muted">--color-accent</div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch__color" style="background: var(--color-secondary);"></div>
+                    <strong>Secondary</strong>
+                    <div class="muted">--color-secondary</div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch__color" style="background: var(--color-tertiary);"></div>
+                    <strong>Tertiary</strong>
+                    <div class="muted">--color-tertiary</div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch__color" style="background: var(--color-alert-600);"></div>
+                    <strong>Alert</strong>
+                    <div class="muted">--color-alert-600</div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch__color" style="background: var(--color-surface-900);"></div>
+                    <strong>Surface</strong>
+                    <div class="muted">--color-surface</div>
+                </div>
+
+                <div class="swatch">
+                    <div class="swatch__color" style="background: var(--color-border);"></div>
+                    <strong>Border</strong>
+                    <div class="muted">--color-border</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="styleguide__section">
+            <h2>Buttons</h2>
+
+            <div class="styleguide__row">
+                <a class="btn btn--primary" href="#">Primary Button</a>
+                <a class="btn btn--ghost" href="#">Ghost Button</a>
+                <button class="btn btn--action" type="button">Action Button</button>
+                <button class="btn btn--delete" type="button">Delete Button</button>
+            </div>
+        </section>
+
+        <section class="styleguide__section">
+            <h2>Forms</h2>
+
+            <form class="adminCard">
+                <label>
+                    Text Input
+                    <input placeholder="Example input" />
+                </label>
+
+                <label>
+                    Select Input
+                    <select>
+                        <option>Option One</option>
+                        <option>Option Two</option>
+                    </select>
+                </label>
+
+                <label>
+                    Textarea
+                    <textarea rows="3" placeholder="Example textarea"></textarea>
+                </label>
+
+                <fieldset class="formGroup">
+                    <legend>Radio Group</legend>
+
+                    <label>
+                        <input type="radio" name="demoRadio" checked />
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="demoRadio" />
+                        No
+                    </label>
+                </fieldset>
+            </form>
+        </section>
+
+        <section class="styleguide__section">
+            <h2>Status + Admin Cards</h2>
+
+            <div class="miniGrid">
+                <div class="adminCard">
+                    <h2>Admin Card</h2>
+                    <p class="muted">This uses adminCard styling.</p>
+                    <div class="statusMessage">Status message example.</div>
+                </div>
+
+                <div class="adminCard">
+                    <h2>Guest Link Row</h2>
+
+                    <div class="guestLinkRow">
+                        <label>
+                            Link Button Text
+                            <input placeholder="Gift Registry" />
+                        </label>
+
+                        <label>
+                            Link URL
+                            <input placeholder="https://example.com" />
+                        </label>
+
+                        <button class="btn btn--delete" type="button">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="styleguide__section">
+            <h2>Live Components</h2>
+
+            <div class="liveBanner">Live banner message example.</div>
+
+            <div class="liveTracker">
+                <div class="liveItem liveNowCard">
+                    <span class="liveLabel">NOW</span>
+                    <span>Guests are arriving.</span>
+                </div>
+
+                <div class="liveItem">
+                    <span class="liveLabel">NEXT</span>
+                    <span>Dinner starts soon.</span>
+                </div>
+            </div>
+
+            <section class="updates">
+                <h2 class="updates__title">Live Updates</h2>
+                <p class="updates__intro">If anything changes, updates show here.</p>
+
+                <div class="updates__list">
+                    <div class="update">
+                        <div class="update__meta">Update</div>
+                        <div class="update__title">Parking note</div>
+                        <div class="update__text">Use the side entrance and text the host if needed.</div>
+                    </div>
+
+                    <div class="update">
+                        <div class="update__meta">Reminder</div>
+                        <div class="update__title">Bring ID</div>
+                        <div class="update__text">The venue may check IDs at the door.</div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="styleguide__section">
+            <h2>Invite Hero</h2>
+
+            <header class="hero">
+                <div class="hero__media"></div>
+
+                <div class="hero__content">
+                    <div class="kicker">
+                        <div class="kicker__date">06.15.2026</div>
+                        <div class="kicker__city">Brooklyn, NY</div>
+                    </div>
+
+                    <h1 class="title">Sample Event</h1>
+
+                    <div class="scriptline scriptline--serif">
+                        <span class="scriptline__text">You're Invited</span>
+                    </div>
+
+                    <div class="host">Hosted by Indie Pigeon</div>
+
+                    <p class="subcopy">
+                        Kindly requests your arrival at <strong>6:30 PM</strong>.
+                    </p>
+
+                    <div class="ctaRow">
+                        <a class="btn btn--primary" href="#">RSVP</a>
+                        <button class="btn btn--ghost" type="button">Add to Calendar</button>
+                        <a class="btn btn--ghost" href="#">Open Map</a>
+                    </div>
+
+                    <div class="links">
+                        <a class="chip" href="#">Gift Registry</a>
+                        <a class="chip" href="#">Menu</a>
+                        <a class="chip" href="#">Hotel Block</a>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <section class="styleguide__section">
+            <h2>Invite Cards</h2>
+
+            <section class="cardGrid">
+                <section class="card">
+                    <h2 class="card__title">Location</h2>
+                    <div class="venueName">Sample Venue</div>
+                    <div class="venueAddr">123 Main Street, City, ST</div>
+                    <div class="hint">Please arrive on time so we can start together.</div>
+                </section>
+
+                <section class="card">
+                    <h2 class="card__title">Schedule</h2>
+
+                    <ol class="timeline">
+                        <li class="step">
+                            <div class="step__time">6:30</div>
+                            <div>
+                                <div class="step__title">Arrival</div>
+                                <div class="step__details">Check in and settle in.</div>
+                            </div>
+                        </li>
+
+                        <li class="step">
+                            <div class="step__time">7:00</div>
+                            <div>
+                                <div class="step__title">Dinner</div>
+                                <div class="step__details">Food and drinks begin.</div>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="card">
+                    <h2 class="card__title">What to Bring</h2>
+                    <ul class="bullets">
+                        <li>Comfortable shoes</li>
+                        <li>Photo ID</li>
+                        <li>Good energy</li>
+                    </ul>
+                    <div class="hint">Dress code: elevated casual.</div>
+                </section>
+
+                <section class="card">
+                    <h2 class="card__title">After</h2>
+                    <p class="afterText">Optional drinks nearby after the main event.</p>
+                </section>
+            </section>
+        </section>
+
+        <section class="styleguide__section">
+            <h2>RSVP Panel</h2>
+
+            <section class="rsvpPanel">
+                <h2>RSVP</h2>
+
+                <form class="rsvpGrid">
+                    <label>Name <input required /></label>
+                    <label>Email <input type="email" /></label>
+                    <label>Phone <input /></label>
+
+                    <label>
+                        Attending
+                        <select>
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Maybe</option>
+                        </select>
+                    </label>
+
+                    <label class="full">
+                        Note
+                        <textarea rows="3"></textarea>
+                    </label>
+
+                    <button class="btn btn--primary" type="button">Send RSVP</button>
+                </form>
+            </section>
+        </section>
+
+        <section class="styleguide__section">
+            <h2>RSVP Admin Groups</h2>
+
+            <div class="rsvpGroups">
+                <details class="rsvpGroup" open>
+                    <summary>
+                        <span class="rsvpGroup__title">Yes: 2</span>
+                        <span class="rsvpGroup__toggle">
+                            <span class="rsvpGroup__toggleView">View</span>
+                            <span class="rsvpGroup__toggleClose">Close</span>
+                        </span>
+                    </summary>
+
+                    <div class="rsvpGuestList">
+                        <article class="rsvpGuest">
+                            <div class="rsvpGuest__topline">
+                                <strong>Guest Name</strong>
+                                <span>5/13/2026, 11:30 AM</span>
+                            </div>
+
+                            <p class="rsvpGuest__note"><strong>Note:</strong> Excited to come.</p>
+
+                            <div class="rsvpGuest__contact">
+                                <span>Contact:</span>
+                                <a href="#">guest@example.com</a>
+                                <span>|</span>
+                                <a href="#">555-555-5555</a>
+                            </div>
+                        </article>
+                    </div>
+                </details>
+
+                <details class="rsvpGroup rsvpGroup--maybe">
+                    <summary>
+                        <span class="rsvpGroup__title">Maybe: 1</span>
+                        <span class="rsvpGroup__toggle">
+                            <span class="rsvpGroup__toggleView">View</span>
+                            <span class="rsvpGroup__toggleClose">Close</span>
+                        </span>
+                    </summary>
+
+                    <div class="rsvpGuestList">
+                        <p class="rsvpEmpty">No maybe RSVPs yet.</p>
+                    </div>
+                </details>
+
+                <details class="rsvpGroup rsvpGroup--no rsvpGroup--muted">
+                    <summary>
+                        <span class="rsvpGroup__title">No: 0</span>
+                        <span class="rsvpGroup__toggle">
+                            <span class="rsvpGroup__toggleView">View</span>
+                            <span class="rsvpGroup__toggleClose">Close</span>
+                        </span>
+                    </summary>
+
+                    <div class="rsvpGuestList">
+                        <p class="rsvpEmpty">No no RSVPs yet.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <footer class="footer">
+            Style guide preview only.
+        </footer>
+    </main>
+</body>
+
+</html>
