@@ -202,15 +202,21 @@
         <h2>Footer</h2>
         <label>
           Footer Notes
-          <textarea id="footerNotes" rows="4" placeholder="Questions? Text me directly.&#10;This page refreshes during live events."></textarea>
+          <textarea id="footerNotes" rows="4">Questions? Text me directly.&#10;This page refreshes during live events.</textarea>
         </label>
 
         <button class="btn btn--primary" type="submit">Create Event & Links</button>
       </form>
 
       <section class="adminCard">
-        <h2>Result</h2>
+        <h2>Invite Preview</h2>
         <pre id="resultBox">Waiting...</pre>
+        <div class="adminCard">
+          Links will display here after your invite creation. You can use these to view your invite, design your invite, and access your dashboard.
+          <a class="btn btn--action" href="/events/slug/invite">View Your Invite</a>
+          <a class="btn btn--outline" href="/events/slug/design">Design Your Invite</a>
+          <a class="btn btn--outline" href="/events/slug/admin">View Your Dashboard</a>
+        </div>
       </section>
     </section>
   </main>
