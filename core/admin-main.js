@@ -46,13 +46,13 @@ if (copyInviteLink) {
 
 const data = await EventData.load(slug);
 
-document.getElementById("adaccentitle").textContent = `${data.event?.title || "Event"} Admin`;
+document.getElementById("title").textContent = `${data.event?.title || "Event"}`;
 document.getElementById("liveBanner").value = data.live?.banner || "";
 document.getElementById("liveNow").value = data.live?.now || "";
 document.getElementById("liveNext").value = data.live?.next || "";
 
 if (status) {
-  status.textContent = "Ready to save updates.";
+  status.textContent = "Your event is ready to update.";
 }
 
 document.getElementById("liveForm").addEventListener("submit", async (event) => {

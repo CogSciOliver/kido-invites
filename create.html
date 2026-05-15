@@ -12,208 +12,237 @@
   <main class="adminShell">
     <section class="adminHeader">
       <div>
-        <p class="eyebrow">Create Invite</p>
-        <h1>New Event Setup</h1>
-        <p class="muted">Creates a complete event record with event.json and rsvps.json.</p>
+        <p class="eyebrow">Create Your Invite</p>
+        <h1>New Event Details</h1>
+        <p class="pageIntro">Start with the basics. These details will appear on your invitation page.
+          <br>Required fields are marked <span class="require" aria-hidden="true">*</span>
+        </p>
       </div>
     </section>
 
     <section class="adminGrid">
-      <form class="adminCard" id="createForm">
-        <h2>Admin Access</h2>
-        <label>
-          Admin Secret
-          <input id="adminSecret" type="password" required />
-        </label>
-
-        <h2>Event Basics</h2>
-        <label>URL Slug <input id="slug" placeholder="new-event" required /></label>
-        <label>Date Display <input id="dateDisplay" placeholder="MM/DD/YYYY" required /></label>
-        <label>City, State <input id="city" placeholder="City, ST" required /></label>
-        <label>
-          Invite Headline
-          <select id="inviteHeadline">
-            <option value="You're Invited">You're Invited</option>
-            <option value="Join Us">Join Us</option>
-            <option value="Save the Date">Save the Date</option>
-            <option value="Celebrate With Us">Celebrate With Us</option>
-            <option value="Come Celebrate">Come Celebrate</option>
-          </select>
-        </label>
-        <label>Host <input id="host" placeholder="Host Name" required /></label>
-        <label>
-          Invitation Content
-          <select id="invitePhrase">
-            <option value="kindly requests your presence at">kindly requests your presence at</option>
-            <option value="invites you to">invites you to</option>
-            <option value="would love for you to join">would love for you to join</option>
-            <option value="is hosting">is hosting</option>
-            <option value="requests your arrival at">requests your arrival at</option>
-          </select>
-        </label>
-        <label>Title <input id="title" placeholder="New Event" required /></label>
-        <label>Arrival Time <input id="arrivalTime" placeholder="6:30 PM" required /></label>
-
-        <h2>Live Defaults</h2>
-        <label>Top Banner<textarea id="liveBanner" placeholder="Exciting News" rows="2"></textarea></label>
-        <label>What's Happening Now<textarea id="liveNow" rows="2"></textarea></label>
-        <label>What's Happening Next<textarea id="liveNext" rows="2"></textarea></label>
-
-        <h2>Venue</h2>
-        <label>Venue Name<input id="venueName" placeholder="Event Venue" required /></label>
-        <label>Address <input id="addressLine1" placeholder="Address Line 1" required /></label>
-        <label>City, State, ZIP <input id="addressLine2" placeholder="City, State, ZIP" required /></label>
-        <label>Google Maps URL <input id="mapUrl" placeholder="https://maps.google.com/..." /></label>
-        <label>Venue Website URL <input id="venueWebsiteUrl" placeholder="https://example.com" /></label>
-
-        <h2>Schedule</h2>
-        <label>
-          Time | Headline | Details (optional)
-          <textarea id="scheduleItems" rows="5" placeholder="6:30 PM | Arrival | Check in and settle in.&#10;7:00 PM | Dinner | Food and drinks begin."></textarea>
-        </label>
-
-        <h2>Guest Info</h2>
-        <label>
-          What to Bring (optional)
-          <textarea id="whatToBring" rows="4" placeholder="Swimsuit&#10;Sandals&#10;Water bottle"></textarea>
-        </label>
-
-        <label>
-          Dress Code
-          <input id="dressCode" />
-        </label>
-
-        <h2>After Party</h2>
-        <fieldset class="formGroup">
-          <legend>Is there anything happening after the main event?</legend>
-
+      <form id="createForm">
+        <div class="adminCard">
+          <h2>Admin Access</h2>
           <label>
-            <input type="radio" name="hasAfterParty" value="yes" checked />
-            Yes
-          </label>
-
-          <label>
-            <input type="radio" name="hasAfterParty" value="no" />
-            No
-          </label>
-        </fieldset>
-
-        <div id="afterPartyFields">
-          <label>
-            Post Event Headline
-            <input id="afterHeadline" placeholder="What's happening after the event?" />
-          </label>
-
-          <label>
-            Post Event Note
-            <textarea id="afterNote" placeholder="Details guests need to know about the post-event activities." rows="3"></textarea>
+            Admin Secret <span class="require" aria-hidden="true">*</span>
+            <input id="adminSecret" type="password" required />
           </label>
         </div>
 
 
-        <h2>Additional Guest Links</h2>
-        <p class="muted">
-          Add optional links guests may need, like a gift registry, menu, hotel block, playlist, or anything else.
-        </p>
+        <div class="adminCard">
+          <h2>Event Basics</h2>
+          <label>URL Slug <span class="require" aria-hidden="true">*</span>
+            <input id="slug" placeholder="new-event" required />
+          </label>
+          <label>Date Display <span class="require" aria-hidden="true">*</span>
+            <input id="dateDisplay" placeholder="MM/DD/YYYY" required />
+          </label>
+          <label>City, State <span class="require" aria-hidden="true">*</span>
+            <input id="city" placeholder="City, ST" required />
+          </label>
+          <label>
+            Invite Headline
+            <select id="inviteHeadline">
+              <option value="You're Invited">You're Invited</option>
+              <option value="Join Us">Join Us</option>
+              <option value="Save the Date">Save the Date</option>
+              <option value="Celebrate With Us">Celebrate With Us</option>
+              <option value="Come Celebrate">Come Celebrate</option>
+            </select>
+          </label>
+          <label>Host <span class="require" aria-hidden="true">*</span>
+            <input id="host" placeholder="Host Name" required />
+          </label>
+          <label>
+            Invitation Request Phrase
+            <select id="invitePhrase">
+              <option value="kindly requests your presence at">kindly requests your presence at</option>
+              <option value="invites you to">invites you to</option>
+              <option value="would love for you to join">would love for you to join</option>
+              <option value="is hosting">is hosting</option>
+              <option value="requests your arrival at">requests your arrival at</option>
+            </select>
+          </label>
+          <label>Event Title <span class="require" aria-hidden="true">*</span>
+            <input id="title" placeholder="Name Your Event" required />
+          </label>
+          <label>Arrival Time <span class="require" aria-hidden="true">*</span>
+            <input id="arrivalTime" placeholder="6:30 PM" required />
+          </label>
+        </div>
 
-        <p class="muted">Build your own gift registry. You can update this at any time in your Admin View</p>
-        <a class="btn btn--action" href="https://www.amazon.com/registries?&linkCode=ll2&tag=unschoolsuppl-20&linkId=4a1a14005b251f958eb4eca022a03692&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener">Create Your Registry Now</a>
 
-        <div id="guestLinksList" class="guestLinksList">
-          <div class="guestLinkRow">
+        <div class="adminCard">
+          <h2>Venue</h2>
+          <label>Location Name <span class="require" aria-hidden="true">*</span>
+            <input id="venueName" placeholder="Event venue, home, park, or party space" required />
+          </label>
+          <label>Address <span class="require" aria-hidden="true">*</span>
+            <input id="addressLine1" placeholder="Street address or general location" required />
+          </label>
+          <label>City, State, ZIP <span class="require" aria-hidden="true">*</span>
+            <input id="addressLine2" placeholder="City, State, ZIP" required />
+          </label>
+          <label>Google Maps URL <input id="mapUrl" placeholder="https://maps.google.com/..." /></label>
+          <label>Venue Website URL <input id="venueWebsiteUrl" placeholder="https://example.com" /></label>
+        </div>
+
+        <div class="adminCard">
+          <h2>Add to Calendar</h2>
+          <p>Allows guests to add the event to their calendars.</p>
+          <label>
+            Event Start Date
+            <input id="eventStartDate" type="date" />
+          </label>
+          <label>
+            Event Start Time
+            <input id="eventStartTime" type="time" />
+          </label>
+          <label>
+            Event End Date
+            <input id="eventEndDate" type="date" />
+          </label>
+          <label>
+            Event End Time
+            <input id="eventEndTime" type="time" />
+          </label>
+          <label>
+            Calendar Note
+            <textarea id="calendarDescription" rows="3" placeholder="Optional note guests will see in their calendar."></textarea>
+          </label>
+        </div>
+
+        <div class="adminCard">
+          <h2>Schedule</h2>
+          <label>
+            Time | Headline | Details <span class="optional" aria-hidden="true">(optional)</span>
+            <textarea id="scheduleItems" rows="5" placeholder="6:30 PM | Arrival | Check in and settle in.&#10;7:00 PM | Dinner | Food and drinks begin."></textarea>
+          </label>
+        </div>
+
+        <div class="adminCard">
+          <h2>Guest Info</h2>
+          <label>
+            What to Bring <span class="optional" aria-hidden="true">(optional)</span>
+            <textarea id="whatToBring" rows="4" placeholder="Swimsuit&#10;Sandals&#10;Water bottle"></textarea>
+          </label>
+          <label>
+            Dress Code <span class="optional" aria-hidden="true">(optional)</span>
+            <input id="dressCode" />
+          </label>
+        </div>
+
+        <div class="adminCard">
+          <h2>After Party</h2>
+          <fieldset class="formGroup">
+            <legend>Is there anything happening after the main event? <span class="require" aria-hidden="true">*</span></legend>
             <label>
-              Link Button Text
-              <input class="guestLinkLabel" placeholder="Example: Gift Registry Website" />
+              <input type="radio" name="hasAfterParty" value="yes" checked />
+              Yes
+            </label>
+            <label>
+              <input type="radio" name="hasAfterParty" value="no" />
+              No
+            </label>
+          </fieldset>
+
+          <div id="afterPartyFields">
+            <label>
+              Post Event Headline
+              <input id="afterHeadline" placeholder="What's happening after the event?" />
             </label>
 
             <label>
-              Link URL
-              <input class="guestLinkUrl" type="url" placeholder="https://..." />
+              Post Event Note
+              <textarea id="afterNote" placeholder="Details guests need to know about the post-event activities." rows="3"></textarea>
             </label>
-
-            <button class="btn btn--delete removeGuestLink" type="button">Remove</button>
           </div>
         </div>
 
-        <button class="btn btn--action" id="addGuestLink" type="button">
-          Add Another Link
-        </button>
+        <div class="adminCard">
+          <h2>Additional Guest Links</h2>
+          <p class="muted">
+            Add optional links guests may need, like a gift registry, menu, hotel block, playlist, or anything else.
+          </p>
 
+          <p class="muted">Build your own gift registry. You can update this at any time in your Admin View</p>
+          <a class="btn btn--action" href="https://www.amazon.com/registries?&linkCode=ll2&tag=unschoolsuppl-20&linkId=4a1a14005b251f958eb4eca022a03692&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener">Create Your Registry Now</a>
 
-        <h2>Invite Design</h2>
+          <div id="guestLinksList" class="guestLinksList">
+            <div class="guestLinkRow">
+              <label>
+                Link Button Text
+                <input class="guestLinkLabel" placeholder="Example: Gift Registry Website" />
+              </label>
 
-        <label>
-          Hero Image URL
-          <input id="heroImage" placeholder="https://example.com/imgs/invitation-hero.jpg" />
-        </label>
+              <label>
+                Link URL
+                <input class="guestLinkUrl" type="url" placeholder="https://..." />
+              </label>
 
-        <label>
-          Select desired font for your invite greeting.
-          <div class="invitePhrasePreview" id="invitePhrasePreview">
-            You're Invited
+              <button class="btn btn--delete removeGuestLink" type="button">Remove</button>
+            </div>
           </div>
-          <select id="inviteTextFont">
-            <option value="script-01">Dancing Script</option>
-            <option value="script-02">Great Vibes</option>
-            <option value="script-03">Stalemate</option>
 
-            <option value="sans-01">Montserrat</option>
-            <option value="sans-02">Bubbler One</option>
-            <option value="sans-03">Koulen</option>
+          <button class="btn btn--action" id="addGuestLink" type="button">
+            Add Another Link
+          </button>
+        </div>
 
-            <option value="serif-01">Playfair Display</option>
-            <option value="serif-02">Rakkas</option>
-            <option value="serif-03">Fredericka the Great</option>
-          </select>
-        </label>
+        <div class="adminCard">
+          <h2>Invite Design</h2>
+          <label>
+            Invitation Image URL
+            <input id="heroImage" placeholder="https://example.com/imgs/invitation-hero.jpg" />
+          </label>
+          <label>
+            Select desired font for your invite greeting.
+            <div class="invitePhrasePreview" id="invitePhrasePreview">
+              You're Invited
+            </div>
+            <select id="inviteTextFont">
+              <option value="script-01">Dancing Script</option>
+              <option value="script-02">Great Vibes</option>
+              <option value="script-03">Stalemate</option>
+              <option value="sans-01">Montserrat</option>
+              <option value="sans-02">Bubbler One</option>
+              <option value="sans-03">Koulen</option>
+              <option value="serif-01">Playfair Display</option>
+              <option value="serif-02">Rakkas</option>
+              <option value="serif-03">Fredericka the Great</option>
+            </select>
+          </label>
+        </div>
 
+        <div class="adminCard">
+          <h2>RSVP</h2>
+          <label>
+            RSVP Button Text
+            <input id="rsvpPrimaryText" value="RSVP" />
+          </label>
+          <label>
+            RSVP Note
+            <textarea id="rsvpNote" rows="3" placeholder="Optional note above the RSVP form."></textarea>
+          </label>
+        </div>
 
+        <div class="adminCard">
+          <h2>Live Defaults</h2>
+          <label>Top Banner<textarea id="liveBanner" placeholder="Exciting News" rows="2"></textarea></label>
+          <label>What's Happening Now<textarea id="liveNow" rows="2"></textarea></label>
+          <label>What's Happening Next<textarea id="liveNext" rows="2"></textarea></label>
+        </div>
 
-        <h2>Add to Calendar</h2>
-        <p>Allows guests to add the event to their calendars.</p>
-        <label>
-          Event Start Date
-          <input id="eventStartDate" type="date" />
-        </label>
-
-        <label>
-          Event Start Time
-          <input id="eventStartTime" type="time" />
-        </label>
-
-        <label>
-          Event End Date
-          <input id="eventEndDate" type="date" />
-        </label>
-
-        <label>
-          Event End Time
-          <input id="eventEndTime" type="time" />
-        </label>
-
-        <label>
-          Calendar Note
-          <textarea id="calendarDescription" rows="3" placeholder="Optional note guests will see in their calendar."></textarea>
-        </label>
-
-        <h2>RSVP</h2>
-
-        <label>
-          RSVP Button Text
-          <input id="rsvpPrimaryText" value="RSVP" />
-        </label>
-
-        <label>
-          RSVP Note
-          <textarea id="rsvpNote" rows="3" placeholder="Optional note above the RSVP form."></textarea>
-        </label>
-        <h2>Footer</h2>
-        <label>
-          Footer Notes
-          <textarea id="footerNotes" rows="4">Questions? Text me directly.&#10;This page refreshes during live events.</textarea>
-        </label>
-
-        <button class="btn btn--primary" type="submit">Create Event & Links</button>
+        <div class="adminCard">
+          <h2>Footer</h2>
+          <label>
+            Footer Notes
+            <textarea id="footerNotes" rows="4">Questions? Text me directly.&#10;This page refreshes during live events.</textarea>
+          </label>
+        </div>
+        <button class="btn btn--primary" type="submit">Publish Your Invitation</button>
       </form>
 
       <section class="adminCard">
@@ -230,7 +259,7 @@
 
             <div class="ctaRow">
               <a class="btn btn--primary" id="designInviteLink" href="#">
-                Design Invite Now
+                Design Your Invitation
               </a>
 
               <a class="btn btn--action" id="viewDashboardLink" href="#">
@@ -238,7 +267,7 @@
               </a>
 
               <a class="btn btn--ghost" id="viewInviteLink" href="#">
-                View Invite Now
+                View Your Invitation Page
               </a>
             </div>
           </div>

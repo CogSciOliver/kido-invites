@@ -13,9 +13,9 @@
   <main class="adminShell">
     <section class="adminHeader">
       <div>
-        <p class="eyebrow">Host Dashboard 05.12.13:16</p>
-        <h1 id="adaccentitle">Event Admin</h1>
-        <p class="muted">Update the live banner, NOW/NEXT, and live update cards.</p>
+        <p class="eyebrow">Host Updates</p>
+        <h1 id="title">Event Admin</h1>
+        <p class="muted">Manage the live parts of your event page. Update the banner, current activity, what's coming next, and any guest-facing updates.</p>
       </div>
     </section>
 
@@ -23,7 +23,9 @@
       <div class="adminCard">
         <form id="liveForm">
           <h2>Admin Access</h2>
-          <label>Admin Secret <input id="adminSecret" type="password" placeholder="ADMIN_SECRET" required /></label>
+          <label>Admin Secret<span class="require" aria-hidden="true">*</span>
+            <input id="adminSecret" type="password" placeholder="ADMIN_SECRET" required />
+          </label>
 
           <h2>Live Host Updates</h2>
           <label>Top Banner <textarea id="liveBanner" rows="2"></textarea></label>
@@ -39,7 +41,7 @@
         <div class="adminCard">
           <h2>Status</h2>
           <div id="saveStatus" class="statusMessage">
-            Ready to save updates.
+            Your invitation is ready to update.
           </div>
           <a class="btn btn--primary" id="viewInvite">View Invite</a>
           <a class="btn btn--primary" id="copyInviteLink">Copy Link to Share</a>
