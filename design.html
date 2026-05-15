@@ -1,26 +1,176 @@
-<!-- notes: 
+<!DOCTYPE html>
+<html lang="en">
 
-function to display and control 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Invite Design | Indie Pigeon</title>
 
-const design = {
-  pageBg: "#fff9ef",
-  text: "#0f0f0f",
-  textMuted: "rgba(15, 15, 15, 0.70)",
+  <link rel="stylesheet" href="./styles/site.css" />
+  <link rel="stylesheet" href="./styles/design.css" />
 
-  primary600: "#108050",
-  primary900: "#175710",
+  <script type="module" src="./core/design-main.js"></script>
+</head>
 
-  accent600: "#20bb9c",
-  accent900: "#0b6f5f",
+<body>
+  <main class="designPage">
+    <section class="designHero">
+      <p class="eyebrow">Invite Design</p>
+      <h1>Choose a starting design</h1>
+      <p>
+        Pick the invite layout that best fits the event. You can still customize
+        the event details, images, links, and live updates after this step.
+      </p>
+    </section>
 
-  secondary600: "#a0b090",
-  secondary900: "#4f5d43",
+    <form id="designForm" class="designLayout" action="./create.html" method="get">
+      <section class="designPicker" aria-labelledby="designPickerTitle">
+        <div class="sectionHeader">
+          <p class="eyebrow">Step 1</p>
+          <h2 id="designPickerTitle">Select a design</h2>
+        </div>
 
-  surface600: "rgba(255, 255, 255, 0.55)",
-  surface900: "rgba(255, 255, 255, 0.75)",
+        <fieldset class="designGrid">
+          <legend class="sr-only">Invite design options</legend>
 
-  border300: "rgba(160, 176, 144, 0.42)",
+          <label class="designCard">
+            <input
+              type="radio"
+              name="design"
+              value="photo-feature"
+              data-preview-title="Photo Feature"
+              data-preview-tone="Big image, clean event details, polished invite feel."
+              required />
 
-  primaryButtonBg: "var(--color-primary-600)"
-};
--->
+            <span class="designCard__body">
+              <span class="designCard__mock designCard__mock--photo"></span>
+              <span class="designCard__title">Photo Feature</span>
+              <span class="designCard__text">
+                Best for birthdays, family events, showers, and invites with a strong hero image.
+              </span>
+            </span>
+          </label>
+
+          <label class="designCard">
+            <input
+              type="radio"
+              name="design"
+              value="bold-poster"
+              data-preview-title="Bold Poster"
+              data-preview-tone="Large title, strong color, graphic announcement style." />
+
+            <span class="designCard__body">
+              <span class="designCard__mock designCard__mock--poster"></span>
+              <span class="designCard__title">Bold Poster</span>
+              <span class="designCard__text">
+                Best for themed parties, launches, pop-ups, performances, and statement events.
+              </span>
+            </span>
+          </label>
+
+          <label class="designCard">
+            <input
+              type="radio"
+              name="design"
+              value="storybook"
+              data-preview-title="Storybook"
+              data-preview-tone="Playful, illustrated, soft and character-driven." />
+
+            <span class="designCard__body">
+              <span class="designCard__mock designCard__mock--storybook"></span>
+              <span class="designCard__title">Storybook</span>
+              <span class="designCard__text">
+                Best for kids parties, creative gatherings, school-free adventures, and playful themes.
+              </span>
+            </span>
+          </label>
+
+          <label class="designCard">
+            <input
+              type="radio"
+              name="design"
+              value="night-out"
+              data-preview-title="Night Out"
+              data-preview-tone="Dark, sleek, colorful, and event-forward." />
+
+            <span class="designCard__body">
+              <span class="designCard__mock designCard__mock--night"></span>
+              <span class="designCard__title">Night Out</span>
+              <span class="designCard__text">
+                Best for ladies night, dinners, adult birthdays, parties, and social events.
+              </span>
+            </span>
+          </label>
+
+          <label class="designCard">
+            <input
+              type="radio"
+              name="design"
+              value="minimal"
+              data-preview-title="Minimal"
+              data-preview-tone="Simple typography, calm spacing, details first." />
+
+            <span class="designCard__body">
+              <span class="designCard__mock designCard__mock--minimal"></span>
+              <span class="designCard__title">Minimal</span>
+              <span class="designCard__text">
+                Best for clean announcements, small gatherings, formal events, and simple RSVPs.
+              </span>
+            </span>
+          </label>
+
+          <label class="designCard">
+            <input
+              type="radio"
+              name="design"
+              value="luxe"
+              data-preview-title="Luxe"
+              data-preview-tone="Elegant, high-contrast, polished and premium." />
+
+            <span class="designCard__body">
+              <span class="designCard__mock designCard__mock--luxe"></span>
+              <span class="designCard__title">Luxe</span>
+              <span class="designCard__text">
+                Best for upscale dinners, milestone parties, formal invites, and premium events.
+              </span>
+            </span>
+          </label>
+        </fieldset>
+      </section>
+
+      <aside class="designPreview" aria-labelledby="designPreviewTitle">
+        <div class="sectionHeader">
+          <p class="eyebrow">Preview</p>
+          <h2 id="designPreviewTitle">Invite direction</h2>
+        </div>
+
+        <div id="previewCard" class="previewCard">
+          <div class="previewCard__image"></div>
+
+          <div class="previewCard__content">
+            <p class="previewCard__label">Selected Design</p>
+            <h3 id="previewTitle">Choose a design</h3>
+            <p id="previewTone">
+              Your selected invite style will appear here before moving into event setup.
+            </p>
+
+            <div class="previewCard__details">
+              <span>Date</span>
+              <span>Time</span>
+              <span>Location</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="designActions">
+          <a class="button button--secondary" href="./index.html">Back</a>
+          <button class="button button--primary" type="submit">
+            Continue to Event Setup
+          </button>
+        </div>
+      </aside>
+    </form>
+  </main>
+</body>
+
+</html>
