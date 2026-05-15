@@ -70,15 +70,20 @@
         /* ========== TYPOGRAPHY ========== */
 
         --font-sans-01: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-        --font-sans-02: "Bubbler One";
-        --font-serif: "Playfair Display", Georgia, serif;
+        --font-sans-02: "Bubbler One", sans-serif;
+        --font-sans-03: "Koulen", sans-serif;
+
+        --font-serif-01: "Playfair Display", Georgia, serif;
+        --font-serif-02: "Rakkas", serif;
+        --font-serif-03: "Fredericka the Great", serif;
+
         --font-script-01: "Dancing Script", cursive;
-        --font-script-02: "Pacifico", cursive;
-        --font-script-03: "Great Vibes", cursive;
+        --font-script-02: "Great Vibes", cursive;
+        --font-script-03: "Stalemate", cursive;
 
         --font-body: var(--font-sans-01);
-        --font-display: var(--font-serif);
-        --font-script: var(--font-serif);
+        --font-display: var(--font-serif-01);
+        --font-fancy: var(--font-script-03);
 
         --font-size-xs: 12px;
         --font-size-sm: 13px;

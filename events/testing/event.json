@@ -23,8 +23,7 @@
     "arrival_time": "6:30 PM"
   },
   "assets": {
-    "hero_image": "./events/testing/imgs/invitation.jpg",
-    "script_image": "./events/testing/imgs/youre-invited.png"
+    "hero_image": "./indie-pigeon-logo.png"
   },
   "venue": {
     "name": "Testing",

@@ -38,7 +38,6 @@
     border-radius: var(--radius-lg);
     background: var(--color-surface-300);
     color: var(--color-text);
-    font-family: var(--font-script);
     font-size: var(--font-size-scriptline);
     line-height: var(--line-height-tight);
 }
@@ -53,8 +52,23 @@
     font-style: normal;
 }
 
-.invitePhrasePreview--serif {
-    font-family: var(--font-serif);
+.invitePhrasePreview--sans-03 {
+    font-family: var(--font-sans-03);
+    font-style: normal;
+}
+
+.invitePhrasePreview--serif-01 {
+    font-family: var(--font-serif-01);
+    font-style: normal;
+}
+
+.invitePhrasePreview--serif-02 {
+    font-family: var(--font-serif-02);
+    font-style: normal;
+}
+
+.invitePhrasePreview--serif-03 {
+    font-family: var(--font-serif-03);
     font-style: normal;
 }
 

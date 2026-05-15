@@ -1,12 +1,48 @@
 import { EventData } from "./EventData.js";
 import { escapeHTML } from "./utils.js";
 
-const slug = EventData.getSlug("ladies-night");
+const slug = EventData.getSlug();
+const encodedSlug = encodeURIComponent(slug);
+
+const inviteHref = `./invite.html?event=${encodedSlug}`;
+const designHref = `./design.html?event=${encodedSlug}`;
 
 const viewInvite = document.getElementById("viewInvite");
+const copyInviteLink = document.getElementById("copyInviteLink");
+const designInviteLink = document.getElementById("designInviteLink");
 const status = document.getElementById("saveStatus");
 
-viewInvite.href = `./invite.html?event=${encodeURIComponent(slug)}`;
+if (viewInvite) {
+  viewInvite.href = inviteHref;
+}
+
+if (designInviteLink) {
+  designInviteLink.href = designHref;
+}
+
+if (copyInviteLink) {
+  copyInviteLink.href = inviteHref;
+
+  copyInviteLink.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const shareUrl = new URL(inviteHref, window.location.href).href;
+
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+
+      if (status) {
+        status.textContent = "Invite link copied.";
+      }
+    } catch (err) {
+      if (status) {
+        status.textContent = "Copy failed. Select and copy the link manually.";
+      }
+
+      window.prompt("Copy invite link:", shareUrl);
+    }
+  });
+}
 
 const data = await EventData.load(slug);
 

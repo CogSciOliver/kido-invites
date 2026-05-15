@@ -235,10 +235,13 @@ function updateInvitePhrasePreviewFont() {
   invitePhrasePreview.classList.remove(
     "invitePhrasePreview--sans-01",
     "invitePhrasePreview--sans-02",
-    "invitePhrasePreview--serif",
+    "invitePhrasePreview--sans-03",
+    "invitePhrasePreview--serif-01",
+    "invitePhrasePreview--serif-02",
+    "invitePhrasePreview--serif-03",
     "invitePhrasePreview--script-01",
     "invitePhrasePreview--script-02",
-    "invitePhrasePreview--script-03"
+    "invitePhrasePreview--script-03",
   );
 
   invitePhrasePreview.classList.add(

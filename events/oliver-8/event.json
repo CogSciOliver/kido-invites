@@ -8,7 +8,7 @@
     "banner": "SAVE THE DATE AUGUST 8TH",
     "now": "Inviting my guests.",
     "next": "Making sure you save the date.",
-    "refresh_seconds": 60,
+    "refresh_seconds": 60000,
     "updates": {
       "enabled": true,
       "intro": "If anything changes during the event, I’ll update it here.",
@@ -16,7 +16,7 @@
     }
   },
   "event": {
-    "title": "Infinity 8 Birthday Day Party",
+    "title": "Infinity 8 Birthday, Day Party",
     "date_display": "08/08/2026",
     "city": "Grandview, TX",
     "host": "Oliver Braithwaite",
@@ -28,8 +28,7 @@
     "invite_text_font": "serif"
   },
   "assets": {
-    "hero_image": "./events/oliver-8/imgs/invitation.jpg",
-    "script_image": ""
+    "hero_image": "./indie-pigeon-logo.png"
   },
   "venue": {
     "name": "KIDO Family Ranch",
@@ -97,6 +96,10 @@
     ]
   },
   "footer": {
-    "notes": []
+    "notes": [
+      "Questions? Text Me Directly.",
+      "This page refreshes automatically for live updates on the night of the event.",
+      "Copyright Danii Oliver 2026"
+    ]
   }
 }

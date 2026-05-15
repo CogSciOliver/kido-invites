@@ -21,7 +21,6 @@
 
     <section class="adminGrid" id="adminUpdateArea">
       <div class="adminCard">
-
         <form id="liveForm">
           <h2>Admin Access</h2>
           <label>Admin Secret <input id="adminSecret" type="password" placeholder="ADMIN_SECRET" required /></label>
@@ -33,36 +32,40 @@
 
           <button class="btn btn--primary" type="submit">Save Live Updates Now</button>
         </form>
-        <a class="btn btn--primary" id="viewInvite">View Invite</a>
+        <p>Guests will see updates automatically every 10 minutes when the page refreshes.</p>
       </div>
-      <div class="adminCard" id="adminStatusArea">
-        <h2>Status</h2>
-        <p>Guests will see updates automatically when the page refreshes.</p>
 
-        <div id="saveStatus" class="statusMessage">
-          Ready to save updates.
+      <div id="adminStatusArea">
+        <div class="adminCard">
+          <h2>Status</h2>
+          <div id="saveStatus" class="statusMessage">
+            Ready to save updates.
+          </div>
+          <a class="btn btn--primary" id="viewInvite">View Invite</a>
+          <a class="btn btn--primary" id="copyInviteLink">Copy Link to Share</a>
+          <a class="btn btn--primary" id="designInviteLink">Design Your Invitation</a>
         </div>
 
-        <hr />
-        <h2>RSVPs</h2>
-        <div class="statusMessage" id="rsvpStatus">
-          Loading RSVPs...
-        </div>
+        <div class="adminCard">
+          <h2>RSVPs</h2>
+          <div class="statusMessage" id="rsvpStatus">
+            Loading RSVPs...
+          </div>
 
-        <button class="btn btn--ghost" id="refreshRsvps" type="button">
-          Refresh RSVPs
-        </button>
+          <button class="btn btn--ghost" id="refreshRsvps" type="button">
+            Refresh RSVPs
+          </button>
 
-        <div class="rsvpGroups" id="rsvpGroups">
-          <details class="rsvpGroup">
-            <summary>Loading RSVPs...</summary>
-          </details>
+          <div class="rsvpGroups" id="rsvpGroups">
+            <details class="rsvpGroup">
+              <summary>Loading RSVPs...</summary>
+            </details>
+          </div>
         </div>
 
       </div>
+
     </section>
-
-
 
   </main>
 

@@ -69,7 +69,7 @@ function makeEvent(slug, body) {
       banner: cleanText(body.live_banner),
       now: cleanText(body.live_now),
       next: cleanText(body.live_next),
-      refresh_seconds: 60,
+      refresh_seconds: 600, // 10 minutes
       updates: {
         enabled: true,
         intro: "If anything changes during the event, I'll update it here.",
