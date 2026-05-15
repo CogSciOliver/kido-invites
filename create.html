@@ -28,8 +28,8 @@
 
         <h2>Event Basics</h2>
         <label>URL Slug <input id="slug" placeholder="new-event" required /></label>
-        <label>Date Display <input id="dateDisplay" placeholder="MM/DD/YYYY" /></label>
-        <label>City, State <input id="city" placeholder="City, ST" /></label>
+        <label>Date Display <input id="dateDisplay" placeholder="MM/DD/YYYY" required /></label>
+        <label>City, State <input id="city" placeholder="City, ST" required /></label>
         <label>
           Invite Headline
           <select id="inviteHeadline">
@@ -40,7 +40,7 @@
             <option value="Come Celebrate">Come Celebrate</option>
           </select>
         </label>
-        <label>Host <input id="host" placeholder="Host Name" /></label>
+        <label>Host <input id="host" placeholder="Host Name" required /></label>
         <label>
           Invitation Content
           <select id="invitePhrase">
@@ -52,7 +52,7 @@
           </select>
         </label>
         <label>Title <input id="title" placeholder="New Event" required /></label>
-        <label>Arrival Time <input id="arrivalTime" placeholder="6:30 PM" /></label>
+        <label>Arrival Time <input id="arrivalTime" placeholder="6:30 PM" required /></label>
 
         <h2>Live Defaults</h2>
         <label>Top Banner<textarea id="liveBanner" placeholder="Exciting News" rows="2"></textarea></label>
@@ -60,15 +60,15 @@
         <label>What's Happening Next<textarea id="liveNext" rows="2"></textarea></label>
 
         <h2>Venue</h2>
-        <label>Venue Name <input id="venueName" placeholder="Event Venue" /></label>
-        <label>Address <input id="addressLine1" placeholder="Address Line 1" /></label>
-        <label>City, State, ZIP <input id="addressLine2" placeholder="City, State, ZIP" /></label>
+        <label>Venue Name<input id="venueName" placeholder="Event Venue" required /></label>
+        <label>Address <input id="addressLine1" placeholder="Address Line 1" required /></label>
+        <label>City, State, ZIP <input id="addressLine2" placeholder="City, State, ZIP" required /></label>
         <label>Google Maps URL <input id="mapUrl" placeholder="https://maps.google.com/..." /></label>
         <label>Venue Website URL <input id="venueWebsiteUrl" placeholder="https://example.com" /></label>
 
         <h2>Schedule</h2>
         <label>
-          Schedule
+          Time | Headline | Details (optional)
           <textarea id="scheduleItems" rows="5" placeholder="6:30 PM | Arrival | Check in and settle in.&#10;7:00 PM | Dinner | Food and drinks begin."></textarea>
         </label>
 
@@ -88,12 +88,12 @@
           <legend>Is there anything happening after the main event?</legend>
 
           <label>
-            <input type="radio" name="hasAfterParty" value="yes" />
+            <input type="radio" name="hasAfterParty" value="yes" checked />
             Yes
           </label>
 
           <label>
-            <input type="radio" name="hasAfterParty" value="no" checked />
+            <input type="radio" name="hasAfterParty" value="no" />
             No
           </label>
         </fieldset>
@@ -143,29 +143,34 @@
         <h2>Invite Design</h2>
 
         <label>
-          Hero Image URL or Path
-          <input id="heroImage" placeholder="./events/new-event/imgs/invitation.jpg" />
+          Hero Image URL
+          <input id="heroImage" placeholder="https://example.com/imgs/invitation-hero.jpg" />
         </label>
 
         <label>
-          Invite Phrase Font
-
+          Select desired font for your invite greeting.
           <div class="invitePhrasePreview" id="invitePhrasePreview">
             You're Invited
           </div>
           <select id="inviteTextFont">
+            <option value="script-01">Dancing Script</option>
+            <option value="script-02">Great Vibes</option>
+            <option value="script-03">Stalemate</option>
+
             <option value="sans-01">Montserrat</option>
             <option value="sans-02">Bubbler One</option>
-            <option value="serif">Playfair Display</option>
-            <option value="script-01">Dancing Script</option>
-            <option value="script-02">Pacifico</option>
-            <option value="script-03">Great Vibes</option>
+            <option value="sans-03">Koulen</option>
+
+            <option value="serif-01">Playfair Display</option>
+            <option value="serif-02">Rakkas</option>
+            <option value="serif-03">Fredericka the Great</option>
           </select>
         </label>
 
 
 
         <h2>Add to Calendar</h2>
+        <p>Allows guests to add the event to their calendars.</p>
         <label>
           Event Start Date
           <input id="eventStartDate" type="date" />
@@ -216,7 +221,7 @@
         <pre id="resultBox">Waiting...</pre>
         <div class="adminCard">
           Links will display here after your invite creation. You can use these to view your invite, design your invite, and access your dashboard.
-          
+
 
           <div id="createResultLinks" class="createResultLinks" hidden>
             <p class="accent">
