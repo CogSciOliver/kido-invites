@@ -15,15 +15,14 @@
 <body>
   <main class="designPage">
     <section class="designHero">
-      <p class="eyebrow">Invite Design</p>
-      <h1>Choose a starting design</h1>
-      <p>
-        Pick the invite layout that best fits the event. You can still customize
-        the event details, images, links, and live updates after this step.
+      <p class="eyebrow">Invite Design | Indie Pigeon</p>
+      <h1>Edit Your Invitation's Drip</h1>
+      <p class="pageIntro">
+        Pick the invite layout that best fits the event. Choose the visual direction for this invite. These settings apply to your existing <a class="viewInviteLink" target="_blank" href="#">Invitation Page</a>.
       </p>
     </section>
 
-    <form id="designForm" class="designLayout" action="./create.html" method="get">
+    <form id="designForm" class="designLayout">
       <section class="designPicker" aria-labelledby="designPickerTitle">
         <div class="sectionHeader">
           <p class="eyebrow">Step 1</p>
@@ -162,12 +161,27 @@
           </div>
         </div>
 
-        <div class="designActions">
-          <a class="button button--secondary" href="./index.html">Back</a>
-          <button class="button button--primary" type="submit">
-            Continue to Event Setup
+        <div class="adminCard">
+          <h2>Admin Access</h2>
+          <label>
+            Admin Secret <span class="require" aria-hidden="true">*</span>
+            <input id="adminSecret" type="password" required />
+          </label>
+          <button class="btn btn--action" type="submit">
+            Save Design Changes
           </button>
         </div>
+
+
+
+        <div class="designActions">
+          <a id="backToAdminLink" class="btn btn--ghost" href="#">Back to Admin</a>
+          <a class="viewInviteLink btn btn--primary" target="_blank" href="#">View Invite</a>
+
+
+        </div>
+
+        <p id="designStatus" class="statusMessage" hidden></p>
       </aside>
     </form>
   </main>

@@ -6,6 +6,11 @@ export class EventRenderer {
   }
 
   render(data) {
+    const designTemplate = data.design?.template || "photo-feature";
+
+    document.body.dataset.design = designTemplate;
+    this.root.dataset.design = designTemplate;
+
     this.root.innerHTML = this.template(data);
     this.root.setAttribute("aria-busy", "false");
   }
@@ -35,9 +40,9 @@ export class EventRenderer {
             ${escapeHTML(data.event?.invite_phrase || "kindly requests your presence at")}
             <strong>${escapeHTML(data.event?.title || "this event")}</strong>
             ${data.event?.arrival_time
-              ? `at <strong>${escapeHTML(data.event.arrival_time)}</strong>.`
-              : "."
-            }
+        ? `at <strong>${escapeHTML(data.event.arrival_time)}</strong>.`
+        : "."
+      }
           </p>
 
           <div class="ctaRow">
@@ -48,14 +53,14 @@ export class EventRenderer {
             <button class="btn btn--ghost" id="calendarBtn" type="button">Add to Calendar</button>
 
             ${data.venue?.website_url
-              ? `<a class="btn btn--ghost" href="${escapeHTML(data.venue.website_url)}" target="_blank" rel="noopener">Venue Website</a>`
-              : ""
-            }
+        ? `<a class="btn btn--ghost" href="${escapeHTML(data.venue.website_url)}" target="_blank" rel="noopener">Venue Website</a>`
+        : ""
+      }
 
             ${data.venue?.google_maps_url
-              ? `<a class="btn btn--ghost" href="${escapeHTML(data.venue.google_maps_url)}" target="_blank" rel="noopener">Open Map</a>`
-              : ""
-            }
+        ? `<a class="btn btn--ghost" href="${escapeHTML(data.venue.google_maps_url)}" target="_blank" rel="noopener">Open Map</a>`
+        : ""
+      }
           </div>
 
           ${this.links(data.links)}
@@ -97,14 +102,14 @@ export class EventRenderer {
     return `
       <div class="liveTracker">
         ${data.live?.now
-          ? `<div class="liveItem liveNowCard"><span class="liveLabel">NOW</span><span>${escapeHTML(data.live.now)}</span></div>`
-          : ""
-        }
+        ? `<div class="liveItem liveNowCard"><span class="liveLabel">NOW</span><span>${escapeHTML(data.live.now)}</span></div>`
+        : ""
+      }
 
         ${data.live?.next
-          ? `<div class="liveItem"><span class="liveLabel">NEXT</span><span>${escapeHTML(data.live.next)}</span></div>`
-          : ""
-        }
+        ? `<div class="liveItem"><span class="liveLabel">NEXT</span><span>${escapeHTML(data.live.next)}</span></div>`
+        : ""
+      }
       </div>
     `;
   }
@@ -194,15 +199,15 @@ export class EventRenderer {
         <h2 class="card__title">Guest Info</h2>
 
         ${bringItems.length
-          ? `<h3 class="card__subtitle">What to bring</h3>
+        ? `<h3 class="card__subtitle">What to bring</h3>
              <ul class="bullets">${bringItems.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>`
-          : ""
-        }
+        : ""
+      }
 
         ${dressCode
-          ? `<div class="hint"><strong>Dress Code:</strong> ${escapeHTML(dressCode)}</div>`
-          : ""
-        }
+        ? `<div class="hint"><strong>Dress Code:</strong> ${escapeHTML(dressCode)}</div>`
+        : ""
+      }
       </section>
     `;
   }
@@ -226,9 +231,9 @@ export class EventRenderer {
         <h2>RSVP</h2>
 
         ${data.rsvp?.note
-          ? `<p class="muted">${escapeHTML(data.rsvp.note)}</p>`
-          : ""
-        }
+        ? `<p class="muted">${escapeHTML(data.rsvp.note)}</p>`
+        : ""
+      }
 
         <form class="rsvpGrid" id="rsvpForm">
           <label>Name <input name="name" required /></label>

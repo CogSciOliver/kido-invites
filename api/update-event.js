@@ -16,13 +16,36 @@ export default async function handler(req, res) {
     if (!file.exists) return send(res, 404, { ok: false, error: "Event not found" });
 
     const data = file.json;
+
     data.live = data.live || {};
+    data.design = data.design || {};
 
     if (typeof body.live_banner === "string") data.live.banner = body.live_banner;
     if (typeof body.live_now === "string") data.live.now = body.live_now;
     if (typeof body.live_next === "string") data.live.next = body.live_next;
 
-    await writeJsonFile(path, data, `Update live event details for ${slug}`);
+    // -- protection to whitelist the design themes template names --
+    const allowedDesigns = [
+      "photo-feature",
+      "bold-poster",
+      "storybook",
+      "night-out",
+      "minimal",
+      "luxe"
+    ];
+
+    if (typeof body.design_template === "string") {
+      const designTemplate = body.design_template.trim();
+
+      if (!allowedDesigns.includes(designTemplate)) {
+        return send(res, 400, { ok: false, error: "Invalid design_template" });
+      }
+
+      data.design.template = designTemplate;
+    }
+    // --end whitelist protection --
+
+    await writeJsonFile(path, data, `Update event details for ${slug}`);
 
     return send(res, 200, { ok: true, event: data });
   } catch (err) {

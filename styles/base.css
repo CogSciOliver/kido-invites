@@ -72,10 +72,26 @@ button {
   border-color: var(--color-button-primary-border);
 }
 
+.btn--outline {
+  background: var(--color-button-outline-bg);
+  color: var(--color-button-outline-text);
+  border-color: var(--color-button-outline-border);
+}
+
 .btn--ghost {
-  background: var(--color-button-ghost-bg);
+  background: linear-gradient(90deg,
+      var(--brand-white) 0%,
+      var(--color-primary-100) 50%,
+      var(--brand-white) 100%);
   color: var(--color-button-ghost-text);
   border-color: var(--color-button-ghost-border);
+  box-shadow: var(--shadow-button);
+}
+
+.btn--ghost:hover {
+  background: var(--color-button-ghost-bg);
+  color: var(--color-button-ghost-text);
+  box-shadow: none;
 }
 
 .btn--action {
@@ -140,4 +156,3 @@ hr {
   font-size: var(--font-size-landing-title);
   line-height: var(--line-height-tight);
 }
-
