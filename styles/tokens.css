@@ -3,12 +3,16 @@
 :root {
 
         --color-button-primary-bg: var(--color-primary-300);
-        --color-button-primary-text: var(--brand-primary-600);
+        --color-button-primary-text: var(--color-primary-900);
         --color-button-primary-border: var(--color-primary-600);
 
-        --color-button-ghost-bg: var(--color-surface-900);
-        --color-button-ghost-text: var(--color-text);
-        --color-button-ghost-border: var(--color-border-900);
+        --color-button-outline-bg: var(--color-surface-900);
+        --color-button-outline-text: var(--color-border-900);
+        --color-button-outline-border: var(--color-border-600);
+
+        --color-button-ghost-bg: var(--color-surface-100);
+        --color-button-ghost-text: var(--color-border-900);
+        --color-button-ghost-border: var(--color-border-100);
 
         --color-button-action-bg: var(--color-accent-100);
         --color-button-action-text: var(--color-accent-900);
@@ -64,6 +68,7 @@
 
         --shadow-card: 0 18px 50px var(--color-primary-100);
         --shadow-live: 0 10px 30px var(--color-accent-100);
+        --shadow-button: 0 10px 30px var(--color-secondary-300);
         --shadow: var(--shadow-card);
 
 
