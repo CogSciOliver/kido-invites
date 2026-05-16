@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     }
     // --end whitelist protection --
 
-    await writeJsonFile(path, data, `Update event details for ${slug}`);
+    await writeJsonFile(path, data, `__User Edited: event content details for ${slug}`);
 
     return send(res, 200, { ok: true, event: data });
   } catch (err) {
