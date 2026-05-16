@@ -8,7 +8,7 @@ const previewTone = document.getElementById("previewTone");
 const backToAdminLink = document.getElementById("backToAdminLink");
 const viewInviteLinks = document.querySelectorAll(".viewInviteLink");
 const designStatus = document.getElementById("designStatus");
-
+const saveButton = designForm.querySelector('button[type="submit"]');
 const publishProgress = document.getElementById("publishProgress");
 const publishProgressFill = document.getElementById("publishProgressFill");
 const publishProgressText = document.getElementById("publishProgressText");
@@ -65,6 +65,23 @@ function setViewInviteEnabled(isEnabled) {
     });
 }
 
+function setSaveDesignEnabled(isEnabled) {
+
+    if (!saveButton) return;
+
+    if (isEnabled) {
+        saveButton.disabled = false;
+        saveButton.textContent = "Save Design Changes";
+        saveButton.classList.remove("btn--disabled");
+        saveButton.classList.add("btn--action");
+    } else {
+        saveButton.disabled = true;
+        saveButton.textContent = "Publishing...";
+        saveButton.classList.remove("btn--action");
+        saveButton.classList.add("btn--disabled");
+    }
+}
+
 function startPublishDelay(seconds = 10) {
     return new Promise((resolve) => {
         let remaining = seconds;
@@ -113,7 +130,7 @@ designForm.addEventListener("submit", async (event) => {
     }
 
     setViewInviteEnabled(false);
-    saveDesignButton.disabled = true;
+    setSaveDesignEnabled(false);
 
     designStatus.hidden = false;
     designStatus.textContent = "Sending design update...";
@@ -140,18 +157,18 @@ designForm.addEventListener("submit", async (event) => {
             designStatus.textContent = `Save failed: ${result.error}`;
             publishProgress.hidden = true;
             setViewInviteEnabled(true);
-            saveDesignButton.disabled = false;
+            setSaveDesignEnabled(true);
             return;
         }
 
         await startPublishDelay(10);
 
         setViewInviteEnabled(true);
-        saveDesignButton.disabled = false;
+        setSaveDesignEnabled(true);
     } catch (err) {
         designStatus.textContent = `Save failed: ${err.message}`;
         publishProgress.hidden = true;
         setViewInviteEnabled(true);
-        saveDesignButton.disabled = false;
+        setSaveDesignEnabled(true);
     }
 });
