@@ -9,6 +9,11 @@ const backToAdminLink = document.getElementById("backToAdminLink");
 const viewInviteLinks = document.querySelectorAll(".viewInviteLink");
 const designStatus = document.getElementById("designStatus");
 
+const publishProgress = document.getElementById("publishProgress");
+const publishProgressFill = document.getElementById("publishProgressFill");
+const publishProgressText = document.getElementById("publishProgressText");
+const saveDesignButton = designForm.querySelector('button[type="submit"]');
+
 if (!slug) {
     document.body.innerHTML = "<main class='designPage'><p>Missing event.</p></main>";
     throw new Error("Missing event slug");
@@ -44,12 +49,56 @@ document.querySelectorAll('input[name="design"]').forEach((input) => {
     });
 });
 
+function setViewInviteEnabled(isEnabled) {
+    viewInviteLinks.forEach((link) => {
+        if (isEnabled) {
+            link.setAttribute("aria-disabled", "false");
+            link.removeAttribute("tabindex");
+            link.classList.remove("btn--ghost");
+            link.classList.add("btn--primary");
+        } else {
+            link.setAttribute("aria-disabled", "true");
+            link.setAttribute("tabindex", "-1");
+            link.classList.remove("btn--primary");
+            link.classList.add("btn--ghost");
+        }
+    });
+}
+
+function startPublishDelay(seconds = 10) {
+    return new Promise((resolve) => {
+        let remaining = seconds;
+        let elapsed = 0;
+
+        publishProgress.hidden = false;
+        publishProgressFill.style.width = "0%";
+        publishProgressText.textContent = `Publishing invite update... ${remaining}s remaining.`;
+        designStatus.hidden = false;
+        designStatus.textContent = "Design update is publishing. View Invite will unlock when it is ready.";
+
+        const timer = setInterval(() => {
+            elapsed += 1;
+            remaining -= 1;
+
+            const percent = Math.min((elapsed / seconds) * 100, 100);
+            publishProgressFill.style.width = `${percent}%`;
+            publishProgressText.textContent = `Publishing invite update... ${Math.max(remaining, 0)}s remaining.`;
+
+            if (elapsed >= seconds) {
+                clearInterval(timer);
+                publishProgressText.textContent = "Invite preview is ready.";
+                designStatus.textContent = "Design update should now be live.";
+                resolve();
+            }
+        }, 1000);
+    });
+}
+
 designForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const selectedDesign = getSelectedDesign();
     const adminSecret = document.getElementById("adminSecret")?.value.trim() || "";
-
 
     if (!selectedDesign) {
         designStatus.hidden = false;
@@ -63,8 +112,14 @@ designForm.addEventListener("submit", async (event) => {
         return;
     }
 
+    setViewInviteEnabled(false);
+    saveDesignButton.disabled = true;
+
     designStatus.hidden = false;
-    designStatus.textContent = "Saving design...";
+    designStatus.textContent = "Sending design update...";
+    publishProgress.hidden = false;
+    publishProgressFill.style.width = "0%";
+    publishProgressText.textContent = "Starting design update...";
 
     try {
         const res = await fetch("/api/update-event", {
@@ -83,11 +138,20 @@ designForm.addEventListener("submit", async (event) => {
 
         if (!result.ok) {
             designStatus.textContent = `Save failed: ${result.error}`;
+            publishProgress.hidden = true;
+            setViewInviteEnabled(true);
+            saveDesignButton.disabled = false;
             return;
         }
 
-        designStatus.textContent = "Design saved.";
+        await startPublishDelay(10);
+
+        setViewInviteEnabled(true);
+        saveDesignButton.disabled = false;
     } catch (err) {
         designStatus.textContent = `Save failed: ${err.message}`;
+        publishProgress.hidden = true;
+        setViewInviteEnabled(true);
+        saveDesignButton.disabled = false;
     }
 });
