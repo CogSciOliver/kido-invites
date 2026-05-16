@@ -394,16 +394,3 @@
         max-width: 240px;
     }
 }
-
-/* Temporary Override Styles */
-body[data-design="night-out"] {
-    background: var(--color-tertiary-600);
-}
-
-body[data-design="minimal"] {
-    background: var(--color-surface-900);
-}
-
-body[data-design="storybook"] {
-    background: var(--color-accent-600);
-}
