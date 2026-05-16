@@ -64,6 +64,6 @@
     "notes": []
   },
   "design": {
-    "template": "minimal"
+    "template": "storybook"
   }
 }
