@@ -106,6 +106,12 @@ button {
   border-color: var(--color-button-delete-border);
 }
 
+.btn--disabled {
+  background: var(--color-button-disabled-bg);
+  color: var(--color-button-disabled-text);
+  border-color: var(--color-button-disabled-border);
+}
+
 input,
 textarea,
 select {

@@ -22,6 +22,10 @@
         --color-button-delete-text: var(--color-alert-900);
         --color-button-delete-border: var(--color-alert-300);
 
+        --color-button-disabled-bg: var(--color-surface-100);
+        --color-button-disabled-text: var(--color-border-600);
+        --color-button-disabled-border: var(--color-border-600);
+
         --color-input-bg: var(--color-surface-900);
         --color-input-text: var(--color-text);
         --color-input-border: var(--color-border-300);

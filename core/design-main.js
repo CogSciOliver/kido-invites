@@ -54,13 +54,13 @@ function setViewInviteEnabled(isEnabled) {
         if (isEnabled) {
             link.setAttribute("aria-disabled", "false");
             link.removeAttribute("tabindex");
-            link.classList.remove("btn--ghost");
+            link.classList.remove("btn--disabled");
             link.classList.add("btn--primary");
         } else {
             link.setAttribute("aria-disabled", "true");
             link.setAttribute("tabindex", "-1");
             link.classList.remove("btn--primary");
-            link.classList.add("btn--ghost");
+            link.classList.add("btn--disabled");
         }
     });
 }
