@@ -234,7 +234,6 @@
     font-size: var(--font-size-md);
     letter-spacing: var(--letter-space-widest);
     text-transform: uppercase;
-    color: var(--color-text-muted);
 }
 
 .venueName {
@@ -283,7 +282,6 @@
 }
 
 .step__details {
-    color: var(--color-text-muted);
     font-size: var(--font-size-md);
     margin-top: var(--space-2xs);
 }
@@ -292,7 +290,6 @@
     margin-top: var(--space-3xl);
     border: 1px solid var(--panel-border);
     border-radius: var(--radius);
-    background: var(--panel-bg);
     box-shadow: var(--card-shadow);
     padding: var(--space-2xl);
 }

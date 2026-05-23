@@ -28,7 +28,7 @@
     "invite_text_font": "serif"
   },
   "assets": {
-    "hero_image": "./indie-pigeon-logo.png"
+    "hero_image": "https://mri.unschooldiscoveries.com/pigeon/oliver-8.jpg"
   },
   "venue": {
     "name": "KIDO Family Ranch",
