@@ -86,13 +86,13 @@
 }
 
 .rsvpGroup__title {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: var(--letter-space-tight);
 }
 
 .rsvpGroup__toggle {
   font-size: var(--font-size-xs);
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: var(--letter-space-wide);
   opacity: 0.65;
@@ -140,7 +140,7 @@
 }
 
 .rsvpGuest__contact>span:first-child {
-  font-weight: 800;
+  font-weight: 700;
   opacity: 0.65;
 }
 

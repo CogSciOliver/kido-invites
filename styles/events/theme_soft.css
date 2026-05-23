@@ -241,6 +241,4 @@
    --timeline-bg: var(--color-surface-300);
    --timeline-border: var(--color-primary-300);
    --timeline-time-text: var(--color-accent-900);
-
-   --footer-text: var(--color-text-muted);
 }

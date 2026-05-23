@@ -2,7 +2,7 @@
   margin: 0 0 var(--space-md);
   color: var(--color-primary-600);
   font-size: var(--font-size-xs);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: var(--letter-space-widest);
   text-transform: uppercase;
 }

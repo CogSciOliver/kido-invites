@@ -216,6 +216,4 @@
         --timeline-bg: var(--color-surface-300);
         --timeline-border: var(--color-primary-300);
         --timeline-time-text: var(--color-primary-600);
-
-        --footer-text: var(--color-text-muted);
 }
