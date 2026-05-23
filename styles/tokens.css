@@ -14,6 +14,8 @@
         --color-button-ghost-text: var(--color-border-900);
         --color-button-ghost-border: var(--color-border-100);
 
+        --color-button-hover-bg: var(--color-surface-100);
+
         --color-button-action-bg: var(--color-accent-100);
         --color-button-action-text: var(--color-accent-900);
         --color-button-action-border: var(--color-accent-900);

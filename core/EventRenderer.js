@@ -120,7 +120,7 @@ export class EventRenderer {
     if (!updates?.enabled) return "";
 
     return `
-      <section class="updates">
+      <section class="updates card">
         <h2 class="updates__title">Live updates</h2>
         <p class="updates__intro">${escapeHTML(updates.intro || "")}</p>
         <div class="updates__list">
@@ -179,7 +179,7 @@ export class EventRenderer {
               <div class="step__time">${escapeHTML(item.time || "")}</div>
               <div>
                 <div class="step__title">${escapeHTML(item.title || "")}</div>
-                <div class="step__details">${escapeHTML(item.details || "")}</div>
+                <div class="step__details muted">${escapeHTML(item.details || "")}</div>
               </div>
             </li>
           `).join("")}
@@ -227,7 +227,7 @@ export class EventRenderer {
     if (!data.rsvp?.enabled) return "";
 
     return `
-      <section class="rsvpPanel" id="rsvp">
+      <section class="card rsvpPanel" id="rsvp">
         <h2>RSVP</h2>
 
         ${data.rsvp?.note

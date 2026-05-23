@@ -1,0 +1,222 @@
+/* Adult Moody: plum / oxblood / deep teal / smoky navy / antique gold */
+
+/* =========================================================
+   Preset: Adult Moody
+   Palette: plum / oxblood / deep teal / smoky navy / antique gold
+   File: event.css
+   Scope: variable overrides only — no size/layout changes
+   ========================================================= */
+
+:root {
+    /* =======================================================
+     PRIMARY SCALE
+     Smoky navy
+     Main invite color.
+  ========================= */
+
+    --color-primary-100: rgba(31, 38, 56, 0.15);
+    --color-primary-300: rgba(31, 38, 56, 0.30);
+    --color-primary-600: rgba(31, 38, 56, 1);
+    --color-primary-900: rgba(13, 18, 32, 1);
+
+    /* =========================
+     SECONDARY SCALE
+     Deep teal
+  ========================= */
+
+    --color-secondary-100: rgba(15, 91, 90, 0.16);
+    --color-secondary-300: rgba(15, 91, 90, 0.32);
+    --color-secondary-600: rgba(15, 91, 90, 1);
+    --color-secondary-900: rgba(7, 56, 54, 1);
+
+    /* =========================
+     TERTIARY SCALE
+     Plum
+  ========================= */
+
+    --color-tertiary-100: rgba(90, 42, 95, 0.16);
+    --color-tertiary-300: rgba(90, 42, 95, 0.34);
+    --color-tertiary-600: rgba(90, 42, 95, 0.86);
+    --color-tertiary-900: rgba(42, 21, 54, 1);
+
+    /* =========================
+     ACCENT SCALE
+     Antique gold
+  ========================= */
+
+    --color-accent-100: rgba(184, 148, 77, 0.14);
+    --color-accent-300: rgba(184, 148, 77, 0.32);
+    --color-accent-600: rgba(184, 148, 77, 1);
+    --color-accent-900: rgba(111, 84, 36, 1);
+
+    /* =========================
+     ALERT SCALE
+     Oxblood
+  ========================= */
+
+    --color-alert-100: rgba(122, 30, 45, 0.14);
+    --color-alert-300: rgba(122, 30, 45, 0.30);
+    --color-alert-600: rgba(122, 30, 45, 1);
+    --color-alert-900: rgba(63, 11, 20, 1);
+
+    --color-white-100: rgba(255, 255, 255, 0.14);
+    --color-white-300: rgba(255, 255, 255, 0.54);
+    --color-white-600: rgba(255, 255, 255, 0.80);
+    --color-white-900: rgba(255, 255, 255, 0.96);
+
+    --color-transparent: transparent;
+
+    /* =========================
+     PAGE
+  ========================= */
+
+    --color-page-bg: var(--color-primary-900);
+    --color-text: var(--color-white-900);
+    --color-text-muted: var(--color-white-300);
+
+    /* =========================
+     SURFACE SCALE
+  ========================= */
+
+    --color-surface-100: rgba(13, 18, 32, 0.20);
+    --color-surface-300: rgba(13, 18, 32, 0.38);
+    --color-surface-600: rgba(13, 18, 32, 0.58);
+    --color-surface-900: rgba(13, 18, 32, 0.78);
+
+    /* =========================
+     BORDER SCALE
+  ========================= */
+
+    --color-border-100: rgba(184, 148, 77, 0.16);
+    --color-border-300: rgba(184, 148, 77, 0.34);
+    --color-border-600: rgba(184, 148, 77, 0.58);
+    --color-border-900: rgba(184, 148, 77, 1);
+
+    /* =========================
+     BUTTONS
+  ========================= */
+
+    --color-button-primary-bg: linear-gradient(135deg,
+            var(--color-alert-600) 0%,
+            var(--color-tertiary-600) 38%,
+            var(--color-primary-900) 72%,
+            var(--color-accent-600) 100%);
+    --color-button-primary-text: var(--color-white-900);
+    --color-button-primary-border: var(--color-border-300);
+
+    --color-button-ghost-bg: var(--color-surface-100);
+    --color-button-ghost-text: var(--color-text);
+    --color-button-ghost-border: var(--color-border-300);
+
+    --color-button-action-bg: var(--color-accent-100);
+    --color-button-action-text: var(--color-white-900);
+    --color-button-action-border: var(--color-accent-300);
+
+    --color-button-delete-bg: var(--color-alert-100);
+    --color-button-delete-text: var(--color-white-900);
+    --color-button-delete-border: var(--color-alert-300);
+
+    /* =========================
+     FORMS + STATUS
+  ========================= */
+
+    --color-input-bg: var(--color-surface-900);
+    --color-input-text: var(--color-text);
+    --color-input-border: var(--color-border-300);
+
+    --color-status-bg: var(--color-accent-100);
+    --color-status-border: var(--color-accent-300);
+    --color-status-text: var(--color-text);
+
+    /* =========================
+     GRADIENTS
+  ========================= */
+
+    --gradient-page:
+        radial-gradient(circle at top left,
+            var(--color-secondary-100),
+            var(--color-transparent) 28%),
+        radial-gradient(circle at top right,
+            var(--color-tertiary-300),
+            var(--color-transparent) 30%),
+        radial-gradient(circle at bottom,
+            var(--color-alert-100),
+            var(--color-transparent) 34%),
+        linear-gradient(180deg,
+            var(--color-primary-600) 0%,
+            var(--color-primary-900) 82%,
+            var(--color-tertiary-900) 100%);
+
+    --gradient-live-banner: linear-gradient(135deg,
+            var(--color-primary-900) 0%,
+            var(--color-alert-600) 48%,
+            var(--color-accent-600) 100%);
+
+    --gradient-live-card: linear-gradient(145deg,
+            var(--color-white-900) 0%,
+            var(--color-border-300) 100%);
+
+    --gradient-live-active-fill: linear-gradient(135deg,
+            var(--color-white-900),
+            var(--color-accent-300));
+
+    --gradient-live-active-border: linear-gradient(70deg,
+            var(--color-alert-900),
+            var(--color-alert-600),
+            var(--color-accent-600),
+            var(--color-secondary-600));
+
+    --gradient-hero-media: linear-gradient(135deg,
+            var(--color-secondary-100),
+            var(--color-primary-100));
+
+    /* =========================
+     SHADOWS
+  ========================= */
+
+    --shadow-card: 0 10px 30px var(--color-primary-300);
+    --shadow-live: 5px 5px 15px var(--color-primary-300);
+
+    /* =========================
+     INVITE COMPONENT MAPPING
+  ========================= */
+
+    --card-bg:
+        radial-gradient(circle at 12% 12%,
+            var(--color-accent-100),
+            var(--color-transparent) 24%),
+        linear-gradient(145deg,
+            var(--color-secondary-900) 0%,
+            var(--color-primary-600) 48%,
+            var(--color-tertiary-900) 100%);
+    --card-border: var(--color-border-300);
+    --card-shadow: var(--shadow-card);
+
+    --panel-bg: var(--card-bg);
+    --panel-border: var(--card-border);
+
+    --chip-bg: var(--color-surface-600);
+    --chip-text: var(--color-text);
+    --chip-border: var(--color-border-300);
+
+    --live-banner-bg: var(--gradient-live-banner);
+    --live-banner-text: var(--color-text);
+
+    --live-card-bg: var(--gradient-live-card);
+    --live-card-text: var(--color-primary-900);
+    --live-card-border: var(--color-border-300);
+
+    --live-active-bg: var(--gradient-live-active-fill);
+    --live-active-border: var(--gradient-live-active-border);
+    --live-active-text: var(--color-primary-900);
+    --live-active-shadow: var(--shadow-live);
+
+    --section-accent-bg: var(--gradient-live-card);
+    --section-accent-border: var(--color-primary-300);
+
+    --timeline-bg: var(--color-surface-300);
+    --timeline-border: var(--color-primary-300);
+    --timeline-time-text: var(--color-text);
+
+    --footer-text: var(--color-text-muted);
+}

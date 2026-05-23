@@ -4,10 +4,10 @@
     "template": "soiree",
     "status": "draft"
   },
-  "live": {
-    "banner": "",
-    "now": "",
-    "next": "",
+   "live": {
+    "banner": "SAVE THE DATE AUGUST 8TH",
+    "now": "Inviting my guests.",
+    "next": "Making sure you save the date.",
     "refresh_seconds": 60000,
     "updates": {
       "enabled": true,

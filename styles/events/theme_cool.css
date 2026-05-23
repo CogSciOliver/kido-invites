@@ -1,0 +1,223 @@
+/* =========================================================
+   Preset: Cool Blue / Jade / Persimmon / Cream
+   File: event.css
+   Scope: theme variables only — no size/layout changes
+   ========================================================= */
+
+:root {
+    /* =========================
+     PRIMARY SCALE
+     Main invite color.
+     Cool blue.
+  ========================= */
+
+    --color-primary-100: rgba(125, 199, 232, 0.16);
+    --color-primary-300: rgba(125, 199, 232, 0.34);
+    --color-primary-600: rgba(58, 154, 205, 1);
+    --color-primary-900: rgba(18, 72, 112, 1);
+
+    /* =========================
+     SECONDARY SCALE
+     Quiet supporting color.
+     Jade.
+  ========================= */
+
+    --color-secondary-100: rgba(0, 168, 120, 0.14);
+    --color-secondary-300: rgba(0, 168, 120, 0.30);
+    --color-secondary-600: rgba(0, 132, 96, 1);
+    --color-secondary-900: rgba(0, 74, 58, 1);
+
+    /* =========================
+     TERTIARY SCALE
+     Optional decorative/pop color.
+     Persimmon.
+  ========================= */
+
+    --color-tertiary-100: rgba(237, 101, 55, 0.14);
+    --color-tertiary-300: rgba(237, 101, 55, 0.30);
+    --color-tertiary-600: rgba(237, 101, 55, 1);
+    --color-tertiary-900: rgba(145, 48, 26, 1);
+
+    /* =========================
+     ACCENT SCALE
+     Supporting highlight color.
+     Brighter jade-cool accent.
+  ========================= */
+
+    --color-accent-100: rgba(55, 190, 168, 0.14);
+    --color-accent-300: rgba(55, 190, 168, 0.30);
+    --color-accent-600: rgba(32, 171, 148, 1);
+    --color-accent-900: rgba(14, 99, 88, 1);
+
+    /* =========================
+     ALERT SCALE
+     Optional warning/urgent update color.
+  ========================= */
+
+    --color-alert-100: var(--color-tertiary-100);
+    --color-alert-300: var(--color-tertiary-300);
+    --color-alert-600: var(--color-tertiary-600);
+    --color-alert-900: var(--color-tertiary-900);
+
+    /* =========================
+     PAGE
+     Design fields:
+     - Page background
+     - Main text
+     - Muted text
+  ========================= */
+
+    --color-page-bg: rgba(255, 246, 222, 1);
+    --color-text: rgba(18, 72, 112, 1);
+    --color-text-muted: rgba(18, 72, 112, 0.68);
+
+    /* =========================
+     SURFACE SCALE
+     Cards, panels, chips, inputs.
+  ========================= */
+
+    --color-surface-100: rgba(255, 246, 222, 0.28);
+    --color-surface-300: rgba(255, 246, 222, 0.52);
+    --color-surface-600: rgba(255, 246, 222, 0.78);
+    --color-surface-900: rgba(255, 252, 242, 0.96);
+
+    /* =========================
+     BORDER SCALE
+  ========================= */
+
+    --color-border-100: rgba(58, 154, 205, 0.14);
+    --color-border-300: rgba(58, 154, 205, 0.28);
+    --color-border-600: rgba(58, 154, 205, 0.46);
+    --color-border-900: rgba(18, 72, 112, 0.72);
+
+    /* =========================
+     BUTTONS
+  ========================= */
+
+    --color-button-primary-bg: linear-gradient(135deg,
+            var(--color-tertiary-600) 0%,
+            var(--color-primary-600) 42%,
+            var(--color-primary-900) 72%,
+            var(--color-secondary-600) 100%);
+    --color-button-primary-text: var(--color-surface-900);
+    --color-button-primary-border: var(--color-primary-300);
+
+    --color-button-ghost-bg: var(--color-surface-600);
+    --color-button-ghost-text: var(--color-text);
+    --color-button-ghost-border: var(--color-border-300);
+
+    --color-button-action-bg: var(--color-accent-100);
+    --color-button-action-text: var(--color-accent-900);
+    --color-button-action-border: var(--color-accent-300);
+
+    --color-button-delete-bg: transparent;
+    --color-button-delete-text: var(--color-alert-900);
+    --color-button-delete-border: var(--color-alert-300);
+
+    /* =========================
+     FORMS + STATUS
+  ========================= */
+
+    --color-input-bg: var(--color-surface-900);
+    --color-input-text: var(--color-text);
+    --color-input-border: var(--color-border-300);
+
+    --color-status-bg: var(--color-accent-100);
+    --color-status-border: var(--color-accent-300);
+    --color-status-text: var(--color-text);
+
+    /* =========================
+     GRADIENTS
+     These must exist because base.css uses --gradient-page
+     and invite.css uses the live/hero gradient tokens.
+  ========================= */
+
+    --gradient-page:
+        radial-gradient(circle at top left,
+            var(--color-primary-100),
+            transparent 28%),
+        radial-gradient(circle at top right,
+            var(--color-secondary-100),
+            transparent 30%),
+        radial-gradient(circle at bottom,
+            var(--color-tertiary-100),
+            transparent 34%),
+        linear-gradient(180deg,
+            var(--color-surface-900) 0%,
+            var(--color-page-bg) 56%,
+            var(--color-primary-100) 100%);
+
+    --gradient-live-banner: linear-gradient(135deg,
+            var(--color-primary-900) 0%,
+            var(--color-primary-600) 72%,
+            var(--color-accent-300) 100%);
+
+    --gradient-live-card: linear-gradient(145deg,
+            var(--color-surface-900) 0%,
+            var(--color-primary-100) 100%);
+
+    --gradient-live-active-fill: linear-gradient(135deg,
+            var(--color-surface-900),
+            var(--color-accent-300));
+
+    --gradient-live-active-border: linear-gradient(70deg,
+            var(--color-tertiary-900),
+            var(--color-tertiary-600),
+            var(--color-accent-600),
+            var(--color-secondary-600));
+
+    --gradient-hero-media: linear-gradient(135deg,
+            var(--color-primary-100),
+            var(--color-secondary-100));
+
+    /* =========================
+     SHADOWS
+  ========================= */
+
+    --shadow-card: 0 10px 30px var(--color-primary-100);
+    --shadow-live: 5px 5px 15px var(--color-primary-300);
+
+    /* =========================
+     INVITE COMPONENT MAPPING
+     These are what invite.css consumes.
+  ========================= */
+
+    --card-bg:
+        radial-gradient(circle at 12% 12%,
+            var(--color-surface-300),
+            transparent 24%),
+        linear-gradient(145deg,
+            var(--color-primary-100) 0%,
+            var(--color-surface-900) 54%,
+            var(--color-secondary-100) 100%);
+    --card-border: var(--color-border-300);
+    --card-shadow: var(--shadow-card);
+
+    --panel-bg: var(--card-bg);
+    --panel-border: var(--card-border);
+
+    --chip-bg: var(--color-surface-600);
+    --chip-text: var(--color-text);
+    --chip-border: var(--color-border-300);
+
+    --live-banner-bg: var(--gradient-live-banner);
+    --live-banner-text: var(--color-surface-900);
+
+    --live-card-bg: var(--gradient-live-card);
+    --live-card-text: var(--color-primary-900);
+    --live-card-border: var(--color-border-300);
+
+    --live-active-bg: var(--gradient-live-active-fill);
+    --live-active-border: var(--gradient-live-active-border);
+    --live-active-text: var(--color-primary-900);
+    --live-active-shadow: var(--shadow-live);
+
+    --section-accent-bg: var(--gradient-live-card);
+    --section-accent-border: var(--color-primary-300);
+
+    --timeline-bg: var(--color-surface-300);
+    --timeline-border: var(--color-primary-300);
+    --timeline-time-text: var(--color-primary-900);
+
+    --footer-text: var(--color-text-muted);
+}
