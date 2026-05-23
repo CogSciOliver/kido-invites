@@ -58,7 +58,8 @@ createForm.addEventListener("submit", async (event) => {
 
   const payload = {
     slug: value("slug"),
-
+    owner_email: value("ownerEmail"),
+    
     invite_headline: value("inviteHeadline"),
     invite_phrase: value("invitePhrase"),
 
