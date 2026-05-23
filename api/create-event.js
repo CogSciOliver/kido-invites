@@ -61,8 +61,11 @@ function makeEvent(slug, body) {
   return {
     meta: {
       slug,
-      template: "soiree",
-      status: "draft"
+      template: "party",
+      status: "draft",
+      owner_email: cleanText(body.owner_email),
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
     },
 
     live: {

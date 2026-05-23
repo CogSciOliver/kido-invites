@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Invites</title>
+
+  <link rel="stylesheet" href="./styles/tokens.css" />
+  <link rel="stylesheet" href="./styles/base.css" />
+  <link rel="stylesheet" href="./styles/site.css" />
+  <link rel="stylesheet" href="./styles/dashboard.css" />
+</head>
+
+<body>
+  <main class="dashboardPage">
+    <section class="dashboardHero card">
+      <p class="eyebrow">Host Dashboard</p>
+      <h1>Your Invites</h1>
+      <p>Manage, and edit the invites & RSVPs for events you've created.</p>
+
+      <form id="dashboardLookup" class="dashboardLookup">
+        <label>
+          Host Email
+          <input id="ownerEmail" type="email" placeholder="host@email.com" required />
+        </label>
+
+        <label>
+          Admin Secret
+          <input id="adminSecret" type="password" placeholder="ADMIN_SECRET" required />
+        </label>
+
+        <button class="btn btn-primary" type="submit">Load Invites</button>
+      </form>
+
+      <p id="dashboardStatus" class="dashboardStatus" aria-live="polite"></p>
+    </section>
+
+    <section class="dashboardSummary" id="dashboardSummary" hidden>
+      <article class="summaryCard card">
+        <span>Total Invites</span>
+        <strong id="totalInvites">0</strong>
+      </article>
+
+      <article class="summaryCard card">
+        <span>Drafts</span>
+        <strong id="draftInvites">0</strong>
+      </article>
+
+      <article class="summaryCard card">
+        <span>Published</span>
+        <strong id="publishedInvites">0</strong>
+      </article>
+    </section>
+
+    <section id="inviteGrid" class="inviteGrid" aria-label="Invite list"></section>
+  </main>
+
+  <script type="module" src="./core/dashboard-main.js"></script>
+</body>
+</html>
