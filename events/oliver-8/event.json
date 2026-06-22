@@ -11,7 +11,7 @@
     "refresh_seconds": 60000,
     "updates": {
       "enabled": true,
-      "intro": "If anything changes during the event, I’ll update it here.",
+      "intro": "If anything changes during the event, I'll update it here.",
       "items": []
     }
   },
@@ -78,7 +78,7 @@
     "title": "Infinity 8 Birthday Day Party",
     "start": "20260808T133000",
     "end": "20260809T235900",
-    "location": "KIDO Family Ranch, 900 E Criner St, Grandview, TX 76050",
+    "location": "KIDO Family Ranch, 9433 County Rd 419, Grandview, TX 76050",
     "description": "Oliver's Infinity 8th Birthday Date!"
   },
   "rsvp": {

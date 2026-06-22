@@ -12,3 +12,6 @@ dist/
 build/
 
 DEV.md
+*.zip
+*.md 
+!README.md
