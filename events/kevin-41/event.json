@@ -17,7 +17,7 @@
   },
   "event": {
     "title": "Cookout & Lime Yard Celebration",
-    "date_display": "08/07/2026",
+    "date_display": "08/08/2026",
     "city": "Grandview, TX",
     "host": "Kevin Braithwaite",
     "invite_headline": "Come Celebrate",
@@ -52,6 +52,11 @@
       "time": "8:30PM",
       "title": "Game Time",
       "details": "May the best player win!"
+    },
+    {
+      "time": "11:30AM",
+      "title": "That's a Wrap",
+      "details": "It's been a great time!"
     }
   ],
   "what_to_bring": [
@@ -72,8 +77,8 @@
   "calendar": {
     "filename": "kevin-41.ics",
     "title": "Liming & Cookout Birthday",
-    "start": "20260807T183000",
-    "end": "20260807T223000",
+    "start": "20260808T183000",
+    "end": "20260808T223000",
     "location": "KIDO Family Ranch, 9433 County Rd 419, Grandview, TX 76050",
     "description": "Kevin's Birthday Party"
   },
