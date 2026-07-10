@@ -81,6 +81,15 @@
       "phone": "2546590022",
       "attending": "yes",
       "note": ""
+    },
+    {
+      "id": "1783716508468-1x1jgwt9",
+      "created_at": "2026-07-10T20:48:28.468Z",
+      "name": "Alicia",
+      "email": "a.delfierro@yahoo.com",
+      "phone": "8176588610",
+      "attending": "yes",
+      "note": "Alicia + 4"
     }
   ]
 }
