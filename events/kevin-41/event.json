@@ -6,9 +6,9 @@
   },
   "live": {
     "banner": "Save the Date!",
-    "now": "Inviting only \nthe best people we know!",
-    "next": "Seasoning the food, setting the yard!",
-    "refresh_seconds": 60,
+    "now": "Getting the grill ready, and the yard set up for a great time!",
+    "next": "Be prepared to have a great time, and enjoy the lime!",
+    "refresh_seconds": 6000,
     "updates": {
       "enabled": true,
       "intro": "If anything changes during the event, I'll update it here.",
@@ -40,8 +40,8 @@
   "schedule": [
     {
       "time": "6:30PM",
-      "title": "Arrive Park",
-      "details": "Pull up a chair."
+      "title": "Arrive & Park",
+      "details": "Pull out your chair and meet our guests."
     },
     {
       "time": "7:30PM",
@@ -51,7 +51,7 @@
     {
       "time": "8:30PM",
       "title": "Game Time",
-      "details": "May the best player win!"
+      "details": "May the best players win!"
     },
     {
       "time": "11:30AM",
@@ -60,6 +60,10 @@
     }
   ],
   "what_to_bring": [
+    "Bring your favorite bottle to share (Whiskey or Mezcal preferred).",
+    "Lawn chair for yourself and kids.",
+    "Swimwear for the pool and waterslide.",
+    "Closed shoes for the yard.",
     "The family!"
   ],
   "dress_code": "It's Hot Out Here!",
@@ -71,7 +75,7 @@
   "links": [
     {
       "label": "Green Back Gifts",
-      "url": "https://zelle.com"
+      "url": "https://cash.app/$bushbrew"
     }
   ],
   "calendar": {

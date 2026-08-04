@@ -6,9 +6,9 @@
   },
   "live": {
     "banner": "SAVE THE DATE AUGUST 8TH",
-    "now": "Inviting my guests.",
-    "next": "Making sure you save the date.",
-    "refresh_seconds": 60000,
+    "now": "Start time updated to 3:00PM, to avoid the heat of the day, and to give us more time to play in the pool and waterslide!",
+    "next": "Water slide, plunge pool, bounce house, and more! Come ready to have fun!",
+    "refresh_seconds": 6000,
     "updates": {
       "enabled": true,
       "intro": "If anything changes during the event, I'll update it here.",
@@ -22,7 +22,7 @@
     "host": "Oliver Braithwaite",
     "invite_headline": "Celebrate With Us",
     "invite_phrase": "would love for you to join",
-    "arrival_time": "1:30PM"
+    "arrival_time": "3:00PM"
   },
   "design": {
     "invite_text_font": "serif"
@@ -39,38 +39,36 @@
   },
   "schedule": [
     {
-      "time": "1:30 PM",
+      "time": "3:00 PM",
       "title": "Arrival",
       "details": "Come in, say hi, and get settled."
     },
     {
-      "time": "2:00 PM",
-      "title": "Infinity Fun",
-      "details": "Games, cake, and birthday activities."
+      "time": "4:00 PM",
+      "title": "Infinite Fun",
+      "details": "Waterslide, Plunge Pool, Bounce House, just pure fun!."
     },
     {
-      "time": "5:00 PM",
-      "title": "Cake & Drinks & Dance the night away",
+      "time": "7:00 PM",
+      "title": "BBQ & Drinks, let's lime & dance the night away",
       "details": "Celebrate the birthday kid."
     }
   ],
   "what_to_bring": [
-    "Just yourself!"
+    "Swimwear!",
+    "Closed shoes for the yard!",
+    "Lawn chair for yourself and kids."
   ],
   "dress_code": "It's Hot Out Here!",
   "after": {
     "enabled": true,
-    "headline": "Adults Stay to Lime and Drink",
+    "headline": "Stay to Lime and Drink",
     "note": "Kids are welcome, we'll be hanging with family enjoying drinks and games for the adults well into the night."
   },
   "links": [
     {
       "label": "Cash Oliver can spend in his own way.",
-      "url": "https://cashapp.com"
-    },
-    {
-      "label": "Zelle Link",
-      "url": "https://zelle.com"
+      "url": "https://cash.app/$bushbrew"
     }
   ],
   "calendar": {
